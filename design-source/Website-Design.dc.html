@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Website Design in Vancouver | Sullivan Park Design</title>
+<meta name="description" content="Squarespace, Shopify and custom-coded website design from Sullivan Park Design in Vancouver. Clear, polished websites that make it easy for customers to get in touch.">
+<link rel="icon" type="image/png" sizes="48x48" href="/_blob/d4956c39878d65ac2c0117fbbbaf4e88">
+<link rel="apple-touch-icon" sizes="180x180" href="/_blob/f019213baefa428c60459801721d55db">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sullivan Park Design">
+<meta property="og:title" content="Website Design in Vancouver | Sullivan Park Design">
+<meta property="og:description" content="Squarespace, Shopify and custom-coded website design from Sullivan Park Design in Vancouver. Clear, polished websites that make it easy for customers to get in touch.">
+<meta name="twitter:card" content="summary_large_image">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Abel&amp;family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;display=swap">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#E9ECEB;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
+a{color:#4E6368}a:hover{color:#121414}
+img{display:block;max-width:100%;height:auto}
+.sp-skip{position:absolute;left:16px;top:-80px;z-index:100;background:#FAFAF8;color:#121414;padding:14px 20px;font-size:15px;text-decoration:none;transition:top .25s}
+.sp-skip:focus{top:16px}
+:focus-visible{outline:2px solid #4E6368;outline-offset:4px}
+.sp-on-dark :focus-visible{outline-color:#FAFAF8}
+.sp-navlink{position:relative}
+.sp-navlink::after{content:"";position:absolute;left:0;right:0;bottom:-8px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.sp-navlink:hover::after,.sp-navlink[aria-current="page"]::after{transform:scaleX(1)}
+.sp-btn{transition:background-color .35s ease,color .35s ease,border-color .35s ease}
+.sp-btn-blue:hover{background:#121414 !important;border-color:#121414 !important;color:#FFFFFF !important}
+.sp-btn-ink:hover{background:#121414 !important;color:#FFFFFF !important;border-color:#121414 !important}
+.sp-btn-line:hover{background:#4E6368 !important;color:#FFFFFF !important}
+.sp-link{transition:gap .4s cubic-bezier(.2,.7,.2,1),color .3s}
+.sp-link:hover{gap:18px !important;color:#121414 !important}
+.sp-flink{transition:color .3s}
+.sp-flink:hover{color:#4E6368 !important}
+.sp-fab{transition:transform .3s cubic-bezier(.2,.7,.2,1),background-color .3s,color .3s}
+.sp-fab:hover{transform:translateY(-3px);background:#4E6368 !important;color:#FFFFFF !important}
+.sp-card{transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.sp-card:hover{transform:translateY(-4px)}
+.sp-photo{overflow:hidden}
+.sp-photo img{transition:transform 1.6s cubic-bezier(.2,.7,.2,1)}
+.sp-photo:hover img{transform:scale(1.04)}
+.sp-shot{transition:transform .6s cubic-bezier(.2,.7,.2,1),box-shadow .6s}
+.sp-project:hover .sp-shot{transform:translateY(-4px);box-shadow:0 28px 60px rgba(18,28,30,0.14) !important}
+.sp-project-title{transition:color .3s}
+.sp-project:hover .sp-project-title{color:#4E6368 !important}
+.sp-faq-btn .sp-plus{transition:transform .4s cubic-bezier(.2,.7,.2,1),background-color .3s,color .3s}
+.sp-faq-btn[aria-expanded="true"] .sp-plus{transform:rotate(45deg)}
+.sp-faq-btn:hover .sp-plus{background:#4E6368;color:#FFFFFF}
+.sp-faq-q{transition:color .3s}
+.sp-faq-btn:hover .sp-faq-q{color:#4E6368}
+.sp-device{transition:transform .9s cubic-bezier(.2,.7,.2,1),box-shadow .9s}
+.sp-stagebox:hover .sp-desk{transform:translateY(-6px)}
+.sp-stagebox:hover .sp-phone{transform:translateY(-14px)}
+.sp-ext{transition:color .3s}
+.sp-ext:hover{color:#121414 !important}
+.sp-on-dark .sp-ext:hover{color:#FFFFFF !important}
+.sp-row{transition:background-color .5s ease}
+.sp-row:hover{background:#FFFFFF}
+.sp-rowgrid{display:grid;grid-template-columns:minmax(200px,.7fr) 1fr 1fr}
+.sp-btn-ghost:hover{background:#FAFAF8 !important;color:#121414 !important;border-color:#FAFAF8 !important}
+@keyframes spSway{0%{transform:rotate(0deg) translate(0,0)}100%{transform:rotate(-1.8deg) translate(-10px,4px)}}
+.sp-sway{animation:spSway 9s ease-in-out infinite alternate;transform-origin:100% 0}
+@keyframes spReveal{from{opacity:0;translate:0 44px}to{opacity:1;translate:0 0}}
+@supports (animation-timeline: view()){@media (prefers-reduced-motion: no-preference){.sp-reveal{animation:spReveal linear both;animation-timeline:view();animation-range:entry 0% entry 70%}}}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.sp-sway{animation:none}.sp-link,.sp-fab,.sp-card,.sp-photo img,.sp-shot,.sp-faq-btn .sp-plus,.sp-device,.sp-row{transition:none}}
+@media (max-width: 1100px){.sp-offset{margin-top:0 !important}}
+@media (max-width: 1040px){.sp-nav,.sp-header-cta{display:none !important}.sp-menu-btn{display:inline-flex !important}}
+@media (max-width: 860px){.sp-rowgrid{grid-template-columns:1fr}}
+@media (max-width: 760px){.sp-desk{width:88% !important}.sp-phone{width:28% !important;padding:5px !important}.sp-stage{padding-bottom:28px !important}}
+@media (max-width: 400px){.sp-wordmark{display:none !important}}
+/* NAV v2 (generated) */
+html{scroll-padding-top:104px}
+.sp-header{transition:background-color .45s ease,box-shadow .45s ease}
+.sp-headbar{position:relative;--hpad:24px;padding-top:var(--hpad) !important;padding-bottom:var(--hpad) !important;transition:padding .45s cubic-bezier(.2,.7,.2,1)}
+.sp-logo{transition:height .45s cubic-bezier(.2,.7,.2,1)}
+.sp-header[data-scrolled="true"]{background:rgba(250,250,248,.94);-webkit-backdrop-filter:saturate(1.3) blur(14px);backdrop-filter:saturate(1.3) blur(14px);box-shadow:0 1px 0 rgba(18,20,20,.08),0 18px 40px -30px rgba(18,20,20,.5)}
+.sp-header[data-scrolled="true"] .sp-headbar{--hpad:12px}
+.sp-header[data-scrolled="true"] .sp-logo{height:46px !important}
+.sp-logo-ink{display:none !important}
+.sp-header.sp-on-dark[data-scrolled="true"] .sp-logo-light{display:none !important}
+.sp-header.sp-on-dark[data-scrolled="true"] .sp-logo-ink{display:block !important}
+.sp-header.sp-on-dark[data-scrolled="true"] .sp-brand,.sp-header.sp-on-dark[data-scrolled="true"] .sp-wordmark,.sp-header.sp-on-dark[data-scrolled="true"] .sp-nav .sp-navlink{color:#121414 !important}
+.sp-header.sp-on-dark[data-scrolled="true"] .sp-header-cta,.sp-header.sp-on-dark[data-scrolled="true"] .sp-menu-btn{color:#121414 !important;border-color:#121414 !important}
+.sp-header.sp-on-dark[data-scrolled="true"] .sp-header-cta:hover{background:#121414 !important;color:#FFFFFF !important}
+.sp-header.sp-on-dark[data-scrolled="true"] :focus-visible{outline-color:#121414}
+.sp-nav{align-self:stretch}
+.sp-dd{display:flex;align-items:center;align-self:stretch;padding-block:var(--hpad);margin-block:calc(var(--hpad) * -1)}
+.sp-dd > .sp-navlink{display:inline-flex !important;align-items:center;gap:9px}
+.sp-caret{transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.sp-navlink.is-active::after,.sp-dd:hover > .sp-navlink::after,.sp-dd:focus-within > .sp-navlink::after{transform:scaleX(1)}
+.sp-dd-panel{opacity:0;visibility:hidden;transform:translateY(-8px);pointer-events:none;transition:opacity .25s ease .12s,transform .3s ease .12s,visibility 0s linear .42s}
+.sp-dd:hover > .sp-dd-panel,.sp-dd:focus-within > .sp-dd-panel{opacity:1;visibility:visible;transform:none;pointer-events:auto;transition:opacity .35s ease,transform .45s cubic-bezier(.2,.7,.2,1),visibility 0s}
+.sp-dd:hover > .sp-navlink .sp-caret,.sp-dd:focus-within > .sp-navlink .sp-caret{transform:rotate(180deg)}
+.sp-nav[data-hush="true"] .sp-dd-panel{opacity:0 !important;visibility:hidden !important;pointer-events:none !important}
+.sp-dd-card img{transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.sp-dd-card:hover img,.sp-dd-card:focus-visible img{transform:scale(1.05)}
+.sp-dd-name{transition:color .3s}
+.sp-dd-card:hover .sp-dd-name,.sp-dd-line:hover .sp-dd-name,.sp-dd-row:hover .sp-dd-name,.sp-dd-card[aria-current="page"] .sp-dd-name,.sp-dd-line[aria-current="page"] .sp-dd-name{color:#4E6368}
+.sp-dd-card[aria-current="page"] .sp-dd-thumb{outline:1px solid #4E6368;outline-offset:4px}
+.sp-dd-all svg,.sp-more-go svg,.sp-more-link svg{transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.sp-dd-all:hover svg,.sp-more-card:hover .sp-more-go svg,.sp-more-link:hover svg{transform:translateX(5px)}
+@media (max-width: 1240px){.sp-nav{gap:30px !important}}
+.sp-foot-grid{display:grid !important;grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr));gap:48px clamp(32px,4vw,64px) !important}
+.sp-foot-grid > :first-child p{max-width:520px}
+@media (max-width: 1000px){.sp-foot-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.sp-foot-grid > :first-child{grid-column:1 / -1}}
+@media (max-width: 680px){.sp-foot-grid{grid-template-columns:1fr 1fr}.sp-foot-grid > :last-child{grid-column:1 / -1}}
+@media (max-width: 420px){.sp-foot-grid{grid-template-columns:1fr}}
+.sp-mnav{max-height:calc(100vh - 110px);max-height:calc(100dvh - 110px);overflow-y:auto;overscroll-behavior:contain}
+.sp-mnav a[aria-current="page"]{color:#4E6368 !important}
+.sp-mnav .sp-msub[aria-current="page"]{color:#121414 !important}
+.sp-mnav .sp-msub[aria-current="page"] span{width:28px !important}
+.sp-msub{transition:color .3s}
+.sp-msub:hover{color:#121414 !important}
+.sp-more-card{transition:transform .6s cubic-bezier(.2,.7,.2,1),box-shadow .6s cubic-bezier(.2,.7,.2,1)}
+.sp-more-card:hover{transform:translateY(-4px);box-shadow:0 34px 60px -34px rgba(0,0,0,.55)}
+.sp-more-card img{transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.sp-more-card:hover img{transform:scale(1.04)}
+@media (max-width: 980px){.sp-more-grid{grid-template-columns:1fr 1fr !important}.sp-more-grid > li:last-child{grid-column:1 / -1}}
+@media (max-width: 640px){.sp-more-grid{grid-template-columns:1fr !important}}
+@media (prefers-reduced-motion: no-preference){.sp-fab{transition:transform .3s cubic-bezier(.2,.7,.2,1),background-color .3s,color .3s,opacity .4s ease,visibility 0s}}
+.sp-fab[data-show="false"]{opacity:0;visibility:hidden;pointer-events:none;transform:translateY(10px)}
+@media (prefers-reduced-motion: reduce){.sp-dd-panel{transform:none !important}.sp-dd-card img,.sp-more-card,.sp-more-card img{transition:none !important;transform:none !important}}
+/* /NAV v2 */
+</style>
+</helmet>
+
+<div id="top" style="position: relative; background: #FAFAF8; color: #121414; font-family: 'Abel', 'Arial Narrow', sans-serif; overflow-x: clip">
+<a class="sp-skip" href="#main">Skip to content</a>
+
+<!-- HEADER (light) -->
+<header class="sp-header" ref="{{headerRef}}" data-scrolled="{{headerScrolled}}" style="position: fixed; top: 0; left: 0; right: 0; z-index: 20">
+<div class="sp-headbar" style="width: 100%; max-width: 1680px; margin: 0 auto; padding: 24px clamp(20px, 5vw, 72px); display: flex; align-items: center; justify-content: space-between; gap: 32px">
+<a class="sp-brand" href="Main.dc.html" aria-label="Sullivan Park Design, home" style="display: flex; align-items: center; gap: 16px; text-decoration: none; color: #121414">
+<img class="sp-logo" src="/_blob/946ef92befcc2436e37a8b858f03f1a7" alt="" width="227" height="192" style="height: 58px; width: auto">
+<span class="sp-wordmark" style="font-family: 'Cormorant Infant', Garamond, serif; font-weight: 400; font-size: 23px; line-height: 1.1; color: #121414">Sullivan Park Design</span>
+</a>
+<nav class="sp-nav" aria-label="Primary" data-hush="{{navHush}}" style="display: flex; align-items: center; gap: 40px; margin-left: auto; margin-right: 16px">
+<div class="sp-dd sp-dd-about">
+<a class="sp-navlink" href="About.dc.html" style="color: #121414; text-decoration: none; font-size: 15px; letter-spacing: 0.14em; text-transform: uppercase">About<svg class="sp-caret" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M.6.8 5 5 9.4.8" stroke="currentColor" stroke-width="1.1"></path></svg></a>
+<div class="sp-dd-panel sp-dd-mega-panel" style="position: absolute; top: 100%; right: clamp(20px, 5vw, 72px); width: min(840px, calc(100% - 2 * clamp(20px, 5vw, 72px))); z-index: 30">
+<div class="sp-dd-sheet" style="position: relative; background: #FAFAF8; box-shadow: 0 34px 80px rgba(18, 20, 20, 0.2), 0 2px 10px rgba(18, 20, 20, 0.06)">
+<span aria-hidden="true" style="position: absolute; inset: 10px; border: 1px solid rgba(78, 99, 104, 0.22); pointer-events: none"></span>
+<div style="position: relative; padding: 32px 34px 28px">
+<ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px">
+<li><a class="sp-dd-card" href="About.dc.html" style="display: flex; flex-direction: column; gap: 8px; height: 100%; text-decoration: none; color: #121414"><span class="sp-dd-thumb" style="display: block; overflow: hidden; background: #E9ECEB"><img src="/_blob/16024f4c845dba8adfabba46c19c436e" alt="" width="600" height="400" loading="lazy" style="display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover"></span><span class="sp-dd-name" style="margin-top: 10px; font-family: 'Cormorant Infant', Garamond, serif; font-size: 24px; line-height: 1.15">About Natasha</span><span style="font-size: 15px; line-height: 1.5; color: #4E5558">Who I am and how I work</span></a></li>
+<li><a class="sp-dd-card" href="Testimonials.dc.html" style="display: flex; flex-direction: column; gap: 8px; height: 100%; text-decoration: none; color: #121414"><span class="sp-dd-thumb" style="display: block; overflow: hidden; background: #E9ECEB"><img src="/_blob/05f12a1707f1469290c05e56e4fe7d13" alt="" width="600" height="400" loading="lazy" style="display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover"></span><span class="sp-dd-name" style="margin-top: 10px; font-family: 'Cormorant Infant', Garamond, serif; font-size: 24px; line-height: 1.15">Testimonials</span><span style="font-size: 15px; line-height: 1.5; color: #4E5558">What clients say about working with me</span></a></li>
+<li><a class="sp-dd-card" href="Journal.dc.html" style="display: flex; flex-direction: column; gap: 8px; height: 100%; text-decoration: none; color: #121414"><span class="sp-dd-thumb" style="display: block; overflow: hidden; background: #E9ECEB"><img src="/_blob/99260137b68de049a7efbe19bcbf4176" alt="" width="600" height="400" loading="lazy" style="display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover"></span><span class="sp-dd-name" style="margin-top: 10px; font-family: 'Cormorant Infant', Garamond, serif; font-size: 24px; line-height: 1.15">Resources</span><span style="font-size: 15px; line-height: 1.5; color: #4E5558">Guides to planning, branding and search</span></a></li>
+</ul>
+<div style="margin-top: 26px; padding-top: 20px; border-top: 1px solid rgba(18, 20, 20, 0.12); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px">
+<a class="sp-dd-row" href="Portfolio.dc.html" style="display: inline-flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; text-decoration: none; color: #121414"><span class="sp-dd-name" style="font-family: 'Cormorant Infant', Garamond, serif; font-size: 22px; line-height: 1.2">Portfolio</span><span style="font-size: 15px; line-height: 1.5; color: #4E5558">Recent websites I’ve designed</span></a>
+<a class="sp-dd-all" href="Contact.dc.html" style="display: inline-flex; align-items: center; gap: 12px; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: #4E6368; text-decoration: none">Get in Touch<svg width="22" height="10" viewBox="0 0 26 10" fill="none" aria-hidden="true"><path d="M0 5h24M20 1l4 4-4 4" stroke="currentColor" stroke-width="1.1"></path></svg></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sp-dd sp-dd-mega">
+<a class="sp-navlink is-active" href="Services.dc.html" style="color: #121414; text-decoration: none; font-size: 15px; letter-spacing: 0.14em; text-transform: uppercase">Services<svg class="sp-caret" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M.6.8 5 5 9.4.8" stroke="currentColor" stroke-width="1.1"></path></svg></a>
+<div class="sp-dd-panel sp-dd-mega-panel" style="position: absolute; top: 100%; right: clamp(20px, 5vw, 72px); width: min(840px, calc(100% - 2 * clamp(20px, 5vw, 72px))); z-index: 30">
+<div class="sp-dd-sheet" style="position: relative; background: #FAFAF8; box-shadow: 0 34px 80px rgba(18, 20, 20, 0.2), 0 2px 10px rgba(18, 20, 20, 0.06)">
+<span aria-hidden="true" style="position: absolute; inset: 10px; border: 1px solid rgba(78, 99, 104, 0.22); pointer-events: none"></span>
+<div style="position: relative; padding: 32px 34px 28px">
+<ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px">
+<li><a class="sp-dd-card" href="Website-Design.dc.html" aria-current="page" style="display: flex; flex-direction: column; gap: 8px; height: 100%; text-decoration: none; color: #121414"><span class="sp-dd-thumb" style="display: block; overflow: hidden; background: #E9ECEB"><img src="/_blob/6c04b495000b663692a52bc44c8e472b" alt="" width="600" height="400" loading="lazy" style="display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover"></span><span style="display: flex; align-items: baseline; gap: 12px; margin-top: 10px"><span style="font-size: 13px; letter-spacing: 0.18em; color: #4E6368">01</span><span class="sp-dd-name" style="font-family: 'Cormorant Infant', Garamond, serif; font-size: 24px; line-height: 1.15">Website Design</span></span><span style="font-size: 15px; line-height: 1.5; color: #4E5558">New websites, redesigns and custom-coded builds</span></a></li>
+<li><a class="sp-dd-card" href="Brand-Marketing-Design.dc.html" style="display: flex; flex-direction: column; gap: 8px; height: 100%; text-decoration: none; color: #121414"><span class="sp-dd-thumb" style="display: block; overflow: hidden; background: #E9ECEB"><img src="/_blob/566fd5dcf72a6e8e27cbe554523c7a1b" alt="" width="600" height="400" loading="lazy" style="display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover"></span><span style="display: flex; align-items: baseline; gap: 12px; margin-top: 10px"><span style="font-size: 13px; letter-spacing: 0.18em; color: #4E6368">02</span><span class="sp-dd-name" style="font-family: 'Cormorant Infant', Garamond, serif; font-size: 24px; line-height: 1.15">Brand &amp; Marketing Design</span></span><span style="font-size: 15px; line-height: 1.5; color: #4E5558">A consistent look across your website and marketing</span></a></li>
+<li><a class="sp-dd-card" href="SEO.dc.html" style="display: flex; flex-direction: column; gap: 8px; height: 100%; text-decoration: none; color: #121414"><span class="sp-dd-thumb" style="display: block; overflow: hidden; background: #E9ECEB"><img src="/_blob/85654ee79e5184e234a9b405db248d06" alt="" width="600" height="400" loading="lazy" style="display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover"></span><span style="display: flex; align-items: baseline; gap: 12px; margin-top: 10px"><span style="font-size: 13px; letter-spacing: 0.18em; color: #4E6368">03</span><span class="sp-dd-name" style="font-family: 'Cormorant Infant', Garamond, serif; font-size: 24px; line-height: 1.15">SEO</span></span><span style="font-size: 15px; line-height: 1.5; color: #4E5558">Make your website easier to find and understand</span></a></li>
+</ul>
+<div style="margin-top: 26px; padding-top: 20px; border-top: 1px solid rgba(18, 20, 20, 0.12); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px">
+<a class="sp-dd-row" href="Services.dc.html#ongoing-title" style="display: inline-flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; text-decoration: none; color: #121414"><span class="sp-dd-name" style="font-family: 'Cormorant Infant', Garamond, serif; font-size: 22px; line-height: 1.2">Ongoing Support</span><span style="font-size: 15px; line-height: 1.5; color: #4E5558">Keep your website and marketing moving</span></a>
+<a class="sp-dd-all" href="Services.dc.html" style="display: inline-flex; align-items: center; gap: 12px; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: #4E6368; text-decoration: none">All Services<svg width="22" height="10" viewBox="0 0 26 10" fill="none" aria-hidden="true"><path d="M0 5h24M20 1l4 4-4 4" stroke="currentColor" stroke-width="1.1"></path></svg></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<a class="sp-navlink" href="Portfolio.dc.html" style="color: #121414; text-decoration: none; font-size: 15px; letter-spacing: 0.14em; text-transform: uppercase">Portfolio</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 12px">
+<a class="sp-btn sp-btn-ink sp-header-cta" href="Contact.dc.html" style="display: inline-flex; align-items: center; min-height: 50px; padding: 0 26px; border: 1px solid #121414; color: #121414; text-decoration: none; font-size: 17px; letter-spacing: 0.03em">Contact</a>
+<button class="sp-menu-btn" type="button" aria-label="Menu" aria-expanded="{{menuExpanded}}" onClick="{{toggleMenu}}" style="display: none; width: 50px; height: 50px; align-items: center; justify-content: center; background: transparent; border: 1px solid #121414; color: #121414; cursor: pointer; padding: 0"><svg width="22" height="12" viewBox="0 0 22 12" fill="none" aria-hidden="true"><path d="M0 1h22M0 11h22" stroke="currentColor" stroke-width="1.2"></path></svg></button>
+</div>
+</div>
+<sc-if value="{{menuOpen}}" hint-placeholder-val="{{false}}">
+<nav class="sp-mnav" aria-label="Mobile" style="position: absolute; left: clamp(20px, 5vw, 72px); right: clamp(20px, 5vw, 72px); top: 100%; background: #FAFAF8; padding: 12px 28px 28px; display: flex; flex-direction: column; box-shadow: 0 30px 70px rgba(18, 20, 20, 0.22)">
+<div style="padding-bottom: 12px; border-bottom: 1px solid rgba(18, 20, 20, 0.12)">
+<a href="About.dc.html" onClick="{{closeMenu}}" style="display: block; padding: 18px 0 6px; font-family: 'Cormorant Infant', Garamond, serif; font-size: 28px; color: #121414; text-decoration: none">About</a>
+<ul style="list-style: none; margin: 0; padding: 0">
+<li><a class="sp-msub" href="Testimonials.dc.html" onClick="{{closeMenu}}" style="display: flex; align-items: center; gap: 14px; min-height: 44px; font-size: 16px; letter-spacing: 0.12em; text-transform: uppercase; color: #4E6368; text-decoration: none"><span aria-hidden="true" style="display: block; width: 18px; height: 1px; background: currentColor"></span>Testimonials</a></li>
+<li><a class="sp-msub" href="Journal.dc.html" onClick="{{closeMenu}}" style="display: flex; align-items: center; gap: 14px; min-height: 44px; font-size: 16px; letter-spacing: 0.12em; text-transform: uppercase; color: #4E6368; text-decoration: none"><span aria-hidden="true" style="display: block; width: 18px; height: 1px; background: currentColor"></span>Resources</a></li>
+</ul>
+</div>
+<div style="padding-bottom: 12px; border-bottom: 1px solid rgba(18, 20, 20, 0.12)">
+<a href="Services.dc.html" onClick="{{closeMenu}}" style="display: block; padding: 18px 0 6px; font-family: 'Cormorant Infant', Garamond, serif; font-size: 28px; color: #121414; text-decoration: none">Services</a>
+<ul style="list-style: none; margin: 0; padding: 0">
+<li><a class="sp-msub" href="Website-Design.dc.html" aria-current="page" onClick="{{closeMenu}}" style="display: flex; align-items: center; gap: 14px; min-height: 44px; font-size: 16px; letter-spacing: 0.12em; text-transform: uppercase; color: #4E6368; text-decoration: none"><span aria-hidden="true" style="display: block; width: 18px; height: 1px; background: currentColor"></span>Website Design</a></li>
+<li><a class="sp-msub" href="Brand-Marketing-Design.dc.html" onClick="{{closeMenu}}" style="display: flex; align-items: center; gap: 14px; min-height: 44px; font-size: 16px; letter-spacing: 0.12em; text-transform: uppercase; color: #4E6368; text-decoration: none"><span aria-hidden="true" style="display: block; width: 18px; height: 1px; background: currentColor"></span>Brand &amp; Marketing Design</a></li>
+<li><a class="sp-msub" href="SEO.dc.html" onClick="{{closeMenu}}" style="display: flex; align-items: center; gap: 14px; min-height: 44px; font-size: 16px; letter-spacing: 0.12em; text-transform: uppercase; color: #4E6368; text-decoration: none"><span aria-hidden="true" style="display: block; width: 18px; height: 1px; background: currentColor"></span>SEO</a></li>
+<li><a class="sp-msub" href="Services.dc.html#ongoing-title" onClick="{{closeMenu}}" style="display: flex; align-items: center; gap: 14px; min-height: 44px; font-size: 16px; letter-spacing: 0.12em; text-transform: uppercase; color: #4E6368; text-decoration: none"><span aria-hidden="true" style="display: block; width: 18px; height: 1px; background: currentColor"></span>Ongoing Support</a></li>
+</ul>
+</div>
+<a href="Portfolio.dc.html" onClick="{{closeMenu}}" style="display: block; padding: 18px 0; border-bottom: 1px solid rgba(18, 20, 20, 0.12); font-family: 'Cormorant Infant', Garamond, serif; font-size: 28px; color: #121414; text-decoration: none">Portfolio</a>
+<a class="sp-btn sp-btn-blue" href="Contact.dc.html" onClick="{{closeMenu}}" style="margin-top: 28px; display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 0 28px; background: #4E6368; border: 1px solid #4E6368; color: #FFFFFF; text-decoration: none; font-size: 17px; letter-spacing: 0.03em">Contact</a>
+</nav>
+</sc-if>
+</header>
+
+<main id="main">
+
+<!-- HERO: real work leads (desktop and phone pairing) -->
+<section aria-labelledby="page-title" style="position: relative; overflow: hidden; background: #FAFAF8">
+<img class="sp-sway" src="/_blob/fddc24a18e2595d21f63da9f1d7bf0d5" alt="" width="1800" height="1200" style="position: absolute; top: -20px; right: -20px; width: min(1320px, 110vw); height: auto; max-width: none; opacity: 0.16; mix-blend-mode: multiply; pointer-events: none; z-index: 0">
+<div style="position: relative; z-index: 1; width: 100%; max-width: 1680px; margin: 0 auto; padding: clamp(140px, 12vw, 172px) clamp(20px, 5vw, 72px) clamp(72px, 8vw, 112px); display: flex; flex-direction: column; gap: clamp(48px, 6vw, 80px)">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 28px clamp(48px, 7vw, 120px)">
+<div style="flex: 1.3 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
+<p style="margin: 0; display: flex; align-items: center; gap: 16px; font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; color: #4E6368"><span aria-hidden="true" style="display: block; width: 40px; height: 1px; background: #4E6368"></span>Website Design</p>
+<h1 id="page-title" style="margin: 0; font-family: 'Cormorant Infant', Garamond, serif; font-weight: 300; font-size: clamp(50px, 6.2vw, 104px); line-height: 1; letter-spacing: -0.015em; color: #121414; text-wrap: balance">Websites that reflect <em style="font-style: italic; color: #4E6368">the quality of your work</em></h1>
+</div>
+<div style="flex: 1 1 400px; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 26px; padding-bottom: 8px">
+<p style="margin: 0; font-size: 20px; line-height: 1.65; color: #1F2426">I design Squarespace, Shopify and custom-coded websites that are easy to navigate, look polished on every screen and make it simple for customers to get in touch.</p>
+<a class="sp-btn sp-btn-blue" href="Contact.dc.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 14px; min-height: 58px; padding: 0 34px; background: #4E6368; border: 1px solid #4E6368; color: #FFFFFF; text-decoration: none; font-size: 18px; letter-spacing: 0.03em">Enquire About Your Project<svg width="22" height="10" viewBox="0 0 26 10" fill="none" aria-hidden="true"><path d="M0 5h24M20 1l4 4-4 4" stroke="currentColor" stroke-width="1.1"></path></svg></a>
+</div>
+</div>
+<figure class="sp-reveal" style="margin: 0; display: flex; flex-direction: column; gap: 24px">
+<div class="sp-stage sp-stagebox" style="position: relative; padding-bottom: clamp(28px, 4.5vw, 64px)">
+<div class="sp-device sp-desk" style="width: 84%; background: #FFFFFF; border: 1px solid rgba(18, 20, 20, 0.14); box-shadow: 0 40px 90px rgba(18, 28, 30, 0.16)">
+<div aria-hidden="true" style="height: 34px; padding: 0 16px; display: flex; align-items: center; gap: 7px; border-bottom: 1px solid rgba(18, 20, 20, 0.1)"><span style="width: 9px; height: 9px; border-radius: 50%; background: #CDD3D2"></span><span style="width: 9px; height: 9px; border-radius: 50%; background: #CDD3D2"></span><span style="width: 9px; height: 9px; border-radius: 50%; background: #CDD3D2"></span><span style="margin-left: 12px; font-size: 13px; color: #5A6163">hamishross.com</span></div>
+<img src="/_blob/55ebab7eacc1ef06e5d4dc85de3d45ad" alt="Desktop homepage of the Hamish Ross Real Estate website" width="1720" height="1075" fetchpriority="high" style="width: 100%; height: auto">
+</div>
+<div class="sp-device sp-phone" style="position: absolute; right: 2%; bottom: 0; width: clamp(110px, 19%, 270px); padding: 8px; background: #121414; border-radius: clamp(20px, 2.8vw, 40px); box-shadow: 0 30px 70px rgba(18, 28, 30, 0.28)">
+<img src="/_blob/1f4daac38751ddbeda94a710ee8f930b" alt="The Hamish Ross Real Estate homepage on a phone" width="540" height="1169" style="width: 100%; height: auto; border-radius: clamp(14px, 2.2vw, 32px)">
+</div>
+</div>
+<figcaption style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 32px; padding-top: 20px; border-top: 1px solid rgba(18, 20, 20, 0.14)">
+<span style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px"><span style="font-family: 'Cormorant Infant', Garamond, serif; font-size: 26px; line-height: 1.2; color: #121414">Hamish Ross Real Estate</span><span style="font-size: 16px; line-height: 1.5; letter-spacing: 0.04em; color: #4E6368">Custom-coded website · Ongoing SEO &amp; marketing</span></span>
+<span style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px">
+<a class="sp-btn sp-btn-line" href="Hamish-Ross.dc.html" aria-label="View Project, Hamish Ross Real Estate" style="display: inline-flex; align-items: center; gap: 12px; min-height: 54px; padding: 0 24px; border: 1px solid #4E6368; color: #4E6368; text-decoration: none; font-size: 17px; letter-spacing: 0.03em">View Project<svg width="20" height="10" viewBox="0 0 26 10" fill="none" aria-hidden="true"><path d="M0 5h24M20 1l4 4-4 4" stroke="currentColor" stroke-width="1.1"></path></svg></a>
+<a class="sp-ext" href="https://www.hamishross.com/" aria-label="Visit Website, hamishross.com" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 16px; letter-spacing: 0.03em; color: #4E6368; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 6px">Visit Website<svg width="12" height="12" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 13L13 5M6.5 5H13v6.5" stroke="currentColor" stroke-width="1.3"></path></svg></a>
+</span>
+</figcaption>
+</figure>
+</div>
+</section>
+
+<!-- APPROACH (condensed) -->
+<section aria-labelledby="approach-title" style="background: #FFFFFF">
+<div class="sp-reveal" style="width: 100%; max-width: 1680px; margin: 0 auto; padding: clamp(72px, 8vw, 112px) clamp(20px, 5vw, 72px); display: flex; flex-wrap: wrap; align-items: flex-start; gap: 28px clamp(48px, 7vw, 120px)">
+<div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<p style="margin: 0; display: flex; align-items: center; gap: 16px; font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; color: #4E6368"><span aria-hidden="true" style="display: block; width: 40px; height: 1px; background: #4E6368"></span>The Approach</p>
+<h2 id="approach-title" style="margin: 0; font-family: 'Cormorant Infant', Garamond, serif; font-weight: 300; font-size: clamp(36px, 4vw, 60px); line-height: 1.04; color: #121414; text-wrap: balance">A website built around <em style="font-style: italic; color: #4E6368">your customers</em></h2>
+</div>
+<div style="flex: 1.4 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+<p style="margin: 0; font-size: 19px; line-height: 1.7; color: #1F2426">Before choosing colours or layouts, I want to understand who you’re trying to reach, what they need to know and what you’d like them to do next.</p>
+<p style="margin: 0; font-size: 19px; line-height: 1.7; color: #1F2426">From there, I organize your pages so visitors can find what they’re looking for quickly, refine the words so your offer is clear, and design layouts that feel calm, polished and true to your brand.</p>
+</div>
+</div>
+</section>
+
+<!-- SELECTED WORK: the thinking behind recent websites -->
+<section aria-labelledby="work-title" class="sp-on-dark" style="position: relative; overflow: hidden; background: #4E6368; color: #FFFFFF">
+<div aria-hidden="true" style="position: absolute; right: 0; top: 0; width: min(1100px, 100vw); pointer-events: none">
+<img src="/_blob/fddc24a18e2595d21f63da9f1d7bf0d5" alt="" width="1800" height="1200" loading="lazy" style="width: 100%; height: auto; filter: brightness(0) invert(1); opacity: 0.07">
+</div>
+<div style="position: relative; width: 100%; max-width: 1680px; margin: 0 auto; padding: clamp(80px, 9vw, 128px) clamp(20px, 5vw, 72px) clamp(96px, 10vw, 144px); display: flex; flex-direction: column; gap: clamp(64px, 8vw, 112px)">
+<div class="sp-reveal" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px 64px">
+<div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<p style="margin: 0; display: flex; align-items: center; gap: 16px; font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; color: #FFFFFF"><span aria-hidden="true" style="display: block; width: 40px; height: 1px; background: #FFFFFF"></span>Selected Work</p>
+<h2 id="work-title" style="margin: 0; font-family: 'Cormorant Infant', Garamond, serif; font-weight: 300; font-size: clamp(40px, 4.6vw, 70px); line-height: 1.04; color: #FFFFFF; text-wrap: balance">The thinking behind <em style="font-style: italic; color: #DCE4E5">recent websites</em></h2>
+</div>
+<a class="sp-btn sp-btn-ghost" href="Portfolio.dc.html" style="display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 0 28px; border: 1px solid rgba(255, 255, 255, 0.75); color: #FFFFFF; text-decoration: none; font-size: 17px; letter-spacing: 0.03em">View the Full Portfolio</a>
+</div>
+
+<article class="sp-reveal" aria-labelledby="proj-smash" style="display: flex; flex-wrap: wrap; align-items: center; gap: 40px clamp(48px, 6vw, 96px)">
+<div class="sp-stage sp-stagebox" style="flex: 1.5 1 560px; min-width: 0; position: relative; padding-bottom: clamp(28px, 4vw, 56px)">
+<div class="sp-device sp-desk" style="width: 84%; background: #FFFFFF; box-shadow: 0 34px 80px rgba(10, 18, 20, 0.35)">
+<div aria-hidden="true" style="height: 30px; padding: 0 14px; display: flex; align-items: center; gap: 6px; border-bottom: 1px solid rgba(18, 20, 20, 0.1)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #CDD3D2"></span><span style="width: 8px; height: 8px; border-radius: 50%; background: #CDD3D2"></span><span style="width: 8px; height: 8px; border-radius: 50%; background: #CDD3D2"></span><span style="margin-left: 10px; font-size: 12px; color: #5A6163">smashtheatreschool.ca</span></div>
+<img src="/_blob/dd8f707bf480ddbc8b5a593bf32382ff" alt="Homepage of the new SMASH Performing Arts Studio website, showing two performers in a scene from Matilda" width="1600" height="1000" loading="lazy" style="width: 100%; height: auto">
+</div>
+<div class="sp-device sp-phone" style="position: absolute; right: 2%; bottom: 0; width: clamp(96px, 22%, 210px); padding: 7px; background: #121414; border-radius: clamp(18px, 2.4vw, 32px); box-shadow: 0 26px 60px rgba(10, 18, 20, 0.4)">
+<img src="/_blob/cfdfde9c1ac51fff0423b636bb1dec6e" alt="The SMASH Performing Arts Studio homepage on a phone, showing a scene from Matilda" width="540" height="1169" loading="lazy" style="width: 100%; height: auto; border-radius: clamp(12px, 1.8vw, 26px)">
+</div>
+</div>
+<div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<p style="margin: 0; font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; color: #DCE4E5">Performing Arts</p>
+<h3 id="proj-smash" style="margin: 0; font-family: 'Cormorant Infant', Garamond, serif; font-weight: 400; font-size: clamp(32px, 3vw, 42px); line-height: 1.1; color: #FFFFFF">SMASH Performing Arts Studio</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.5; letter-spacing: 0.04em; color: #DCE4E5">Custom-coded website · Ongoing SEO &amp; marketing</p>
+<ul style="list-style: none; margin: 6px 0 0; padding: 0; border-top: 1px solid rgba(255, 255, 255, 0.28)">
+<li style="padding: 14px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.28); font-size: 18px; line-height: 1.55; color: #FFFFFF">An AI assistant designed to help families find answers about the studio and its programmes, reducing the need for repetitive email enquiries</li>
+<li style="padding: 14px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.28); font-size: 18px; line-height: 1.55; color: #FFFFFF">A password-protected members’ portal for information shared with the studio’s families</li>
+<li style="padding: 14px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.28); font-size: 18px; line-height: 1.55; color: #FFFFFF">Ongoing support with SEO, blogs, social media and newsletters</li>
+</ul>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; margin-top: 6px">
+<a class="sp-btn sp-btn-ghost" href="Smash.dc.html" aria-label="View Project, SMASH Performing Arts Studio" style="display: inline-flex; align-items: center; gap: 12px; min-height: 54px; padding: 0 24px; border: 1px solid rgba(255, 255, 255, 0.75); color: #FFFFFF; text-decoration: none; font-size: 17px; letter-spacing: 0.03em">View Project<svg width="20" height="10" viewBox="0 0 26 10" fill="none" aria-hidden="true"><path d="M0 5h24M20 1l4 4-4 4" stroke="currentColor" stroke-width="1.1"></path></svg></a>
+<a class="sp-ext" href="https://www.smashtheatreschool.ca/" aria-label="Visit Website, smashtheatreschool.ca" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 16px; letter-spacing: 0.03em; color: #FFFFFF; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 6px">Visit Website<svg width="12" height="12" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 13L13 5M6.5 5H13v6.5" stroke="currentColor" stroke-width="1.3"></path></svg></a>
+</div>
+</div>
+</article>
+
+<article class="sp-reveal" aria-labelledby="proj-rooster" style="display: flex; flex-direction: row-reverse; flex-wrap: wrap; align-items: center; gap: 40px clamp(48px, 6vw, 96px)">
+<div class="sp-stage sp-stagebox" style="flex: 1.5 1 560px; min-width: 0; position: relative; padding-bottom: clamp(28px, 4vw, 56px)">
+<div class="sp-device sp-desk" style="width: 84%; margin-left: auto; background: #FFFFFF; box-shadow: 0 34px 80px rgba(10, 18, 20, 0.35)">
+<div aria-hidden="true" style="height: 30px; padding: 0 14px; display: flex; align-items: center; gap: 6px; border-bottom: 1px solid rgba(18, 20, 20, 0.1)"><span style="width: 8px; height: 8px; border-radius: 50%; background: #CDD3D2"></span><span style="width: 8px; height: 8px; border-radius: 50%; background: #CDD3D2"></span><span style="width: 8px; height: 8px; border-radius: 50%; background: #CDD3D2"></span><span style="margin-left: 10px; font-size: 12px; color: #5A6163">theroosterdenco.com</span></div>
+<img src="/_blob/6e0ec8095ddd7a8cc7e8f9ae271eeb7d" alt="Desktop homepage of The Rooster Den Co online store" width="1300" height="812" loading="lazy" style="width: 100%; height: auto">
+</div>
+<div class="sp-device sp-phone" style="position: absolute; left: 2%; bottom: 0; width: clamp(96px, 22%, 210px); padding: 7px; background: #121414; border-radius: clamp(18px, 2.4vw, 32px); box-shadow: 0 26px 60px rgba(10, 18, 20, 0.4)">
+<img src="/_blob/11c1fff442b17a3cb0316c630813958e" alt="The Rooster Den Co homepage on a phone" width="540" height="1169" loading="lazy" style="width: 100%; height: auto; border-radius: clamp(12px, 1.8vw, 26px)">
+</div>
+</div>
+<div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<p style="margin: 0; font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; color: #DCE4E5">Online Retail</p>
+<h3 id="proj-rooster" style="margin: 0; font-family: 'Cormorant Infant', Garamond, serif; font-weight: 400; font-size: clamp(32px, 3vw, 42px); line-height: 1.1; color: #FFFFFF">The Rooster Den Co</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.5; letter-spacing: 0.04em; color: #DCE4E5">Shopify redesign · SEO · Google Business Profile setup</p>
+<ul style="list-style: none; margin: 6px 0 0; padding: 0; border-top: 1px solid rgba(255, 255, 255, 0.28)">
+<li style="padding: 14px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.28); font-size: 18px; line-height: 1.55; color: #FFFFFF">A cowgirl-chic identity in place of a dated template</li>
+<li style="padding: 14px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.28); font-size: 18px; line-height: 1.55; color: #FFFFFF">A clearer shopping experience, redesigned page by page</li>
+<li style="padding: 14px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.28); font-size: 18px; line-height: 1.55; color: #FFFFFF">On-page and technical SEO, plus Google Business Profile setup</li>
+</ul>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; margin-top: 6px">
+<a class="sp-btn sp-btn-ghost" href="Rooster-Den.dc.html" aria-label="View Project, The Rooster Den Co" style="display: inline-flex; align-items: center; gap: 12px; min-height: 54px; padding: 0 24px; border: 1px solid rgba(255, 255, 255, 0.75); color: #FFFFFF; text-decoration: none; font-size: 17px; letter-spacing: 0.03em">View Project<svg width="20" height="10" viewBox="0 0 26 10" fill="none" aria-hidden="true"><path d="M0 5h24M20 1l4 4-4 4" stroke="currentColor" stroke-width="1.1"></path></svg></a>
+<a class="sp-ext" href="https://theroosterdenco.com/" aria-label="Visit Website, theroosterdenco.com" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 16px; letter-spacing: 0.03em; color: #FFFFFF; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 6px">Visit Website<svg width="12" height="12" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M5 13L13 5M6.5 5H13v6.5" stroke="currentColor" stroke-width="1.3"></path></svg></a>
+</div>
+</div>
+</article>
+</div>
+</section>
+
+<!-- PLATFORMS: three comparison rows -->
+<section aria-labelledby="platforms-title" style="background: #FAFAF8">
+<div style="width: 100%; max-width: 1680px; margin: 0 auto; padding: clamp(80px, 9vw, 128px) clamp(20px, 5vw, 72px); display: flex; flex-direction: column; gap: clamp(40px, 5vw, 64px)">
+<div class="sp-reveal" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 20px 64px">
+<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<p style="margin: 0; display: flex; align-items: center; gap: 16px; font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; color: #4E6368"><span aria-hidden="true" style="display: block; width: 40px; height: 1px; background: #4E6368"></span>Platforms</p>
+<h2 id="platforms-title" style="margin: 0; font-family: 'Cormorant Infant', Garamond, serif; font-weight: 300; font-size: clamp(40px, 4.6vw, 70px); line-height: 1.04; color: #121414">Choosing the right <em style="font-style: italic; color: #4E6368">platform</em></h2>
+</div>
+<p style="margin: 0; flex: 1.3 1 480px; min-width: 0; font-size: 19px; line-height: 1.7; color: #1F2426">The right choice depends on what your business needs, how you’ll manage the site and the features involved. We’ll talk through the options before deciding on a direction.</p>
+</div>
+<ul class="sp-reveal" style="list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(78, 99, 104, 0.4)">
+<li class="sp-row sp-rowgrid" style="gap: 14px clamp(32px, 4vw, 64px); padding: clamp(28px, 3vw, 40px) clamp(8px, 1.5vw, 24px); border-bottom: 1px solid rgba(78, 99, 104, 0.4)">
+<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 12px"><h3 style="margin: 0; font-family: 'Cormorant Infant', Garamond, serif; font-weight: 400; font-size: clamp(30px, 2.6vw, 38px); line-height: 1.1; color: #121414">Squarespace</h3><a class="sp-link pf-see" href="Portfolio.dc.html#squarespace" style="display: inline-flex; align-items: center; gap: 10px; min-height: 44px; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: #4E6368; text-decoration: none">See Squarespace work<svg width="22" height="10" viewBox="0 0 26 10" fill="none" aria-hidden="true"><path d="M0 5h24M20 1l4 4-4 4" stroke="currentColor" stroke-width="1.1"></path></svg></a></div>
+<div style="display: flex; flex-direction: column; gap: 8px"><p style="margin: 0; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: #4E6368">Best for</p><p style="margin: 0; font-size: 18px; line-height: 1.7; color: #1F2426">Service businesses that want a polished site they can update themselves.</p></div>
+<div style="display: flex; flex-direction: column; gap: 8px"><p style="margin: 0; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: #4E6368">Good to know</p><p style="margin: 0; font-size: 18px; line-height: 1.7; color: #1F2426">You can handle everyday changes yourself, such as changing text, swapping photos or adding blog posts.</p></div>
+</li>
+<li class="sp-row sp-rowgrid" style="gap: 14px clamp(32px, 4vw, 64px); padding: clamp(28px, 3vw, 40px) clamp(8px, 1.5vw, 24px); border-bottom: 1px solid rgba(78, 99, 104, 0.4)">
+<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 12px"><h3 style="margin: 0; font-family: 'Cormorant Infant', Garamond, serif; font-weight: 400; font-size: clamp(30px, 2.6vw, 38px); line-height: 1.1; color: #121414">Shopify</h3><a class="sp-link pf-see" href="Portfolio.dc.html#shopify" style="display: inline-flex; align-items: center; gap: 10px; min-height: 44px; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: #4E6368; text-decoration: none">See Shopify work<svg width="22" height="10" viewBox="0 0 26 10" fill="none" aria-hidden="true"><path d="M0 5h24M20 1l4 4-4 4" stroke="currentColor" stroke-width="1.1"></path></svg></a></div>
+<div style="display: flex; flex-direction: column; gap: 8px"><p style="margin: 0; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: #4E6368">Best for</p><p style="margin: 0; font-size: 18px; line-height: 1.7; color: #1F2426">Online stores that need products, payments and shipping managed in one place.</p></div>
+<div style="display: flex; flex-direction: column; gap: 8px"><p style="margin: 0; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: #4E6368">Good to know</p><p style="margin: 0; font-size: 18px; line-height: 1.7; color: #1F2426">Built for selling online, so your store and its day-to-day running live in one system.</p></div>
+</li>
+<li class="sp-row sp-rowgrid" style="gap: 14px clamp(32px, 4vw, 64px); padding: clamp(28px, 3vw, 40px) clamp(8px, 1.5vw, 24px); border-bottom: 1px solid rgba(78, 99, 104, 0.4)">
+<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 12px"><h3 style="margin: 0; font-family: 'Cormorant Infant', Garamond, serif; font-weight: 400; font-size: clamp(30px, 2.6vw, 38px); line-height: 1.1; color: #121414">Custom-coded</h3><a class="sp-link pf-see" href="Portfolio.dc.html#custom" style="display: inline-flex; align-items: center; gap: 10px; min-height: 44px; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: #4E6368; text-decoration: none">See Custom-coded work<svg width="22" height="10" viewBox="0 0 26 10" fill="none" aria-hidden="true"><path d="M0 5h24M20 1l4 4-4 4" stroke="currentColor" stroke-width="1.1"></path></svg></a></div>
+<div style="display: flex; flex-direction: column; gap: 8px"><p style="margin: 0; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: #4E6368">Best for</p><p style="margin: 0; font-size: 18px; line-height: 1.7; color: #1F2426">Projects that need full design freedom or features beyond a template.</p></div>
+<div style="display: flex; flex-direction: column; gap: 8px"><p style="margin: 0; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: #4E6368">Good to know</p><p style="margin: 0; font-size: 18px; line-height: 1.7; color: #1F2426">Editing options depend on how the site is built, so we’ll plan that together before starting.</p></div>
+</li>
+</ul>
+</div>
+</section>
+
+<!-- WHAT I CAN HELP WITH -->
+<section aria-labelledby="help-title" style="background: #ECEEED">
+<div style="width: 100%; max-width: 1680px; margin: 0 auto; padding: clamp(80px, 9vw, 128px) clamp(20px, 5vw, 72px); display: flex; flex-wrap: wrap; align-items: flex-start; gap: 48px clamp(48px, 7vw, 120px)">
+<div class="sp-reveal" style="flex: 1 1 360px; max-width: 520px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
+<p style="margin: 0; display: flex; align-items: center; gap: 16px; font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; color: #4E6368"><span aria-hidden="true" style="display: block; width: 40px; height: 1px; background: #4E6368"></span>What I Can Help With</p>
+<h2 id="help-title" style="margin: 0; font-family: 'Cormorant Infant', Garamond, serif; font-weight: 300; font-size: clamp(40px, 4.4vw, 66px); line-height: 1.04; color: #121414">Every detail, <em style="font-style: italic; color: #4E6368">considered</em></h2>
+<p style="margin: 0; font-size: 19px; line-height: 1.7; color: #1F2426">Whether you need a brand-new website or want to improve the one you have, I can help with the pieces that make it work well.</p>
+</div>
+<ul class="sp-reveal" style="flex: 1.6 1 600px; min-width: 0; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); column-gap: clamp(32px, 4vw, 64px); border-top: 1px solid rgba(78, 99, 104, 0.35)">
+<li style="display: flex; align-items: baseline; gap: 18px; padding: 20px 0; border-bottom: 1px solid rgba(78, 99, 104, 0.35); font-family: 'Cormorant Infant', Garamond, serif; font-size: 26px; line-height: 1.3; color: #121414"><span aria-hidden="true" style="flex: none; width: 8px; height: 8px; border: 1px solid #4E6368; transform: rotate(45deg) translateY(-3px)"></span>New websites</li>
+<li style="display: flex; align-items: baseline; gap: 18px; padding: 20px 0; border-bottom: 1px solid rgba(78, 99, 104, 0.35); font-family: 'Cormorant Infant', Garamond, serif; font-size: 26px; line-height: 1.3; color: #121414"><span aria-hidden="true" style="flex: none; width: 8px; height: 8px; border: 1px solid #4E6368; transform: rotate(45deg) translateY(-3px)"></span>Website redesigns</li>
+<li style="display: flex; align-items: baseline; gap: 18px; padding: 20px 0; border-bottom: 1px solid rgba(78, 99, 104, 0.35); font-family: 'Cormorant Infant', Garamond, serif; font-size: 26px; line-height: 1.3; color: #121414"><span aria-hidden="true" style="flex: none; width: 8px; height: 8px; border: 1px solid #4E6368; transform: rotate(45deg) translateY(-3px)"></span>Custom-coded builds</li>
+<li style="display: flex; align-items: baseline; gap: 18px; padding: 20px 0; border-bottom: 1px solid rgba(78, 99, 104, 0.35); font-family: 'Cormorant Infant', Garamond, serif; font-size: 26px; line-height: 1.3; color: #121414"><span aria-hidden="true" style="flex: none; width: 8px; height: 8px; border: 1px solid #4E6368; transform: rotate(45deg) translateY(-3px)"></span>AI assistants and website integrations</li>
+<li style="display: flex; align-items: baseline; gap: 18px; padding: 20px 0; border-bottom: 1px solid rgba(78, 99, 104, 0.35); font-family: 'Cormorant Infant', Garamond, serif; font-size: 26px; line-height: 1.3; color: #121414"><span aria-hidden="true" style="flex: none; width: 8px; height: 8px; border: 1px solid #4E6368; transform: rotate(45deg) translateY(-3px)"></span>Page structure and navigation</li>
+<li style="display: flex; align-items: baseline; gap: 18px; padding: 20px 0; border-bottom: 1px solid rgba(78, 99, 104, 0.35); font-family: 'Cormorant Infant', Garamond, serif; font-size: 26px; line-height: 1.3; color: #121414"><span aria-hidden="true" style="flex: none; width: 8px; height: 8px; border: 1px solid #4E6368; transform: rotate(45deg) translateY(-3px)"></span>Website copy and messaging</li>
+<li style="display: flex; align-items: baseline; gap: 18px; padding: 20px 0; border-bottom: 1px solid rgba(78, 99, 104, 0.35); font-family: 'Cormorant Infant', Garamond, serif; font-size: 26px; line-height: 1.3; color: #121414"><span aria-hidden="true" style="flex: none; width: 8px; height: 8px; border: 1px solid #4E6368; transform: rotate(45deg) translateY(-3px)"></span>Layouts for every screen size</li>
+<li style="display: flex; align-items: baseline; gap: 18px; padding: 20px 0; border-bottom: 1px solid rgba(78, 99, 104, 0.35); font-family: 'Cormorant Infant', Garamond, serif; font-size: 26px; line-height: 1.3; color: #121414"><span aria-hidden="true" style="flex: none; width: 8px; height: 8px; border: 1px solid #4E6368; transform: rotate(45deg) translateY(-3px)"></span>Search-friendly setup</li>
+</ul>
+</div>
+</section>
+
+<!-- FAQ -->
+<section aria-labelledby="faq-title" style="background: #FFFFFF">
+<div style="width: 100%; max-width: 1680px; margin: 0 auto; padding: clamp(80px, 9vw, 128px) clamp(20px, 5vw, 72px); display: flex; flex-wrap: wrap; align-items: flex-start; gap: 40px clamp(48px, 7vw, 120px)">
+<div class="sp-reveal" style="flex: 1 1 360px; max-width: 520px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
+<p style="margin: 0; display: flex; align-items: center; gap: 16px; font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; color: #4E6368"><span aria-hidden="true" style="display: block; width: 40px; height: 1px; background: #4E6368"></span>FAQ</p>
+<h2 id="faq-title" style="margin: 0; font-family: 'Cormorant Infant', Garamond, serif; font-weight: 300; font-size: clamp(40px, 4.4vw, 66px); line-height: 1.04; color: #121414; text-wrap: balance">Website design <em style="font-style: italic; color: #4E6368">questions</em></h2>
+<p style="margin: 0; font-size: 19px; line-height: 1.7; color: #1F2426">More answers about working together are on the <a href="Contact.dc.html" style="color: #4E6368; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 5px">contact page</a>.</p>
+</div>
+<div class="sp-reveal" style="flex: 1.6 1 600px; min-width: 0; display: flex; flex-direction: column; border-bottom: 1px solid rgba(18, 20, 20, 0.16)">
+
+<div style="border-top: 1px solid rgba(18, 20, 20, 0.16)">
+<h3 style="margin: 0"><button id="faq-1-btn" class="sp-faq-btn" type="button" aria-expanded="{{faq0Expanded}}" aria-controls="faq-1-panel" onClick="{{toggleFaq0}}" style="width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 28px; padding: 22px 0; background: transparent; border: 0; cursor: pointer; text-align: left; color: #121414"><span class="sp-faq-q" style="font-family: 'Cormorant Infant', Garamond, serif; font-weight: 400; font-size: clamp(22px, 1.9vw, 27px); line-height: 1.25">Can you move my website to a different platform?</span><span class="sp-plus" aria-hidden="true" style="flex: none; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid #4E6368; color: #4E6368"><svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.2"></path></svg></span></button></h3>
+<sc-if value="{{faq0Open}}" hint-placeholder-val="{{true}}"><div id="faq-1-panel" style="padding: 0 68px 26px 0"><p style="margin: 0; font-size: 18px; line-height: 1.7; color: #1F2426">Often, yes. What’s involved depends on where your site is now and where it’s going. Tell me about your current website and I’ll let you know what moving it would look like.</p></div></sc-if>
+</div>
+
+<div style="border-top: 1px solid rgba(18, 20, 20, 0.16)">
+<h3 style="margin: 0"><button id="faq-2-btn" class="sp-faq-btn" type="button" aria-expanded="{{faq1Expanded}}" aria-controls="faq-2-panel" onClick="{{toggleFaq1}}" style="width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 28px; padding: 22px 0; background: transparent; border: 0; cursor: pointer; text-align: left; color: #121414"><span class="sp-faq-q" style="font-family: 'Cormorant Infant', Garamond, serif; font-weight: 400; font-size: clamp(22px, 1.9vw, 27px); line-height: 1.25">Will my website work well on phones?</span><span class="sp-plus" aria-hidden="true" style="flex: none; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid #4E6368; color: #4E6368"><svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.2"></path></svg></span></button></h3>
+<sc-if value="{{faq1Open}}" hint-placeholder-val="{{false}}"><div id="faq-2-panel" style="padding: 0 68px 26px 0"><p style="margin: 0; font-size: 18px; line-height: 1.7; color: #1F2426">Yes. I design every page for phones, tablets and larger screens, so your website is easy to use wherever people find it.</p></div></sc-if>
+</div>
+
+<div style="border-top: 1px solid rgba(18, 20, 20, 0.16)">
+<h3 style="margin: 0"><button id="faq-3-btn" class="sp-faq-btn" type="button" aria-expanded="{{faq2Expanded}}" aria-controls="faq-3-panel" onClick="{{toggleFaq2}}" style="width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 28px; padding: 22px 0; background: transparent; border: 0; cursor: pointer; text-align: left; color: #121414"><span class="sp-faq-q" style="font-family: 'Cormorant Infant', Garamond, serif; font-weight: 400; font-size: clamp(22px, 1.9vw, 27px); line-height: 1.25">Do you write the words for my website?</span><span class="sp-plus" aria-hidden="true" style="flex: none; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid #4E6368; color: #4E6368"><svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.2"></path></svg></span></button></h3>
+<sc-if value="{{faq2Open}}" hint-placeholder-val="{{false}}"><div id="faq-3-panel" style="padding: 0 68px 26px 0"><p style="margin: 0; font-size: 18px; line-height: 1.7; color: #1F2426">I can help plan your pages and refine your messaging so your offer is clear. We’ll agree on what content is needed and who will provide it as part of the project scope.</p></div></sc-if>
+</div>
+
+<div style="border-top: 1px solid rgba(18, 20, 20, 0.16)">
+<h3 style="margin: 0"><button id="faq-4-btn" class="sp-faq-btn" type="button" aria-expanded="{{faq3Expanded}}" aria-controls="faq-4-panel" onClick="{{toggleFaq3}}" style="width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 28px; padding: 22px 0; background: transparent; border: 0; cursor: pointer; text-align: left; color: #121414"><span class="sp-faq-q" style="font-family: 'Cormorant Infant', Garamond, serif; font-weight: 400; font-size: clamp(22px, 1.9vw, 27px); line-height: 1.25">Is SEO part of a new website?</span><span class="sp-plus" aria-hidden="true" style="flex: none; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid #4E6368; color: #4E6368"><svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.2"></path></svg></span></button></h3>
+<sc-if value="{{faq3Open}}" hint-placeholder-val="{{false}}"><div id="faq-4-panel" style="padding: 0 68px 26px 0"><p style="margin: 0; font-size: 18px; line-height: 1.7; color: #1F2426">I build websites with search in mind, from page structure to titles and descriptions. Ongoing SEO, such as content planning and regular improvements, can be added as a separate service. <a href="SEO.dc.html" style="color: #4E6368; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px">Learn more about SEO</a>.</p></div></sc-if>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- OTHER SERVICES (cross-links) -->
+<section aria-labelledby="more-title" class="sp-on-dark" style="position: relative; overflow: hidden; background: #4E6368; color: #FFFFFF">
+<div class="sp-reveal" style="position: relative; z-index: 1; width: 100%; max-width: 1680px; margin: 0 auto; padding: clamp(88px, 10vw, 136px) clamp(20px, 5vw, 72px); display: flex; flex-direction: column; gap: clamp(44px, 5vw, 64px)">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px 48px">
+<div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
+<p style="margin: 0; display: flex; align-items: center; gap: 16px; font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; color: #DCE4E5"><span aria-hidden="true" style="display: block; width: 40px; height: 1px; background: #DCE4E5"></span>Explore More</p>
+<h2 id="more-title" style="margin: 0; font-family: 'Cormorant Infant', Garamond, serif; font-weight: 300; font-size: clamp(42px, 4.6vw, 72px); line-height: 1.04; color: #FFFFFF; text-wrap: balance">Other ways <em style="font-style: italic; color: #DCE4E5">I can help</em></h2>
+</div>
+<a class="sp-link sp-more-link" href="Services.dc.html" style="display: inline-flex; align-items: center; gap: 12px; min-height: 44px; font-size: 15px; letter-spacing: 0.16em; text-transform: uppercase; color: #FFFFFF; text-decoration: none; border-bottom: 1px solid rgba(255, 255, 255, 0.5)">View All Services<svg width="22" height="10" viewBox="0 0 26 10" fill="none" aria-hidden="true"><path d="M0 5h24M20 1l4 4-4 4" stroke="currentColor" stroke-width="1.1"></path></svg></a>
+</div>
+<ul class="sp-more-grid" style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 2.4vw, 32px)">
+<li style="display: flex"><a class="sp-more-card" href="Brand-Marketing-Design.dc.html" style="flex: 1; display: flex; flex-direction: column; background: #FAFAF8; color: #121414; text-decoration: none; padding: 14px 14px 32px">
+<span style="display: block; overflow: hidden; background: #E9ECEB"><img src="/_blob/1164e7d2af63c3bb162607bac351f168" alt="" width="1440" height="960" loading="lazy" style="display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; object-position: 50% 50%"></span>
+<span style="flex: 1; display: flex; flex-direction: column; gap: 12px; padding: 28px clamp(10px, 1.4vw, 20px) 0">
+<span style="font-size: 14px; letter-spacing: 0.2em; color: #4E6368">02</span>
+<span style="font-family: 'Cormorant Infant', Garamond, serif; font-weight: 400; font-size: clamp(30px, 2.5vw, 38px); line-height: 1.1; color: #121414">Brand &amp; Marketing Design</span>
+<span style="font-size: 18px; line-height: 1.6; color: #1F2426">A consistent identity across your website and marketing</span>
+<span class="sp-more-go" style="margin-top: auto; padding-top: 16px; display: inline-flex; align-items: center; gap: 12px; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: #4E6368">Explore Brand Design<svg width="22" height="10" viewBox="0 0 26 10" fill="none" aria-hidden="true"><path d="M0 5h24M20 1l4 4-4 4" stroke="currentColor" stroke-width="1.1"></path></svg></span>
+</span>
+</a></li>
+<li style="display: flex"><a class="sp-more-card" href="SEO.dc.html" style="flex: 1; display: flex; flex-direction: column; background: #FAFAF8; color: #121414; text-decoration: none; padding: 14px 14px 32px">
+<span style="display: block; overflow: hidden; background: #E9ECEB"><img src="/_blob/d0af229df2e363b1a9a642b6c1426b3d" alt="" width="1440" height="960" loading="lazy" style="display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; object-position: 50% 50%"></span>
+<span style="flex: 1; display: flex; flex-direction: column; gap: 12px; padding: 28px clamp(10px, 1.4vw, 20px) 0">
+<span style="font-size: 14px; letter-spacing: 0.2em; color: #4E6368">03</span>
+<span style="font-family: 'Cormorant Infant', Garamond, serif; font-weight: 400; font-size: clamp(30px, 2.5vw, 38px); line-height: 1.1; color: #121414">SEO</span>
+<span style="font-size: 18px; line-height: 1.6; color: #1F2426">Make your website easier to find and understand</span>
+<span class="sp-more-go" style="margin-top: auto; padding-top: 16px; display: inline-flex; align-items: center; gap: 12px; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: #4E6368">Explore SEO<svg width="22" height="10" viewBox="0 0 26 10" fill="none" aria-hidden="true"><path d="M0 5h24M20 1l4 4-4 4" stroke="currentColor" stroke-width="1.1"></path></svg></span>
+</span>
+</a></li>
+<li style="display: flex"><div class="sp-more-ongoing" style="flex: 1; display: flex; flex-direction: column; gap: 20px; padding: clamp(30px, 3vw, 44px); border: 1px solid rgba(255, 255, 255, 0.4); color: #FFFFFF">
+<p style="margin: 0; font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase; color: #DCE4E5">Ongoing Support</p>
+<h3 style="margin: 0; font-family: 'Cormorant Infant', Garamond, serif; font-weight: 400; font-size: clamp(30px, 2.5vw, 38px); line-height: 1.1; color: #FFFFFF; text-wrap: balance">Keep your website and marketing moving</h3>
+<p style="margin: 0; font-size: 18px; line-height: 1.65; color: #E3E9EA">Once your website is in place, I can help keep your content current and your marketing consistent.</p>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px">
+<li style="display: flex; gap: 14px; font-size: 18px; line-height: 1.6; color: #FFFFFF"><span aria-hidden="true" style="flex: none; display: block; width: 18px; height: 1px; margin-top: 14px; background: #DCE4E5"></span>SEO and website content</li>
+<li style="display: flex; gap: 14px; font-size: 18px; line-height: 1.6; color: #FFFFFF"><span aria-hidden="true" style="flex: none; display: block; width: 18px; height: 1px; margin-top: 14px; background: #DCE4E5"></span>Blogs and newsletters</li>
+<li style="display: flex; gap: 14px; font-size: 18px; line-height: 1.6; color: #FFFFFF"><span aria-hidden="true" style="flex: none; display: block; width: 18px; height: 1px; margin-top: 14px; background: #DCE4E5"></span>Social content and marketing design</li>
+<li style="display: flex; gap: 14px; font-size: 18px; line-height: 1.6; color: #FFFFFF"><span aria-hidden="true" style="flex: none; display: block; width: 18px; height: 1px; margin-top: 14px; background: #DCE4E5"></span>Website updates</li>
+</ul>
+<a class="sp-link sp-more-link" href="Services.dc.html#ongoing-title" style="margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; gap: 12px; min-height: 44px; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: #FFFFFF; text-decoration: none; border-bottom: 1px solid rgba(255, 255, 255, 0.5)">About Ongoing Support<svg width="22" height="10" viewBox="0 0 26 10" fill="none" aria-hidden="true"><path d="M0 5h24M20 1l4 4-4 4" stroke="currentColor" stroke-width="1.1"></path></svg></a>
+</div></li>
+</ul>
+</div>
+</section>
+<!-- /OTHER SERVICES -->
+
+<!-- CLOSING (simple enquiry band) -->
+<section aria-labelledby="cta-title" style="position: relative; overflow: hidden; background: #FAFAF8">
+<div aria-hidden="true" style="position: absolute; left: -40px; bottom: -40px; width: min(1000px, 100vw); transform: rotate(180deg); pointer-events: none; z-index: 0">
+<img src="/_blob/fddc24a18e2595d21f63da9f1d7bf0d5" alt="" width="1800" height="1200" loading="lazy" style="width: 100%; height: auto; opacity: 0.12; mix-blend-mode: multiply">
+</div>
+<div class="sp-reveal" style="position: relative; z-index: 1; width: 100%; max-width: 1680px; margin: 0 auto; padding: clamp(88px, 10vw, 136px) clamp(20px, 5vw, 72px); display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 36px clamp(48px, 7vw, 120px)">
+<div style="flex: 1.4 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+<p style="margin: 0; display: flex; align-items: center; gap: 16px; font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; color: #4E6368"><span aria-hidden="true" style="display: block; width: 40px; height: 1px; background: #4E6368"></span>Get in Touch</p>
+<h2 id="cta-title" style="margin: 0; font-family: 'Cormorant Infant', Garamond, serif; font-weight: 300; font-size: clamp(42px, 5vw, 76px); line-height: 1.02; color: #121414; text-wrap: balance">Let’s talk <em style="font-style: italic; color: #4E6368">about your website</em></h2>
+<p style="margin: 0; font-size: 20px; line-height: 1.7; color: #1F2426">Whether you’re starting fresh or improving what you have, tell me what you have in mind.</p>
+</div>
+<div style="flex: 0 1 auto; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 18px">
+<a class="sp-btn sp-btn-blue" href="Contact.dc.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 14px; min-height: 58px; padding: 0 34px; background: #4E6368; border: 1px solid #4E6368; color: #FFFFFF; text-decoration: none; font-size: 18px; letter-spacing: 0.03em">Enquire About Your Project<svg width="22" height="10" viewBox="0 0 26 10" fill="none" aria-hidden="true"><path d="M0 5h24M20 1l4 4-4 4" stroke="currentColor" stroke-width="1.1"></path></svg></a>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #1F2426">Or email me at <a href="mailto:info@sullivanparkdesign.com" style="color: #4E6368; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 5px">info@sullivanparkdesign.com</a>.</p>
+</div>
+</div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer style="background: #E9ECEB; color: #121414">
+<div style="width: 100%; max-width: 1680px; margin: 0 auto; padding: clamp(64px, 7vw, 96px) clamp(20px, 5vw, 72px) 36px; display: flex; flex-direction: column; gap: clamp(48px, 5vw, 72px)">
+<div class="sp-foot-grid" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 48px 64px">
+<div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
+<a href="Main.dc.html" style="display: flex; align-items: center; gap: 16px; align-self: flex-start; text-decoration: none; color: #121414"><img src="/_blob/946ef92befcc2436e37a8b858f03f1a7" alt="" width="227" height="192" loading="lazy" style="height: 72px; width: auto"><span style="font-family: 'Cormorant Infant', Garamond, serif; font-size: 26px; line-height: 1.1">Sullivan Park Design</span></a>
+<p style="margin: 0; font-size: 18px; line-height: 1.7; color: #1F2426">Website design, branding and SEO that help businesses present their work clearly and connect with the right customers.</p>
+</div>
+<nav aria-label="Services" style="flex: 0 1 220px; display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0 0 6px; font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; color: #4E6368">Services</p>
+<a class="sp-flink" href="Services.dc.html" style="color: #121414; text-decoration: none; font-size: 18px; line-height: 1.5">All Services</a>
+<a class="sp-flink" href="Website-Design.dc.html" aria-current="page" style="color: #121414; text-decoration: none; font-size: 18px; line-height: 1.5">Website Design</a>
+<a class="sp-flink" href="Brand-Marketing-Design.dc.html" style="color: #121414; text-decoration: none; font-size: 18px; line-height: 1.5">Brand &amp; Marketing Design</a>
+<a class="sp-flink" href="SEO.dc.html" style="color: #121414; text-decoration: none; font-size: 18px; line-height: 1.5">SEO</a>
+<a class="sp-flink" href="Services.dc.html#ongoing-title" style="color: #121414; text-decoration: none; font-size: 18px; line-height: 1.5">Ongoing Support</a>
+</nav>
+<nav aria-label="Explore" style="flex: 0 1 200px; display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0 0 6px; font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; color: #4E6368">Explore</p>
+<a class="sp-flink" href="About.dc.html" style="color: #121414; text-decoration: none; font-size: 18px; line-height: 1.5">About</a>
+<a class="sp-flink" href="Portfolio.dc.html" style="color: #121414; text-decoration: none; font-size: 18px; line-height: 1.5">Portfolio</a>
+<a class="sp-flink" href="Testimonials.dc.html" style="color: #121414; text-decoration: none; font-size: 18px; line-height: 1.5">Testimonials</a>
+<a class="sp-flink" href="Journal.dc.html" style="color: #121414; text-decoration: none; font-size: 18px; line-height: 1.5">Resources</a>
+<a class="sp-flink" href="Contact.dc.html" style="color: #121414; text-decoration: none; font-size: 18px; line-height: 1.5">Contact</a>
+</nav>
+<div style="flex: 0 1 260px; display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0 0 6px; font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; color: #4E6368">Contact</p>
+<address style="font-style: normal; display: flex; flex-direction: column; gap: 12px; font-size: 18px; line-height: 1.5; color: #121414">
+<span>Vancouver, British Columbia</span>
+<a class="sp-flink" href="mailto:info@sullivanparkdesign.com" style="color: #121414; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 5px">info@sullivanparkdesign.com</a>
+</address>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 32px; padding: 24px 80px 0 0; border-top: 1px solid rgba(18, 20, 20, 0.16); font-size: 15px; color: #4E5558">
+<p style="margin: 0">© 2026 Sullivan Park Design. All rights reserved.</p>
+<a class="sp-flink" href="Privacy.dc.html" style="display: inline-block; padding: 6px 0; color: #4E5558; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px">Privacy Policy</a>
+</div>
+</div>
+</footer>
+
+<!-- BACK TO TOP -->
+<a class="sp-fab" href="#top" data-show="{{fabShow}}" aria-label="Back to top" style="position: fixed; right: clamp(16px, 2.4vw, 32px); bottom: clamp(16px, 2.4vw, 32px); z-index: 50; width: 48px; height: 48px; display: inline-flex; align-items: center; justify-content: center; background: #FAFAF8; border: 1px solid #4E6368; color: #4E6368; box-shadow: 0 10px 26px rgba(18, 20, 20, 0.14)"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 12.5V1.5M2.5 6L7 1.5 11.5 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":7800}}'>
+class Component extends DCLogic {
+  getHeaderRef() {
+    // Sticky header: turns solid once the page scrolls, shows the back-to-top
+    // button further down, and lets Escape close the phone menu or a dropdown.
+    if (!this._headerRef) {
+      this._headerRef = (el) => {
+        if (this._headerOff) { try { this._headerOff(); } catch (e) {} this._headerOff = null; }
+        if (!el) return;
+        const doc = el.ownerDocument || document;
+        const win = doc.defaultView || window;
+        const sync = () => {
+          const y = win.pageYOffset || (doc.documentElement && doc.documentElement.scrollTop) || 0;
+          const st = this.state || {};
+          const scrolled = y > 24;
+          const deep = y > 640;
+          if (!!st.scrolled !== scrolled || !!st.deep !== deep) this.setState({ scrolled: scrolled, deep: deep });
+        };
+        const unhush = () => { if ((this.state || {}).navHush) this.setState({ navHush: false }); };
+        const onKey = (e) => {
+          if (e.key !== 'Escape' && e.key !== 'Esc') return;
+          const st = this.state || {};
+          const active = doc.activeElement;
+          const inHeader = !!(active && el.contains(active));
+          if (st.menuOpen) {
+            this.setState({ menuOpen: false });
+            const btn = el.querySelector('.sp-menu-btn');
+            if (btn && inHeader) { try { btn.focus(); } catch (err) {} }
+            return;
+          }
+          if (inHeader && active.closest && active.closest('.sp-dd-panel')) {
+            const dd = active.closest('.sp-dd');
+            const topLink = dd && dd.querySelector('.sp-navlink');
+            if (topLink) { try { topLink.focus(); } catch (err) {} }
+          }
+          this.setState({ navHush: true });
+        };
+        const nav = el.querySelector('.sp-nav');
+        win.addEventListener('scroll', sync, { passive: true });
+        doc.addEventListener('keydown', onKey);
+        if (nav) { nav.addEventListener('pointerleave', unhush); nav.addEventListener('focusout', unhush); }
+        const raf = win.requestAnimationFrame ? win.requestAnimationFrame(sync) : 0;
+        this._headerOff = () => {
+          win.removeEventListener('scroll', sync);
+          doc.removeEventListener('keydown', onKey);
+          if (nav) { nav.removeEventListener('pointerleave', unhush); nav.removeEventListener('focusout', unhush); }
+          if (raf && win.cancelAnimationFrame) win.cancelAnimationFrame(raf);
+        };
+      };
+    }
+    return this._headerRef;
+  }
+  renderVals() {
+    const FAQ_COUNT = 4;
+    const s = this.state || {};
+    const menuOpen = !!s.menuOpen;
+    const faqOpen = s.faqOpen || { 0: true };
+    const vals = {
+      menuOpen: menuOpen,
+      menuExpanded: menuOpen ? 'true' : 'false',
+      toggleMenu: () => this.setState({ menuOpen: !menuOpen }),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      headerRef: this.getHeaderRef(),
+      headerScrolled: (this.state && this.state.scrolled) ? 'true' : 'false',
+      fabShow: (this.state && this.state.deep && !this.state.menuOpen) ? 'true' : 'false',
+      navHush: (this.state && this.state.navHush) ? 'true' : 'false'
+    };
+    for (let i = 0; i < FAQ_COUNT; i++) {
+      const isOpen = !!faqOpen[i];
+      vals['faq' + i + 'Open'] = isOpen;
+      vals['faq' + i + 'Expanded'] = isOpen ? 'true' : 'false';
+      vals['toggleFaq' + i] = () => this.setState({ faqOpen: Object.assign({}, faqOpen, { [i]: !isOpen }) });
+    }
+    return vals;
+  }
+}
+</script>
+</body>
+</html>

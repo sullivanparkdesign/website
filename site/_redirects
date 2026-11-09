@@ -1,0 +1,10 @@
+# Old Squarespace addresses -> new pages
+/home            /            301
+/articles        /resources   301
+/articles/*      /resources   301
+/blog            /resources   301
+/blog/*          /resources   301
+/journal         /resources   301
+/web-design      /services/website-design   301
+/branding        /services/brand-marketing-design   301
+/seo             /services/seo   301
