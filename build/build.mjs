@@ -139,6 +139,10 @@ function postProcess(body, page) {
     form.attr('data-endpoint', CONFIG.formEndpoint || '');
     form.attr('action', CONFIG.formEndpoint || '');
     form.attr('method', 'post');
+    if (CONFIG.formEndpoint) {
+      // Formspree extras: an email subject, and a hidden field only spam bots fill in
+      form.prepend('<input type="hidden" name="_subject" value="Website enquiry"><input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display: none">');
+    }
     form.find('[data-error="email"] p').attr('data-error-text', '');
     form.find('[data-form-submit]').attr('data-label', form.find('[data-form-submit]').text().trim());
     const alertBox = form.find('[data-form-view="failed"] [role="alert"]');

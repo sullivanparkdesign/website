@@ -48,13 +48,22 @@ await p.fill('#f-name', 'Test Person'); await p.fill('#f-email', 'not-an-email')
 await p.click('[data-form-submit]');
 ok('bad email flagged', await p.$eval('[data-error="email"]', e => !e.hidden && /valid/.test(e.textContent)));
 await p.fill('#f-email', 'test@example.com');
-let mailto = '';
-p.on('request', r => { if (r.url().startsWith('mailto:')) mailto = r.url(); });
-await p.evaluate(() => { window.__nav = ''; const orig = Object.getOwnPropertyDescriptor(window.location.__proto__, 'href'); });
-await p.route('mailto:**', r => { mailto = r.request().url(); r.abort(); });
-await p.click('[data-form-submit]').catch(() => {});
-await p.waitForTimeout(500);
-ok('no form service yet: email fallback shown', await p.$eval('[data-form-view="failed"]', e => !e.hidden && /email app/.test(e.textContent)));
+// the form service is mocked here, so tests never send real email
+let posted = null;
+await p.route('https://formspree.io/**', async r => { posted = r.request().postData() || ''; await r.fulfill({ status: 200, contentType: 'application/json', body: '{"ok":true}' }); });
+await p.click('[data-form-submit]');
+await p.waitForTimeout(600);
+ok('message sends to Formspree', !!posted && /Test Person/.test(posted) && /test@example.com/.test(posted));
+ok('subject names the sender', !!posted && /Website enquiry from Test Person/.test(posted));
+ok('spam trap left empty', !!posted && /name="_gotcha"\r\n\r\n\r\n/.test(posted));
+ok('thank-you message shown', await p.$eval('[data-form-view="sent"]', e => !e.hidden) && await p.$eval('[data-form-view="form"]', e => e.hidden));
+await p.click('[data-form-reset]');
+await p.unroute('https://formspree.io/**');
+await p.route('https://formspree.io/**', r => r.fulfill({ status: 500, body: 'error' }));
+await p.fill('#f-name', 'Test Person'); await p.fill('#f-email', 'test@example.com'); await p.fill('#f-message', 'Hello again');
+await p.click('[data-form-submit]');
+await p.waitForTimeout(600);
+ok('if sending fails, details stay and an error shows', await p.$eval('[data-form-view="failed"]', e => !e.hidden && /couldn/.test(e.textContent)) && (await p.inputValue('#f-message')) === 'Hello again');
 // home video toggle
 await p.goto(O + '/', { waitUntil: 'load' });
 ok('hero video present', !!(await p.$('[data-hero-video]')));

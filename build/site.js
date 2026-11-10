@@ -149,6 +149,8 @@
         return;
       }
       sending = true;
+      var subject = form.querySelector('[name="_subject"]');
+      if (subject) subject.value = 'Website enquiry from ' + name;
       if (submit) { submit.textContent = 'Sending…'; submit.setAttribute('aria-disabled', 'true'); }
       try {
         fetch(endpoint, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
