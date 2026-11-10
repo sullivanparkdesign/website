@@ -243,7 +243,8 @@ for (const page of PAGES) {
   // og image: the page's first large picture, or the home poster
   const $b = cheerio.load(body);
   let og = '';
-  $b('main img').each((_, el) => { if (!og && +($b(el).attr('width') || 0) >= 1000 && ($b(el).attr('src') || '').startsWith('/_blob/')) og = $b(el).attr('src'); });
+  // skip decorative images (empty alt); the home page always uses the ocean poster
+  if (page.url !== '/') $b('main img').each((_, el) => { if (!og && ($b(el).attr('alt') || '').trim() && +($b(el).attr('width') || 0) >= 800 && ($b(el).attr('src') || '').startsWith('/_blob/')) og = $b(el).attr('src'); });
   if (!og) og = CONFIG.defaultOg;
   let html = `<!doctype html>
 <html lang="en-CA">
