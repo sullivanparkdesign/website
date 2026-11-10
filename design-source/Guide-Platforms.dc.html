@@ -76,6 +76,592 @@ a:hover .sp-more-title{color:#4E6368 !important}
 @media (max-width: 760px){.gd-cmp{grid-template-columns:minmax(0,1fr);gap:36px}.gd-anat-row{grid-template-columns:minmax(0,1fr);gap:4px}}
 @media (prefers-reduced-motion: reduce){.gd-next,.gd-next-arrow{transition:none}}
 /* /GUIDES */
+/* EDITORIAL */
+.ed-vh{position:absolute !important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.ed-wrap{width:100%;max-width:1680px;margin:0 auto;padding-left:clamp(20px,5vw,72px);padding-right:clamp(20px,5vw,72px)}
+.ed-p{margin:0;font-size:19px;line-height:1.8;color:#1F2426}
+.ed-cap{margin:0;font-size:15px;line-height:1.6;letter-spacing:.02em;color:#4E5558}
+.ed-h2{margin:0;font-family:'Cormorant Infant',Garamond,serif;font-weight:300;font-size:clamp(38px,3.7vw,58px);line-height:1.05;letter-spacing:-.01em;color:#121414;text-wrap:balance}
+.ed-h2 em{font-style:italic;color:#4E6368}
+.ed-frame{position:absolute;top:20px;left:20px;right:0;bottom:0;border:1px solid rgba(78,99,104,.45)}
+
+/* cover */
+.ed-cover{position:relative;overflow:hidden;background:#FAFAF8}
+.ed-cover-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(44px,6vw,64px);padding-top:clamp(132px,12vw,184px);padding-bottom:clamp(64px,7vw,104px)}
+.ed-cover-text{display:flex;flex-direction:column;gap:clamp(22px,2.2vw,32px);min-width:0}
+.ed-title{margin:0;font-family:'Cormorant Infant',Garamond,serif;font-weight:300;font-size:clamp(50px,7vw,124px);line-height:.98;letter-spacing:-.02em;color:#121414;text-wrap:balance}
+.ed-title em{font-style:italic;color:#4E6368}
+.ed-stand{margin:0;font-size:clamp(19px,1.5vw,22px);line-height:1.65;color:#1F2426}
+.ed-meta{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;font-size:16px;letter-spacing:.06em;color:#4E5558}
+.ed-meta-rule{width:22px;height:1px;background:rgba(78,99,104,.5)}
+.ed-begin{align-self:flex-start;display:inline-flex;align-items:center;gap:14px;min-height:44px;margin-top:4px;color:#4E6368;font-size:17px;letter-spacing:.03em;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px}
+.ed-arch{position:relative;width:100%;max-width:520px;justify-self:center;padding:0 0 22px 22px}
+.ed-arch-frame{position:absolute;left:0;bottom:0;right:22px;top:22px;border:1px solid rgba(78,99,104,.45);border-radius:999px 999px 0 0}
+.ed-arch-img{position:relative;overflow:hidden;border-radius:999px 999px 0 0;aspect-ratio:4/5;background:#DCE4E5}
+.ed-arch-img img{width:100%;height:100%;object-fit:cover;object-position:50% 70%}
+.ed-seal{position:absolute;left:-6px;bottom:48px;width:clamp(104px,9.5vw,148px);height:auto;z-index:2;filter:drop-shadow(0 14px 30px rgba(18,28,30,.14))}
+@media (min-width:1000px){
+  .ed-cover-grid{grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);align-items:end;column-gap:clamp(56px,6vw,112px)}
+  .ed-arch{justify-self:end}
+  .ed-seal{left:-58px}
+}
+
+/* in short */
+.ed-short{background:#FFFFFF;border-bottom:1px solid rgba(78,99,104,.18)}
+.ed-short-in{padding-top:clamp(56px,6vw,88px);padding-bottom:clamp(56px,6vw,88px);display:flex;flex-direction:column;gap:clamp(28px,3vw,40px)}
+.ed-short-h{margin:0;display:flex;align-items:center;gap:16px;font-family:'Abel','Arial Narrow',sans-serif;font-weight:400;font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:#4E6368}
+.ed-short-h span{display:block;width:40px;height:1px;background:#4E6368}
+.ed-short-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:32px clamp(24px,2.4vw,40px)}
+.ed-short-list li{display:flex;flex-direction:column;gap:16px;padding-top:20px;border-top:1px solid #4E6368}
+.ed-short-n{font-family:'Cormorant Infant',Garamond,serif;font-style:italic;font-size:24px;line-height:1;color:#4E6368}
+.ed-short-t{font-family:'Cormorant Infant',Garamond,serif;font-size:clamp(22px,1.6vw,25px);line-height:1.32;color:#121414}
+
+/* body grid + rail */
+.ed-body-bg{background:#FFFFFF}
+.ed-body{display:grid;grid-template-columns:minmax(0,1fr);timeline-scope:--ed-c1,--ed-c2,--ed-c3,--ed-c4,--ed-c5,--ed-c6;view-timeline-name:--ed-read}
+.ed-body>*{grid-column:1 / -1;min-width:0}
+.ed-rail{display:none}
+.ed-intro{padding:clamp(56px,6vw,96px) 0 clamp(48px,5vw,72px)}
+.ed-standfirst{margin:0;max-width:960px;font-family:'Cormorant Infant',Garamond,serif;font-weight:300;font-size:clamp(25px,2.2vw,32px);line-height:1.5;color:#121414}
+.ed-standfirst::first-letter{float:left;font-weight:300;font-size:3.9em;line-height:.8;padding:10px 18px 0 0;color:#4E6368}
+@media (min-width:1024px){
+  .ed-body{grid-template-columns:168px minmax(0,1fr);column-gap:clamp(48px,5vw,96px)}
+  .ed-body>*{grid-column:2}
+  .ed-body>.ed-bleed{grid-column:1 / -1}
+  .ed-rail{grid-column:1;display:flex;flex-direction:column;gap:20px;align-self:start;position:sticky;top:124px;z-index:1;padding:clamp(56px,6vw,96px) 0 0}
+}
+.ed-rail-h{margin:0;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#4E6368}
+.ed-rail-track{position:relative;padding-left:20px}
+.ed-rail-track::before,.ed-rail-fill{content:"";position:absolute;left:0;top:8px;bottom:8px;width:1px;background:rgba(78,99,104,.22)}
+.ed-rail-fill{background:#4E6368;transform-origin:50% 0;transform:scaleY(0)}
+.ed-rail ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.ed-rail a{--ed-on:0;position:relative;display:flex;align-items:baseline;gap:12px;padding:7px 0;font-size:15px;line-height:1.35;letter-spacing:.02em;color:#4E5558;text-decoration:none;transition:color .3s}
+.ed-rail a::before{content:"";position:absolute;left:-20px;top:50%;width:calc(12px * var(--ed-on));height:1px;background:#4E6368}
+.ed-rail a:hover{color:#121414}
+.ed-rail-n{flex:none;width:22px;font-family:'Cormorant Infant',Garamond,serif;font-style:italic;font-size:17px;color:#4E6368}
+@property --ed-on{syntax:'<number>';inherits:true;initial-value:0}
+@keyframes edOn{from,to{color:#121414;--ed-on:1}}
+@keyframes edFill{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes edZoom{from{transform:scale(1)}to{transform:scale(1.12)}}
+@keyframes edDrift{from{transform:translateY(-6%)}to{transform:translateY(6%)}}
+
+/* chapters */
+.ed-ch{display:flex;flex-direction:column;gap:28px;padding:clamp(56px,6vw,96px) 0;border-top:1px solid rgba(78,99,104,.2);scroll-margin-top:80px}
+.ed-ch-main{display:flex;flex-direction:column;gap:24px;min-width:0}
+.ed-kick{margin:0 0 -4px;display:flex;align-items:baseline;gap:18px}
+.ed-kick-n{font-family:'Cormorant Infant',Garamond,serif;font-style:italic;font-weight:300;font-size:clamp(60px,5.6vw,92px);line-height:.8;color:#4E6368}
+.ed-kick-l{font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:#4E5558}
+.ed-note{display:flex;flex-direction:column;gap:12px;padding:22px 24px;background:#FAFAF8;border-left:2px solid #4E6368}
+.ed-note-l{margin:0;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#4E6368}
+.ed-note-t{margin:0;font-family:'Cormorant Infant',Garamond,serif;font-style:italic;font-size:22px;line-height:1.45;color:#121414}
+.ed-ch-main>.ed-p{max-width:760px}
+@media (min-width:1280px){
+  .ed-ch{display:grid;grid-template-columns:minmax(0,1fr) 260px;column-gap:clamp(48px,4.5vw,80px);align-items:start}
+  .ed-ch-main{grid-column:1}
+  .ed-note{grid-column:2;position:sticky;top:150px;margin-top:clamp(150px,11vw,176px);padding:20px 0 0;background:none;border-left:0;border-top:1px solid #4E6368}
+  .ed-ch-nonote .ed-wide{margin-right:calc(-260px - clamp(48px,4.5vw,80px))}
+}
+
+/* goal picker */
+.ed-goals{border:0;margin:6px 0;padding:0;min-width:0}
+.ed-goals legend{padding:0;margin-bottom:16px;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#4E6368}
+.ed-goal-row{display:flex;flex-wrap:wrap;gap:20px 12px;padding-top:8px}
+.ed-goal{position:relative;cursor:pointer;display:inline-flex;align-items:center;min-height:60px;padding:14px 22px;border:1px solid rgba(78,99,104,.5);background:#FFFFFF;transition:background-color .35s,border-color .35s}
+.ed-goal:hover{border-color:#4E6368;background:#FAFAF8}
+.ed-goal-t{font-family:'Cormorant Infant',Garamond,serif;font-size:24px;line-height:1.2;color:#121414;transition:color .35s}
+.ed-goal-tag{position:absolute;left:14px;top:-8px;padding:0;background:#FFFFFF;font-size:11px;line-height:15px;letter-spacing:.18em;text-transform:uppercase;color:#4E5558;transition:background-color .35s}
+.ed-goals:has(input:checked) .ed-goal-tag{padding:0 8px}
+.ed-goal:hover .ed-goal-tag{background:#FAFAF8}
+.ed-goal:has(input:checked){background:#4E6368;border-color:#4E6368}
+.ed-goal:has(input:checked) .ed-goal-t{color:#FFFFFF}
+.ed-goal:has(input:checked) .ed-goal-tag{color:#4E6368;background:#FFFFFF;box-shadow:inset 0 0 0 1px #4E6368}
+.ed-goal:has(input:checked) .ed-goal-tag::after{content:"Main goal"}
+.ed-goals:has(input:checked) .ed-goal:not(:has(input:checked)) .ed-goal-tag::after{content:"Supporting"}
+.ed-goal:has(input:focus-visible){outline:2px solid #4E6368;outline-offset:4px}
+
+/* three questions */
+.ed-qs{list-style:none;margin:6px 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:14px}
+.ed-qs li{background:#FAFAF8;padding:24px 24px 28px;display:flex;flex-direction:column;gap:18px;border-top:2px solid #4E6368}
+.ed-qs-n{font-family:'Cormorant Infant',Garamond,serif;font-style:italic;font-size:34px;line-height:.8;color:#4E6368}
+.ed-qs-t{font-family:'Cormorant Infant',Garamond,serif;font-size:23px;line-height:1.3;color:#121414}
+
+/* page plan */
+.ed-map{margin:10px 0;padding:clamp(28px,3.4vw,52px) clamp(20px,3vw,48px) clamp(24px,2.6vw,36px);background:#FAFAF8;display:flex;flex-direction:column;align-items:center}
+.ed-node{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
+.ed-page{width:78px;aspect-ratio:3/4;background:#FFFFFF;border:1px solid #4E6368;padding:9px 8px;display:flex;flex-direction:column;gap:6px;box-shadow:0 12px 26px rgba(18,28,30,.07);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.ed-page i{display:block;height:4px;background:#DCE4E5}
+.ed-page i:first-child{height:20px;background:#C3D0D2}
+.ed-page i:nth-child(3){width:72%}
+.ed-page i:nth-child(4){width:48%}
+.ed-node:hover .ed-page{transform:translateY(-4px)}
+.ed-node-root .ed-page{width:96px;border-width:1.5px}
+.ed-node-t{font-family:'Cormorant Infant',Garamond,serif;font-size:21px;line-height:1.1;color:#121414}
+.ed-map-stem{width:1px;height:30px;margin-top:14px;background:#4E6368}
+.ed-map-row{list-style:none;margin:0;padding:30px 0 0;width:100%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;position:relative}
+.ed-map-row::before{content:"";position:absolute;top:0;left:calc(12.5% - 4.5px);right:calc(12.5% - 4.5px);height:1px;background:#4E6368}
+.ed-map-row>li{position:relative;display:flex;justify-content:center}
+.ed-map-row>li::before{content:"";position:absolute;top:-30px;left:50%;width:1px;height:30px;background:#4E6368}
+.ed-map-sep{margin:34px 0 22px;width:100%;display:flex;align-items:center;gap:16px;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#4E5558;white-space:nowrap}
+.ed-map-sep::before,.ed-map-sep::after{content:"";flex:1;border-top:1px dashed rgba(78,99,104,.5)}
+.ed-map-extra{padding-top:0}
+.ed-map-extra::before,.ed-map-extra>li::before{display:none}
+.ed-map-extra .ed-page{border-style:dashed;background:transparent;box-shadow:none}
+.ed-map-extra .ed-page i{background:rgba(78,99,104,.14)}
+.ed-map-extra .ed-node-t{color:#4E5558}
+.ed-map .ed-cap{margin-top:30px;text-align:center}
+@media (max-width:560px){
+  .ed-map-row{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:24px;padding-top:24px}
+  .ed-map-row::before,.ed-map-row>li::before{display:none}
+  .ed-map-stem{height:22px}
+}
+
+/* brand kit */
+.ed-kitfig{margin:6px 0;display:flex;flex-direction:column;gap:14px}
+.ed-kit{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:12px}
+.ed-kit-p{background:#FAFAF8;padding:22px;display:flex;flex-direction:column;gap:18px;min-width:0}
+.ed-kit-l{margin:0;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#4E6368}
+.ed-files{display:grid;grid-template-columns:repeat(auto-fill,minmax(68px,1fr));gap:10px}
+.ed-file{position:relative;aspect-ratio:1/1;background:#FFFFFF;border:1px solid rgba(78,99,104,.45);display:flex;align-items:flex-end;padding:8px 10px;font-size:14px;letter-spacing:.14em;color:#121414}
+.ed-file::after{content:"";position:absolute;top:-1px;right:-1px;width:30%;aspect-ratio:1;background:linear-gradient(225deg,#FAFAF8 50%,#DCE4E5 50%)}
+.ed-file-png{background-color:#FFFFFF;background-image:conic-gradient(#E9EDEC 25%,transparent 0 50%,#E9EDEC 0 75%,transparent 0);background-size:12px 12px}
+.ed-sws{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.ed-sws li{display:flex;align-items:center;gap:14px;font-size:15px;letter-spacing:.08em;color:#1F2426}
+.ed-sw{flex:none;width:34px;height:34px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(18,20,20,.14)}
+.ed-type{display:flex;align-items:baseline;gap:14px;padding-bottom:10px;border-bottom:1px solid rgba(78,99,104,.2)}
+.ed-type:last-child{border-bottom:0;padding-bottom:0}
+.ed-type-a{font-size:56px;line-height:1;color:#121414}
+.ed-type-b{font-size:40px}
+.ed-type-n{font-size:14px;letter-spacing:.06em;color:#4E5558}
+
+/* photos */
+.ed-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid #4E6368;border-bottom:1px solid #4E6368;margin:4px 0}
+.ed-pair>div{padding:24px 24px 26px 0;display:flex;flex-direction:column;gap:10px;min-width:0}
+.ed-pair>div+div{padding-left:24px;border-left:1px solid rgba(78,99,104,.3)}
+.ed-pair-h{margin:0;font-family:'Cormorant Infant',Garamond,serif;font-style:italic;font-size:30px;line-height:1.1;color:#121414}
+.ed-pair-t{margin:0;font-size:14px;line-height:1.6;letter-spacing:.16em;text-transform:uppercase;color:#4E6368}
+@media (max-width:600px){.ed-pair{grid-template-columns:minmax(0,1fr)}.ed-pair>div+div{padding-left:0;border-left:0;border-top:1px solid rgba(78,99,104,.3)}}
+
+/* logins */
+.ed-keys{list-style:none;margin:4px 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));column-gap:32px;border-top:1px solid rgba(78,99,104,.3)}
+.ed-keys li{display:flex;align-items:center;gap:16px;padding:18px 0;border-bottom:1px solid rgba(78,99,104,.3);font-size:18px;line-height:1.45;color:#1F2426}
+.ed-keys svg{flex:none;color:#4E6368}
+
+/* features */
+.ed-feats{list-style:none;margin:8px 0;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:1px;background:rgba(78,99,104,.25);border:1px solid rgba(78,99,104,.25)}
+.ed-feats li{background:#FFFFFF;padding:26px 24px 28px;display:flex;flex-direction:column;gap:22px;transition:background-color .4s}
+.ed-feats li:hover{background:#FAFAF8}
+.ed-feats svg{color:#4E6368;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.ed-feats li:hover svg{transform:translateY(-3px)}
+.ed-feats span{font-family:'Cormorant Infant',Garamond,serif;font-size:24px;line-height:1.25;color:#121414}
+@media (min-width:360px){.ed-feats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.ed-feats li{padding:22px 18px 24px;gap:16px}.ed-feats span{font-size:21px}.ed-meta-ch{display:none}}
+@media (min-width:760px){.ed-feats{grid-template-columns:repeat(3,minmax(0,1fr))}.ed-feats li{min-height:170px}}
+
+/* collage */
+.ed-collage{margin:12px 0 8px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));align-items:start}
+.ed-collage-a{grid-column:1 / span 6;grid-row:1;position:relative;z-index:1}
+.ed-collage-a img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.ed-collage-b{grid-column:5 / span 8;grid-row:1;margin-top:22%;position:relative;z-index:2;background:#FFFFFF;padding:10px;box-shadow:0 30px 70px rgba(18,28,30,.16)}
+.ed-collage-b img{width:100%;aspect-ratio:3/2;object-fit:cover}
+
+/* timing */
+.ed-dates{list-style:none;margin:6px 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:16px}
+.ed-date{position:relative;background:#FFFFFF;border:1px solid rgba(78,99,104,.45);padding:44px 24px 26px}
+.ed-date::before{content:"";position:absolute;left:-1px;right:-1px;top:-1px;height:12px;background:#4E6368}
+.ed-date::after{content:"";position:absolute;left:22px;top:-6px;width:40px;height:12px;background:radial-gradient(circle at 6px 6px,#FAFAF8 3px,transparent 3.6px) 0 0 / 28px 12px repeat-x}
+.ed-date-t{font-family:'Cormorant Infant',Garamond,serif;font-size:26px;line-height:1.2;color:#121414}
+
+/* full-bleed interludes */
+.ed-bleed{position:relative;z-index:2;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw)}
+.ed-quote{margin-top:0;margin-bottom:0;overflow:hidden;isolation:isolate;background:#3E5F69;color:#FFFFFF}
+.ed-quote-img{position:absolute;left:0;top:-8%;width:100%;height:116%;max-width:none;object-fit:cover;z-index:-2}
+.ed-quote-tint{position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(14,40,50,.5),rgba(14,40,50,.32)),rgb(137,175,188);background-blend-mode:normal;mix-blend-mode:multiply}
+.ed-quote-in{padding-top:clamp(104px,12vw,184px);padding-bottom:clamp(104px,12vw,184px)}
+.ed-quote-in p{margin:0 auto;max-width:1240px;text-align:center;font-family:'Cormorant Infant',Garamond,serif;font-style:italic;font-weight:300;font-size:clamp(40px,5.2vw,86px);line-height:1.1;letter-spacing:-.01em;color:#FFFFFF;text-wrap:balance;text-shadow:0 1px 18px rgba(10,30,40,.35)}
+.ed-q-em{font-style:normal;color:#E4EBEC;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.16em}
+.ed-spread{background:#ECEEED}
+.ed-spread-in{display:grid;grid-template-columns:minmax(0,1fr);gap:44px;padding-top:clamp(80px,9vw,128px);padding-bottom:clamp(80px,9vw,128px)}
+.ed-spread-fig{margin:0;position:relative;padding:0 20px 20px 0}
+.ed-spread-t{display:flex;flex-direction:column;gap:26px}
+.ed-spread-q{margin:0;font-family:'Cormorant Infant',Garamond,serif;font-weight:300;font-size:clamp(36px,3.8vw,62px);line-height:1.1;color:#121414;text-wrap:balance}
+.ed-spread-q em{font-style:italic;color:#4E6368}
+@media (min-width:900px){.ed-spread-in{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);align-items:center;column-gap:clamp(56px,7vw,128px)}}
+
+/* checklist */
+.ed-cl-band{background:#FAFAF8;scroll-margin-top:60px}
+.ed-cl{counter-reset:edready;display:grid;grid-template-columns:minmax(0,1fr);grid-template-areas:"head" "list" "status";gap:40px;padding-top:clamp(88px,10vw,144px);padding-bottom:clamp(88px,10vw,144px)}
+.ed-cl-head{grid-area:head;display:flex;flex-direction:column;gap:24px}
+.ed-cl-title{font-size:clamp(44px,4.8vw,76px)}
+.ed-cl-list{grid-area:list;list-style:none;margin:0;padding:0;border-top:1px solid rgba(78,99,104,.35)}
+.ed-cl-item label{display:flex;align-items:center;gap:18px;padding:17px 8px;border-bottom:1px solid rgba(78,99,104,.35);cursor:pointer;transition:background-color .3s}
+.ed-cl-item label:hover{background:#FFFFFF}
+.ed-cl-box{flex:none;width:30px;height:30px;border:1px solid #4E6368;background:#FFFFFF;display:grid;place-items:center;color:#FFFFFF;transition:background-color .3s}
+.ed-cl-box svg{opacity:0;transform:scale(.5);transition:opacity .3s,transform .45s cubic-bezier(.2,.7,.2,1)}
+.ed-cl-item input{counter-increment:none}
+.ed-cl-item input:checked{counter-increment:edready}
+.ed-cl-item input:checked+.ed-cl-box{background:#4E6368}
+.ed-cl-item input:checked+.ed-cl-box svg{opacity:1;transform:none}
+.ed-cl-item input:focus-visible+.ed-cl-box{outline:2px solid #4E6368;outline-offset:3px}
+.ed-cl-t{font-family:'Cormorant Infant',Garamond,serif;font-size:clamp(22px,1.8vw,27px);line-height:1.25;color:#121414;transition:color .3s}
+.ed-cl-item input:checked~.ed-cl-t{color:#4E6368}
+.ed-cl-c{margin-left:auto;padding-left:12px;font-family:'Cormorant Infant',Garamond,serif;font-style:italic;font-size:18px;color:#4E6368}
+.ed-cl-status{grid-area:status}
+.ed-cl-count{margin:0;display:flex;align-items:baseline;gap:16px;font-family:'Cormorant Infant',Garamond,serif;color:#121414}
+.ed-cl-n::before{content:counter(edready)}
+.ed-cl-n{min-width:.55em;font-weight:300;font-style:italic;font-size:clamp(96px,10vw,168px);line-height:.8;color:#4E6368}
+.ed-cl-of{font-size:clamp(26px,2.4vw,36px);line-height:1.1}
+.ed-cl-bar{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:6px;margin-top:28px}
+.ed-cl-bar span{height:4px;background:rgba(78,99,104,.2);transition:background-color .4s}
+
+.ed-cl-msg{margin:20px 0 0;font-size:19px;line-height:1.7;color:#1F2426}
+.ed-cl-msg-done{display:none;font-family:'Cormorant Infant',Garamond,serif;font-style:italic;font-size:28px;line-height:1.3;color:#4E6368}
+.ed-cl:not(:has(.ed-cl-list input:not(:checked))) .ed-cl-msg-todo{display:none}
+.ed-cl:not(:has(.ed-cl-list input:not(:checked))) .ed-cl-msg-done{display:block}
+@media (min-width:960px){
+  .ed-cl{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);grid-template-areas:"head list" "status list";column-gap:clamp(56px,7vw,128px);row-gap:56px;align-items:start}
+  .ed-cl-status{position:sticky;top:140px}
+}
+
+/* bottom line */
+.ed-bottom{overflow:hidden;background:#4E6368;color:#FFFFFF}
+.ed-bottom-in{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr);gap:32px;padding-top:clamp(96px,11vw,168px);padding-bottom:clamp(96px,11vw,168px)}
+.ed-bottom-h{margin:0;font-family:'Cormorant Infant',Garamond,serif;font-weight:300;font-size:clamp(50px,6vw,100px);line-height:1;letter-spacing:-.015em;color:#FFFFFF}
+.ed-bottom-h em{font-style:italic;color:#DCE4E5}
+.ed-bottom-t{display:flex;flex-direction:column;gap:36px}
+.ed-bottom-t p{margin:0;font-family:'Cormorant Infant',Garamond,serif;font-weight:300;font-size:clamp(25px,2.3vw,35px);line-height:1.45;color:#FFFFFF}
+@media (min-width:960px){.ed-bottom-in{grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);column-gap:clamp(56px,7vw,128px);align-items:start}}
+
+/* up next */
+.ed-next-band{background:#FAFAF8}
+.ed-next{display:grid;grid-template-columns:minmax(0,1fr);gap:40px;text-decoration:none;color:#121414}
+.ed-next-t{display:flex;flex-direction:column;gap:26px;min-width:0}
+.ed-next-h{font-family:'Cormorant Infant',Garamond,serif;font-weight:300;font-size:clamp(38px,4.2vw,68px);line-height:1.05;color:#121414;text-wrap:balance;transition:color .3s}
+.ed-next-h em{font-style:italic;color:#4E6368}
+.ed-next-go{display:inline-flex;align-items:center;gap:12px;color:#4E6368;font-size:18px;letter-spacing:.03em;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:7px;transition:gap .4s cubic-bezier(.2,.7,.2,1)}
+.ed-next:hover .ed-next-go{gap:18px}
+.ed-next-img{position:relative;display:block;padding:0 20px 20px 0}
+@media (min-width:960px){.ed-next{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);align-items:center;column-gap:clamp(56px,6vw,112px)}}
+
+/* scroll-driven touches (progressive: browsers without support simply skip them) */
+@supports (animation-timeline: view()){
+  #glance{view-timeline-name:--ed-c1}
+.ed-rail li:nth-child(1) a{animation-timeline:--ed-c1}
+#squarespace{view-timeline-name:--ed-c2}
+.ed-rail li:nth-child(2) a{animation-timeline:--ed-c2}
+#shopify{view-timeline-name:--ed-c3}
+.ed-rail li:nth-child(3) a{animation-timeline:--ed-c3}
+#custom{view-timeline-name:--ed-c4}
+.ed-rail li:nth-child(4) a{animation-timeline:--ed-c4}
+#questions{view-timeline-name:--ed-c5}
+.ed-rail li:nth-child(5) a{animation-timeline:--ed-c5}
+#switching{view-timeline-name:--ed-c6}
+.ed-rail li:nth-child(6) a{animation-timeline:--ed-c6}
+  .ed-ch{view-timeline-inset:40% 59%}
+  .ed-rail a{animation:edOn linear none}
+  .ed-rail li:last-child a{animation:none}
+  .ed-rail-fill{animation:edFill linear both;animation-timeline:--ed-read;animation-range:contain 0% contain 100%}
+  @media (prefers-reduced-motion: no-preference){
+    .ed-arch-img img{animation:edZoom linear both;animation-timeline:view();animation-range:exit 0% exit 100%}
+    .ed-quote-img{animation:edDrift linear both;animation-timeline:view();animation-range:cover 0% cover 100%}
+  }
+}
+@media (prefers-reduced-motion: reduce){.ed-goal,.ed-goal-t,.ed-page,.ed-feats li,.ed-feats svg,.ed-cl-box,.ed-cl-box svg,.ed-cl-t,.ed-cl-bar span,.ed-next-go,.ed-rail a{transition:none}}
+@media (max-width:999px){.ed-arch{max-width:480px}.ed-arch-img{aspect-ratio:1/1}}
+
+/* ---------- shared extras ---------- */
+.ed-legend{margin:0 0 16px;padding:0;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#4E6368}
+.ed-qs-5{grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr))}
+.ed-qs-4{grid-template-columns:minmax(0,1fr)}
+@media (min-width:480px){.ed-qs-4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.ed-files-wide .ed-files{grid-template-columns:repeat(auto-fill,minmax(78px,1fr))}
+@media (min-width:760px){.ed-feats-4{grid-template-columns:repeat(4,minmax(0,1fr))}}
+
+/* cover: three arches */
+.ed-trio{position:relative;width:100%;max-width:640px;justify-self:center;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,1.4vw,22px);align-items:end}
+.ed-trio-i{margin:0;display:flex;flex-direction:column;gap:14px;min-width:0}
+.ed-trio-i:nth-child(2){margin-bottom:clamp(28px,4vw,64px)}
+.ed-trio-arch{position:relative;overflow:hidden;border-radius:999px 999px 0 0;aspect-ratio:5/9;background:#DCE4E5;box-shadow:0 30px 60px -30px rgba(18,28,30,.35);outline:1px solid rgba(78,99,104,.25);outline-offset:8px}
+.ed-trio-arch img{width:100%;height:100%;object-fit:cover;object-position:50% 0}
+.ed-trio-i figcaption{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#4E6368;text-align:center}
+.ed-trio .ed-seal{left:auto;right:-6px;bottom:auto;top:-30px;width:clamp(78px,20vw,104px)}
+.ed-cover-trio .ed-title{font-size:clamp(46px,5.6vw,98px)}
+@media (min-width:1000px){.ed-trio{justify-self:end}.ed-cover-trio .ed-cover-grid{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}.ed-cover-trio .ed-trio .ed-seal{right:-30px;top:-46px;width:clamp(104px,9.5vw,148px)}}
+
+/* browser frame */
+.ed-browser-fig{margin:6px 0;display:flex;flex-direction:column;gap:12px}
+.ed-browser{background:#FFFFFF;border:1px solid rgba(78,99,104,.28);box-shadow:0 30px 60px -36px rgba(18,28,30,.45);overflow:hidden}
+.ed-browser-bar{height:30px;display:flex;align-items:center;gap:7px;padding:0 14px;border-bottom:1px solid rgba(78,99,104,.18);background:#FAFAF8}
+.ed-browser-bar i{width:9px;height:9px;border-radius:50%;background:#D5DAD9}
+.ed-browser img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:50% 0}
+
+/* platform finder */
+.ed-pf{margin:8px 0;display:flex;flex-direction:column;gap:26px}
+.ed-pf-q{border:0;margin:0;padding:0;min-width:0}
+.ed-pf-q legend{padding:0;margin-bottom:14px;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#4E6368}
+.ed-pf-opts{display:flex;flex-wrap:wrap;gap:10px}
+.ed-pf-opt{cursor:pointer;display:inline-flex;align-items:center;min-height:52px;padding:12px 20px;border:1px solid rgba(78,99,104,.5);background:#FFFFFF;font-family:'Cormorant Infant',Garamond,serif;font-size:22px;line-height:1.2;color:#121414;transition:background-color .35s,color .35s,border-color .35s}
+.ed-pf-opt:hover{border-color:#4E6368;background:#FAFAF8}
+.ed-pf-opt:has(input:checked){background:#4E6368;border-color:#4E6368;color:#FFFFFF}
+.ed-pf-opt:has(input:focus-visible){outline:2px solid #4E6368;outline-offset:4px}
+.ed-pf-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:14px}
+.ed-pf-col{position:relative;background:#FAFAF8;padding:26px 24px 10px;border-top:2px solid rgba(78,99,104,.35);transition:background-color .45s,box-shadow .45s,border-color .45s,opacity .45s}
+.ed-pf-h{margin:0 0 6px;font-family:'Cormorant Infant',Garamond,serif;font-weight:400;font-size:30px;line-height:1.1;color:#121414}
+.ed-pf-dl{margin:0}
+.ed-pf-dl div{padding:14px 0;border-bottom:1px solid rgba(78,99,104,.2);display:flex;flex-direction:column;gap:5px}
+.ed-pf-dl div:last-child{border-bottom:0}
+.ed-pf-dl dt{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#4E5558}
+.ed-pf-dl dd{margin:0;font-size:17px;line-height:1.55;color:#1F2426}
+.ed-pf-fit{position:absolute;top:-13px;left:22px;margin:0;padding:4px 10px;background:#4E6368;color:#FFFFFF;font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:0;transform:translateY(4px);transition:opacity .35s,transform .35s}
+.ed-pf:has(input:checked) .ed-pf-col{opacity:.55}
+.ed-pf:has(#ed-pf-sq:checked) .ed-pf-sq,.ed-pf:has(#ed-pf-sh:checked) .ed-pf-sh,.ed-pf:has(#ed-pf-cu:checked) .ed-pf-cu{opacity:1;background:#FFFFFF;border-top-color:#4E6368;box-shadow:0 30px 60px -34px rgba(18,28,30,.4),inset 0 0 0 1px rgba(78,99,104,.35)}
+.ed-pf:has(#ed-pf-sq:checked) .ed-pf-sq .ed-pf-fit,.ed-pf:has(#ed-pf-sh:checked) .ed-pf-sh .ed-pf-fit,.ed-pf:has(#ed-pf-cu:checked) .ed-pf-cu .ed-pf-fit{opacity:1;transform:none}
+
+/* where you are now -> heading */
+.ed-path{margin:6px 0;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:end;gap:18px;max-width:500px}
+.ed-path>div{aspect-ratio:4/5;border-radius:999px 999px 0 0;display:flex;align-items:flex-end;justify-content:center;padding:0 16px 22px;text-align:center;font-family:'Cormorant Infant',Garamond,serif;font-size:22px;line-height:1.2}
+.ed-path-a{border:1px dashed rgba(78,99,104,.6);color:#4E5558}
+.ed-path-b{background:#4E6368;color:#FFFFFF}
+.ed-path-arrow{color:#4E6368;padding-bottom:40%}
+
+/* palette switcher */
+.ed-palx{--p1:#1A2558;--p2:#22306B;--p3:#CFAE6B;--p4:#D3E3F3;--p5:#97D9F8;--h1:"#1A2558";--h2:"#22306B";--h3:"#CFAE6B";--h4:"#D3E3F3";--h5:"#97D9F8";margin:10px 0;display:flex;flex-direction:column;gap:20px}
+.ed-palx:has(#ed-pal-hr:checked){--p1:#12141A;--p2:#22384A;--p3:#C9A876;--p4:#F6F3EE;--p5:#A0865C;--h1:"#12141A";--h2:"#22384A";--h3:"#C9A876";--h4:"#F6F3EE";--h5:"#A0865C"}
+.ed-palx:has(#ed-pal-laura:checked){--p1:#066680;--p2:#9FD0D4;--p3:#F9CFCF;--p4:#FEF4F4;--p5:#DCEEEE;--h1:"#066680";--h2:"#9FD0D4";--h3:"#F9CFCF";--h4:"#FEF4F4";--h5:"#DCEEEE"}
+.ed-palx:has(#ed-pal-rooster:checked){--p1:#171717;--p2:#6D7C7C;--p3:#C16452;--p4:#FAF2E6;--p5:#5C5C5C;--h1:"#171717";--h2:"#6D7C7C";--h3:"#C16452";--h4:"#FAF2E6";--h5:"#5C5C5C"}
+.ed-palx:has(#ed-pal-callum:checked){--p1:#121212;--p2:#5A5A5A;--p3:#848484;--p4:#F8F8F8;--p5:#CCCACA;--h1:"#121212";--h2:"#5A5A5A";--h3:"#848484";--h4:"#F8F8F8";--h5:"#CCCACA"}
+.ed-palx-q{border:0;margin:0;padding:0;min-width:0}
+.ed-palx-q legend{padding:0;margin-bottom:14px;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#4E6368}
+.ed-palx-opts{display:flex;flex-wrap:wrap;gap:10px}
+.ed-palx-opt{cursor:pointer;display:inline-flex;align-items:center;gap:12px;min-height:46px;padding:8px 16px 8px 12px;border:1px solid rgba(78,99,104,.45);background:#FFFFFF;font-size:15px;letter-spacing:.04em;color:#1F2426;transition:background-color .35s,color .35s,border-color .35s}
+.ed-palx-opt:hover{border-color:#4E6368}
+.ed-palx-dots{display:flex;padding-left:4px}
+.ed-palx-dots i{width:16px;height:16px;border-radius:50%;margin-left:-4px;box-shadow:0 0 0 2px #FFFFFF}
+.ed-palx-opt:has(input:checked),.ed-palx:not(:has(input:checked)) .ed-palx-opt:first-child{background:#121414;border-color:#121414;color:#FFFFFF}
+.ed-palx-opt:has(input:focus-visible){outline:2px solid #4E6368;outline-offset:4px}
+.ed-palx-stage{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
+@media (min-width:700px){.ed-palx-stage{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);align-items:stretch}}
+.ed-mock{background:var(--p4);border:1px solid rgba(18,20,20,.1);display:flex;flex-direction:column;min-height:300px;box-shadow:0 30px 60px -36px rgba(18,28,30,.45);transition:background-color .5s}
+.ed-mock *{transition:background-color .5s}
+.ed-mock-nav{height:42px;flex:none;background:var(--p1);display:flex;align-items:center;justify-content:space-between;padding:0 18px}
+.ed-mock-nav>i{width:60px;height:7px;background:var(--p4)}
+.ed-mock-nav span{display:flex;gap:10px}
+.ed-mock-nav span i{width:26px;height:4px;background:color-mix(in srgb,var(--p4) 70%,transparent)}
+.ed-mock-hero{flex:1;padding:30px 24px 22px;display:flex;flex-direction:column;gap:11px}
+.ed-mock-hero b{display:block;height:16px;width:72%;background:var(--p1)}
+.ed-mock-hero b+b{width:48%;background:var(--p2)}
+.ed-mock-hero s{display:block;height:5px;width:86%;background:color-mix(in srgb,var(--p1) 30%,transparent);margin-top:4px}
+.ed-mock-hero s+s{width:64%;margin-top:0}
+.ed-mock-btn{display:block;align-self:flex-start;margin-top:10px;width:104px;height:30px;background:var(--p3)}
+.ed-mock-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:0 24px 24px}
+.ed-mock-cards span{height:58px;background:color-mix(in srgb,var(--p5) 55%,#FFFFFF);border-top:3px solid var(--p2)}
+.ed-palx-sws{list-style:none;margin:0;padding:18px 20px;background:#FAFAF8;display:flex;flex-direction:column;justify-content:center;gap:12px}
+.ed-palx-sws li{display:grid;grid-template-columns:40px minmax(0,1fr) auto;align-items:center;gap:14px;font-size:15px;color:#1F2426}
+.ed-palx-sw{width:40px;height:40px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(18,20,20,.14);transition:background-color .5s}
+.ed-palx-role{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#4E5558}
+.ed-palx-hex{font-size:14px;letter-spacing:.08em;color:#121414}
+.ed-palx-sws li:nth-child(1) .ed-palx-hex::before{content:var(--h1)}
+.ed-palx-sws li:nth-child(2) .ed-palx-hex::before{content:var(--h2)}
+.ed-palx-sws li:nth-child(3) .ed-palx-hex::before{content:var(--h3)}
+.ed-palx-sws li:nth-child(4) .ed-palx-hex::before{content:var(--h4)}
+.ed-palx-sws li:nth-child(5) .ed-palx-hex::before{content:var(--h5)}
+
+/* type pairing */
+.ed-typepair{margin:6px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:12px}
+.ed-tp{background:#FAFAF8;padding:24px 22px 26px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.ed-tp-a{font-size:76px;line-height:1;color:#121414;margin-bottom:10px}
+.ed-tp-sans{font-size:58px;line-height:1.3}
+.ed-tp-h{margin:0;font-family:'Cormorant Infant',Garamond,serif;font-size:24px;line-height:1.2;color:#121414}
+.ed-tp-t{margin:0;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:#4E6368}
+.ed-tp-pair{background:#4E6368;color:#FFFFFF;gap:12px}
+.ed-tp-pair .ed-kit-l{color:#DCE4E5}
+.ed-tp-head{font-size:32px;line-height:1.1;font-weight:300;color:#FFFFFF}
+.ed-tp-body{font-size:17px;color:#E4EBEC}
+.ed-tp-pair .ed-cap{color:#DCE4E5;margin-top:auto}
+
+/* style scales */
+.ed-scales{margin:6px 0;padding:24px clamp(18px,2.4vw,28px) 10px;border:0;background:#FAFAF8;min-width:0}
+.ed-scales legend{float:left;width:100%;padding:0;margin-bottom:14px;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#4E6368}
+.ed-scale-row{clear:both;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:14px;padding:14px 0;border-top:1px solid rgba(78,99,104,.18)}
+.ed-scale-l,.ed-scale-r{font-family:'Cormorant Infant',Garamond,serif;font-size:21px;line-height:1.2;color:#121414}
+.ed-scale-r{text-align:right}
+.ed-scale-dots{position:relative;display:flex;gap:clamp(8px,1.6vw,18px)}
+.ed-scale-dots::before{content:"";position:absolute;left:8px;right:8px;top:50%;height:1px;background:rgba(78,99,104,.4)}
+.ed-scale-dot{position:relative;cursor:pointer;display:grid;place-items:center;width:30px;height:30px}
+.ed-scale-dot span{width:16px;height:16px;border-radius:50%;border:1px solid #4E6368;background:#FFFFFF;transition:transform .3s,background-color .3s}
+.ed-scale-dot:hover span{transform:scale(1.15)}
+.ed-scale-dot:has(input:checked) span{background:#4E6368;transform:scale(1.3)}
+.ed-scale-dot:has(input:focus-visible) span{outline:2px solid #4E6368;outline-offset:3px}
+@media (max-width:520px){.ed-scale-row{grid-template-columns:minmax(0,1fr) minmax(0,1fr);row-gap:10px}.ed-scale-dots{grid-column:1 / -1;grid-row:2;justify-content:space-between}}
+
+/* words */
+.ed-words{counter-reset:edw;margin:6px 0;padding:0;border:0;min-width:0}
+.ed-words legend{padding:0;margin-bottom:14px;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#4E6368}
+.ed-word-row{display:flex;flex-wrap:wrap;gap:10px}
+.ed-word{cursor:pointer;display:inline-flex;align-items:center;min-height:56px;padding:10px 26px;border:1px solid rgba(78,99,104,.5);border-radius:999px;background:#FFFFFF;font-family:'Cormorant Infant',Garamond,serif;font-style:italic;font-size:26px;line-height:1;color:#121414;transition:background-color .35s,color .35s,border-color .35s}
+.ed-word:hover{border-color:#4E6368;background:#FAFAF8}
+.ed-word input:checked{counter-increment:edw}
+.ed-word:has(input:checked){background:#4E6368;border-color:#4E6368;color:#FFFFFF}
+.ed-word:has(input:focus-visible){outline:2px solid #4E6368;outline-offset:4px}
+.ed-words-count{margin:16px 0 0;font-size:15px;letter-spacing:.06em;color:#4E5558}
+.ed-words-n::before{content:counter(edw)}
+.ed-words-n{font-family:'Cormorant Infant',Garamond,serif;font-style:italic;font-size:26px;color:#4E6368}
+
+/* places */
+.ed-places{list-style:none;margin:6px 0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.ed-places li{display:inline-flex;align-items:center;gap:12px;padding:12px 18px 12px 14px;background:#FAFAF8;border:1px solid rgba(78,99,104,.22);font-size:16px;letter-spacing:.04em;color:#1F2426}
+.ed-places svg{color:#4E6368;flex:none}
+
+/* website + newsletter */
+.ed-duo{margin:10px 0;display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,.8fr);gap:clamp(14px,2vw,28px);align-items:end}
+.ed-duo-b img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 0;box-shadow:0 30px 60px -30px rgba(18,28,30,.45);border:1px solid rgba(78,99,104,.2)}
+.ed-duo .ed-cap{grid-column:1 / -1}
+@media (max-width:560px){.ed-duo{grid-template-columns:minmax(0,1fr)}.ed-duo-b{max-width:70%}}
+
+/* search: words */
+.ed-xlate{margin:6px 0;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1.4fr);align-items:center;gap:22px;padding:26px clamp(20px,2.6vw,32px);background:#FAFAF8;border-left:2px solid #4E6368}
+.ed-xlate>div{display:flex;flex-direction:column;gap:10px;min-width:0}
+.ed-xlate-w{margin:0;font-family:'Cormorant Infant',Garamond,serif;font-size:clamp(26px,2.4vw,34px);line-height:1.15;color:#121414}
+.ed-xlate>div:first-child .ed-xlate-w{color:#4E5558;font-style:italic}
+.ed-xlate-arrow{color:#4E6368}
+@media (max-width:600px){.ed-xlate{grid-template-columns:minmax(0,1fr)}.ed-xlate-arrow{transform:rotate(90deg);justify-self:start;margin-left:6px}}
+
+/* search: menu */
+.ed-menu{margin:6px 0;display:flex;flex-direction:column;gap:12px}
+.ed-menu ul{list-style:none;margin:0;padding:16px 20px;background:#12141A;display:flex;flex-wrap:wrap;gap:8px 26px}
+.ed-menu li{font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:rgba(246,243,238,.62);padding:6px 0}
+.ed-menu li.on{color:#F6F3EE;box-shadow:inset 0 -1px 0 #C9A876}
+
+/* search: title toggle */
+.ed-serp{margin:8px 0;display:flex;flex-direction:column;gap:16px}
+.ed-serp-toggle{border:0;margin:0;padding:4px;display:inline-flex;align-self:flex-start;gap:4px;background:#ECEEED;border-radius:999px}
+.ed-serp-toggle label{cursor:pointer;display:inline-flex;align-items:center;min-height:42px;padding:0 20px;border-radius:999px;font-size:15px;letter-spacing:.05em;color:#4E5558;transition:background-color .3s,color .3s}
+.ed-serp-toggle label:has(input:checked),.ed-serp:not(:has(input:checked)) .ed-serp-toggle label:first-of-type{background:#FFFFFF;color:#121414;box-shadow:0 4px 12px rgba(18,28,30,.1)}
+.ed-serp-toggle label:has(input:focus-visible){outline:2px solid #4E6368;outline-offset:2px}
+.ed-serp-card{background:#FFFFFF;border:1px solid rgba(78,99,104,.22);box-shadow:0 30px 60px -36px rgba(18,28,30,.4);padding:clamp(20px,2.6vw,32px);display:flex;flex-direction:column;gap:16px}
+.ed-serp-row{display:grid;grid-template-columns:130px minmax(0,1fr);gap:18px;align-items:baseline}
+.ed-serp-lab{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#4E6368;padding-top:3px;border-top:1px solid rgba(78,99,104,.35)}
+.ed-serp-url{font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#4E5558;overflow-wrap:anywhere}
+.ed-serp-title{font-family:Arial,Helvetica,sans-serif;font-size:clamp(19px,1.7vw,23px);line-height:1.3;color:#2C4A8A}
+.ed-serp-desc{font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.6;color:#3B4042}
+.ed-serp-vague{display:none}
+.ed-serp:has(#ed-serp-v:checked) .ed-serp-vague{display:inline}
+.ed-serp:has(#ed-serp-v:checked) .ed-serp-spec{display:none}
+@media (max-width:560px){.ed-serp-row{grid-template-columns:minmax(0,1fr);gap:6px}.ed-serp-lab{border-top:0;padding-top:0}}
+
+/* search: schema */
+.ed-schema{margin:6px 0;display:flex;flex-direction:column;gap:12px}
+.ed-schema-card{background:#2F4246;color:#E4EBEC;padding:clamp(22px,2.6vw,32px);font-family:ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace}
+.ed-schema-l{margin:0 0 16px;font-family:'Abel','Arial Narrow',sans-serif;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#A9C1C6}
+.ed-schema dl{margin:0;display:flex;flex-direction:column;gap:12px}
+.ed-schema dl div{display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;font-size:14px;line-height:1.55}
+.ed-schema dt{color:#A9C1C6}
+.ed-schema dd{margin:0;color:#FFFFFF}
+@media (max-width:560px){.ed-schema dl div{grid-template-columns:minmax(0,1fr);gap:2px}}
+
+/* search: area bar */
+.ed-areas{margin:6px 0;display:flex;flex-direction:column;gap:12px}
+.ed-areas-bar{background:#12141A;padding:14px 20px;display:flex;flex-wrap:wrap;gap:6px 0;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#F6F3EE}
+.ed-areas-bar span+span::before{content:"·";padding:0 12px;color:#C9A876}
+
+/* search: same everywhere */
+.ed-nap{margin:8px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:12px}
+.ed-nap-c{background:#FAFAF8;padding:22px 22px 18px}
+.ed-nap-h{margin:0 0 12px;font-family:'Cormorant Infant',Garamond,serif;font-size:23px;line-height:1.2;color:#121414}
+.ed-nap ul{list-style:none;margin:0;padding:0}
+.ed-nap li{display:flex;align-items:center;gap:12px;padding:9px 0;border-top:1px solid rgba(78,99,104,.18);font-size:16px;color:#1F2426}
+.ed-nap li svg{color:#4E6368;flex:none}
+
+/* search: tools */
+.ed-tools{margin:6px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px}
+.ed-tool{position:relative;background:#FAFAF8;padding:26px 24px 28px;display:flex;flex-direction:column;gap:12px}
+.ed-tool svg{color:#4E6368}
+.ed-tool-h{margin:6px 0 0;font-family:'Cormorant Infant',Garamond,serif;font-size:26px;line-height:1.15;color:#121414}
+.ed-tool-t{margin:0;font-size:17px;line-height:1.6;color:#1F2426}
+.ed-tool-tag{position:absolute;top:24px;right:22px;padding:4px 10px;border:1px solid #4E6368;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#4E6368}
+
+/* search: growth */
+.ed-growth{margin:8px 0;padding:24px clamp(18px,2.6vw,30px) 22px;background:#FAFAF8}
+.ed-growth-svg{display:block;width:100%;height:120px}
+.ed-growth-labels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:14px}
+.ed-growth-labels>div{display:flex;flex-direction:column;gap:6px}
+.ed-growth-labels>div+div{text-align:right;align-items:flex-end}
+.ed-growth-t{margin:0;font-family:'Cormorant Infant',Garamond,serif;font-size:21px;line-height:1.3;color:#121414}
+
+/* search: avoid */
+.ed-avoid{margin:6px 0}
+.ed-avoid ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.ed-avoid li{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border:1px dashed rgba(78,99,104,.55);font-size:16px;color:#4E5558;text-decoration:line-through;text-decoration-color:rgba(78,99,104,.7);text-decoration-thickness:1px}
+.ed-avoid svg{color:#A0522D;flex:none}
+
+/* support: tokens */
+.ed-tokens{margin:6px 0}
+.ed-tokens ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.ed-tokens li{display:inline-flex;align-items:center;gap:10px;padding:10px 18px 10px 14px;background:#FAFAF8;border:1px solid rgba(78,99,104,.22);font-family:'Cormorant Infant',Garamond,serif;font-size:22px;line-height:1.1;color:#121414}
+.ed-tokens svg{color:#4E6368;flex:none}
+
+/* support: everyday care */
+.ed-log{margin:6px 0}
+.ed-log ol{list-style:none;margin:0;padding:0 0 0 22px;position:relative;display:flex;flex-direction:column}
+.ed-log ol::before{content:"";position:absolute;left:5px;top:12px;bottom:12px;width:1px;background:rgba(78,99,104,.4)}
+.ed-log li{position:relative;padding:10px 0 10px 14px;font-family:'Cormorant Infant',Garamond,serif;font-size:24px;line-height:1.25;color:#121414}
+.ed-log li::before{content:"";position:absolute;left:-22px;top:50%;width:11px;height:11px;margin-top:-5.5px;border-radius:50%;border:1px solid #4E6368;background:#FFFFFF}
+.ed-log li:first-child::before{background:#4E6368}
+
+/* support: related guide */
+.ed-related{margin:6px 0;display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"l go" "h go";gap:8px 24px;align-items:center;padding:24px clamp(20px,2.6vw,30px);background:#FAFAF8;border-top:2px solid #4E6368;text-decoration:none;color:#121414;transition:background-color .35s}
+.ed-related:hover{background:#ECEEED}
+.ed-related-l{grid-area:l;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#4E6368}
+.ed-related-h{grid-area:h;font-family:'Cormorant Infant',Garamond,serif;font-size:clamp(24px,2.2vw,30px);line-height:1.2}
+.ed-related-h em{font-style:italic;color:#4E6368}
+.ed-related-go{grid-area:go;color:#4E6368;transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.ed-related:hover .ed-related-go{transform:translateX(6px)}
+
+/* support: newsletters */
+.ed-fan{margin:14px 0 8px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));align-items:start;padding:0 0 10px}
+.ed-fan>div{position:relative}
+.ed-fan img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 0;background:#FFFFFF;border:1px solid rgba(18,20,20,.08);box-shadow:0 30px 60px -28px rgba(18,28,30,.45)}
+.ed-fan-a{grid-column:1 / span 5;grid-row:1;margin-top:8%;transform:rotate(-3deg);z-index:1}
+.ed-fan-b{grid-column:4 / span 5;grid-row:1;z-index:3}
+.ed-fan-c{grid-column:8 / span 5;grid-row:1;margin-top:8%;transform:rotate(3deg);z-index:2}
+.ed-fan .ed-cap{grid-column:1 / -1;grid-row:2;margin-top:26px}
+
+/* support: formats */
+.ed-formats{margin:8px 0;display:flex;flex-direction:column;gap:14px}
+.ed-formats-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr) minmax(0,.8fr);gap:clamp(12px,1.8vw,24px);align-items:end}
+.ed-fmt{display:flex;flex-direction:column;gap:12px;min-width:0}
+.ed-fmt-art{position:relative;background:#FAFAF8;border:1px solid rgba(78,99,104,.3);display:flex;flex-direction:column;justify-content:flex-end;gap:7px;padding:16px;overflow:hidden}
+.ed-fmt-sq .ed-fmt-art{aspect-ratio:1/1}
+.ed-fmt-wide .ed-fmt-art{aspect-ratio:16/9}
+.ed-fmt-tall .ed-fmt-art{aspect-ratio:3/4.4}
+.ed-fmt-band{position:absolute;left:0;right:0;top:0;height:42%;background:#4E6368}
+.ed-fmt-art b{position:relative;font-family:'Cormorant Infant',Garamond,serif;font-style:italic;font-weight:300;font-size:clamp(28px,2.6vw,40px);line-height:1;color:#121414}
+.ed-fmt-art s{display:block;height:4px;width:78%;background:#DCE4E5}
+.ed-fmt-art s+s{width:54%}
+.ed-fmt-btn{display:block;width:42%;max-width:90px;height:14px;margin-top:4px;background:#121414}
+@media (max-width:560px){.ed-formats-row{grid-template-columns:repeat(2,minmax(0,1fr))}.ed-fmt-wide{grid-column:1 / -1;grid-row:1}}
+
+/* support: options */
+.ed-opts{margin:6px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px}
+.ed-opt{background:#FAFAF8;padding:24px 24px 28px;border-top:2px solid #4E6368;display:flex;flex-direction:column;gap:12px}
+.ed-opt-h{margin:6px 0 0;font-family:'Cormorant Infant',Garamond,serif;font-size:28px;line-height:1.1;color:#121414}
+.ed-opt-t{margin:0;font-size:17px;line-height:1.6;color:#1F2426}
+
+/* support: routine */
+.ed-routine{list-style:none;margin:6px 0;padding:0;border-top:1px solid #4E6368}
+.ed-routine li{display:grid;grid-template-columns:200px minmax(0,1fr);gap:22px;align-items:baseline;padding:18px 0;border-bottom:1px solid rgba(78,99,104,.25)}
+.ed-routine-f{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#4E6368}
+.ed-routine-t{font-family:'Cormorant Infant',Garamond,serif;font-size:23px;line-height:1.35;color:#121414}
+@media (max-width:600px){.ed-routine li{grid-template-columns:minmax(0,1fr);gap:6px}}
+
+/* inline checklist (inside a chapter) */
+.ed-cl-inline{display:flex;flex-direction:column;gap:28px;padding:0;margin:6px 0}
+.ed-cl-inline .ed-legend{margin-bottom:-12px}
+.ed-cl-inline .ed-cl-status{position:static}
+.ed-cl-inline .ed-cl-n{font-size:clamp(72px,7vw,110px)}
+.ed-cl-inline .ed-cl-c{display:none}
+.ed-cl-any:has(.ed-cl-list input:checked) .ed-cl-msg-todo{display:none}
+.ed-cl-any:has(.ed-cl-list input:checked) .ed-cl-msg-done{display:block}
+/* /EDITORIAL */
 /* NAV v2 (generated) */
 html{scroll-padding-top:104px}
 .sp-header{transition:background-color .45s ease,box-shadow .45s ease}
@@ -216,93 +802,143 @@ html{scroll-padding-top:104px}
 <main id="main">
 <article aria-labelledby="page-title">
 
-<!-- GUIDE HERO -->
-<header style="position: relative; overflow: hidden; background: #FAFAF8">
+<!-- EDITORIAL COVER -->
+<header class="ed-cover ed-cover-trio">
 <img class="sp-sway" src="/_blob/fddc24a18e2595d21f63da9f1d7bf0d5" alt="" width="1800" height="1200" style="position: absolute; top: -20px; right: -20px; width: min(1320px, 110vw); height: auto; max-width: none; opacity: 0.16; mix-blend-mode: multiply; pointer-events: none; z-index: 0">
-<div style="position: relative; z-index: 1; width: 100%; max-width: 1680px; margin: 0 auto; padding: clamp(140px, 12vw, 176px) clamp(20px, 5vw, 72px) clamp(56px, 6vw, 88px); display: flex; flex-direction: column; gap: clamp(48px, 5vw, 72px)">
-<div style="display: flex; flex-direction: column; gap: 28px; max-width: 1260px">
-<p style="margin: 0; display: flex; align-items: center; gap: 16px; font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; color: #4E6368"><span aria-hidden="true" style="display: block; width: 40px; height: 1px; background: #4E6368"></span>Guide 02 · Website Design</p>
-<h1 id="page-title" style="margin: 0; font-family: 'Cormorant Infant', Garamond, serif; font-weight: 300; font-size: clamp(46px, 6.2vw, 102px); line-height: 1.02; letter-spacing: -0.015em; color: #121414; text-wrap: balance">Squarespace, Shopify or <span style="white-space: nowrap">custom-coded:</span> <em style="font-style: italic; color: #4E6368">choosing your platform</em></h1>
-<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; font-size: 16px; letter-spacing: 0.06em; color: #4E5558">
-<span style="display: inline-flex; align-items: center; gap: 14px"><img src="/_blob/61209a65a04271cd5c18338b2938e4f1" alt="" width="1000" height="1000" style="width: 48px; height: 48px; object-fit: cover; object-position: 50% 20%; border: 1px solid rgba(78, 99, 104, 0.35); padding: 3px; background: #FFFFFF"><span>By <span style="color: #121414">Natasha</span></span></span>
-<span aria-hidden="true" style="width: 24px; height: 1px; background: rgba(78, 99, 104, 0.5)"></span>
-<span>4 min read</span>
+<div class="ed-wrap ed-cover-grid">
+<div class="ed-cover-text">
+<p style="margin: 0; display: flex; align-items: center; gap: 16px; font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase; color: #4E6368"><span aria-hidden="true" style="display: block; width: 40px; height: 1px; background: #4E6368"></span>Guide 02 · Website Design</p>
+<h1 id="page-title" class="ed-title">Squarespace, Shopify or <span style="white-space: nowrap">custom-coded:</span> <em>choosing your platform</em></h1>
+<p class="ed-stand">How the three platforms I build on compare, and how to tell which one suits your business.</p>
+<div class="ed-meta">
+<span style="display: inline-flex; align-items: center; gap: 14px"><img src="/_blob/61209a65a04271cd5c18338b2938e4f1" alt="" width="1000" height="1000" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; object-position: 50% 20%; border: 1px solid rgba(78, 99, 104, 0.35); padding: 3px; background: #FFFFFF"><span>By <span style="color: #121414">Natasha</span></span></span>
+<span aria-hidden="true" class="ed-meta-rule"></span><span>4 min read</span>
+<span aria-hidden="true" class="ed-meta-rule ed-meta-ch"></span><span class="ed-meta-ch">6 chapters</span>
 </div>
+<a class="ed-begin sp-link" href="#ed-start">Begin Reading<svg width="10" height="22" viewBox="0 0 10 26" fill="none" aria-hidden="true"><path d="M5 0v24M1 20l4 4 4-4" stroke="currentColor" stroke-width="1.1"></path></svg></a>
 </div>
-<div style="position: relative; padding: 0 24px 24px 0">
-<span aria-hidden="true" style="position: absolute; top: 24px; left: 24px; right: 0; bottom: 0; border: 1px solid rgba(78, 99, 104, 0.45)"></span>
-<div class="sp-photo" style="position: relative"><img src="/_blob/30877871fc4f79c536971d91a8d2f627" alt="Three websites side by side: Callum Frost on Squarespace, The Rooster Den Co on Shopify and SMASH Performing Arts Studio, custom-coded" width="1800" height="771" fetchpriority="high" style="width: 100%; aspect-ratio: 21 / 9; object-fit: cover"></div>
-</div>
+<div class="ed-trio"><figure class="ed-trio-i"><div class="ed-trio-arch"><img src="/_blob/62e62f82d1767d1ff68aadf3196022ad" alt="Callum Frost’s website on a phone, built on Squarespace" width="600" height="1298" loading="lazy"></div><figcaption>Squarespace</figcaption></figure><figure class="ed-trio-i"><div class="ed-trio-arch"><img src="/_blob/d10c98749309b9a833f8b3a2e20d6430" alt="The Rooster Den Co store on a phone, built on Shopify" width="600" height="1298" fetchpriority="high"></div><figcaption>Shopify</figcaption></figure><figure class="ed-trio-i"><div class="ed-trio-arch"><img src="/_blob/f912b4f6d45ae4b94acd03c3ac4a84b8" alt="SMASH Performing Arts Studio on a phone, custom-coded" width="600" height="1298" loading="lazy"></div><figcaption>Custom-coded</figcaption></figure><svg class="ed-seal" viewBox="0 0 200 200" aria-hidden="true">
+<defs><path id="ed-seal-path" d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"></path></defs>
+<circle cx="100" cy="100" r="99" fill="#FAFAF8"></circle>
+<circle cx="100" cy="100" r="91" fill="none" stroke="#4E6368" stroke-width="0.8"></circle>
+<circle cx="100" cy="100" r="58" fill="none" stroke="#4E6368" stroke-width="0.6"></circle>
+<text font-family="Abel, 'Arial Narrow', sans-serif" font-size="13" fill="#4E6368"><textPath href="#ed-seal-path" textLength="472" lengthAdjust="spacing">THE SULLIVAN PARK GUIDES · PLATFORMS ·</textPath></text>
+<text x="100" y="121" text-anchor="middle" font-family="'Cormorant Infant', Garamond, serif" font-style="italic" font-weight="300" font-size="60" fill="#121414">02</text>
+</svg></div>
 </div>
 </header>
 
-<!-- GUIDE BODY -->
-<div style="background: #FFFFFF">
-<div style="width: 100%; max-width: 1680px; margin: 0 auto; padding: clamp(64px, 7vw, 104px) clamp(20px, 5vw, 72px) clamp(80px, 9vw, 128px); display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 48px clamp(40px, 5vw, 88px)">
+<!-- IN SHORT -->
+<section class="ed-short" aria-labelledby="ed-short-h">
+<div class="ed-wrap ed-short-in">
+<h2 id="ed-short-h" class="ed-short-h"><span aria-hidden="true"></span>In Short</h2>
+<ol class="ed-short-list"><li><span class="ed-short-n" aria-hidden="true">01</span><span class="ed-short-t">Squarespace suits service businesses that want to update their own site.</span></li><li><span class="ed-short-n" aria-hidden="true">02</span><span class="ed-short-t">Shopify suits businesses that sell products online.</span></li><li><span class="ed-short-n" aria-hidden="true">03</span><span class="ed-short-t">Custom code suits projects that need full design freedom or features beyond a template.</span></li><li><span class="ed-short-n" aria-hidden="true">04</span><span class="ed-short-t">Think about who will update the site, and how often.</span></li><li><span class="ed-short-n" aria-hidden="true">05</span><span class="ed-short-t">Choose for where your business is heading, not only where it is today.</span></li></ol>
+</div>
+</section>
 
-<nav class="sp-toc" aria-label="In this guide" style="flex: 0 0 260px; min-width: 0; position: sticky; top: 104px; display: flex; flex-direction: column; gap: 18px">
-<p style="margin: 0; display: flex; align-items: center; gap: 14px; font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase; color: #4E6368"><span aria-hidden="true" style="display: block; width: 28px; height: 1px; background: #4E6368"></span>In This Guide</p>
-<ol style="list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(78, 99, 104, 0.3)"><li style="border-bottom: 1px solid rgba(78, 99, 104, 0.3)"><a href="#glance" style="display: flex; gap: 14px; padding: 12px 0; font-size: 16px; line-height: 1.45; color: #1F2426; text-decoration: none"><span aria-hidden="true" style="flex: none; width: 24px; font-family: 'Cormorant Infant', Garamond, serif; font-style: italic; font-size: 19px; color: #4E6368">01</span>The three platforms at a glance</a></li><li style="border-bottom: 1px solid rgba(78, 99, 104, 0.3)"><a href="#squarespace" style="display: flex; gap: 14px; padding: 12px 0; font-size: 16px; line-height: 1.45; color: #1F2426; text-decoration: none"><span aria-hidden="true" style="flex: none; width: 24px; font-family: 'Cormorant Infant', Garamond, serif; font-style: italic; font-size: 19px; color: #4E6368">02</span>When Squarespace is the right fit</a></li><li style="border-bottom: 1px solid rgba(78, 99, 104, 0.3)"><a href="#shopify" style="display: flex; gap: 14px; padding: 12px 0; font-size: 16px; line-height: 1.45; color: #1F2426; text-decoration: none"><span aria-hidden="true" style="flex: none; width: 24px; font-family: 'Cormorant Infant', Garamond, serif; font-style: italic; font-size: 19px; color: #4E6368">03</span>When Shopify is the right fit</a></li><li style="border-bottom: 1px solid rgba(78, 99, 104, 0.3)"><a href="#custom" style="display: flex; gap: 14px; padding: 12px 0; font-size: 16px; line-height: 1.45; color: #1F2426; text-decoration: none"><span aria-hidden="true" style="flex: none; width: 24px; font-family: 'Cormorant Infant', Garamond, serif; font-style: italic; font-size: 19px; color: #4E6368">04</span>When custom code is the right fit</a></li><li style="border-bottom: 1px solid rgba(78, 99, 104, 0.3)"><a href="#questions" style="display: flex; gap: 14px; padding: 12px 0; font-size: 16px; line-height: 1.45; color: #1F2426; text-decoration: none"><span aria-hidden="true" style="flex: none; width: 24px; font-family: 'Cormorant Infant', Garamond, serif; font-style: italic; font-size: 19px; color: #4E6368">05</span>Questions that point to the right platform</a></li><li style="border-bottom: 1px solid rgba(78, 99, 104, 0.3)"><a href="#switching" style="display: flex; gap: 14px; padding: 12px 0; font-size: 16px; line-height: 1.45; color: #1F2426; text-decoration: none"><span aria-hidden="true" style="flex: none; width: 24px; font-family: 'Cormorant Infant', Garamond, serif; font-style: italic; font-size: 19px; color: #4E6368">06</span>What about switching later?</a></li><li style="border-bottom: 1px solid rgba(78, 99, 104, 0.3)"><a href="#bottom-line" style="display: flex; gap: 14px; padding: 12px 0; font-size: 16px; line-height: 1.45; color: #1F2426; text-decoration: none"><span aria-hidden="true" style="flex: none; width: 24px; font-family: 'Cormorant Infant', Garamond, serif; font-style: italic; font-size: 19px; color: #4E6368">·</span>The bottom line</a></li></ol>
+<!-- EDITORIAL BODY -->
+<div class="ed-body-bg">
+<div class="ed-wrap ed-body">
+<nav class="ed-rail" aria-label="Chapters" style="grid-row: 1 / span 10">
+<p class="ed-rail-h">In This Guide</p>
+<div class="ed-rail-track"><span class="ed-rail-fill" aria-hidden="true"></span><ol><li><a href="#glance"><span class="ed-rail-n" aria-hidden="true">01</span>At a glance</a></li><li><a href="#squarespace"><span class="ed-rail-n" aria-hidden="true">02</span>Squarespace</a></li><li><a href="#shopify"><span class="ed-rail-n" aria-hidden="true">03</span>Shopify</a></li><li><a href="#custom"><span class="ed-rail-n" aria-hidden="true">04</span>Custom code</a></li><li><a href="#questions"><span class="ed-rail-n" aria-hidden="true">05</span>Questions</a></li><li><a href="#switching"><span class="ed-rail-n" aria-hidden="true">06</span>Switching later</a></li></ol></div>
 </nav>
-
-<div style="flex: 1 1 600px; max-width: 760px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
-
-<aside class="sp-card" aria-labelledby="takeaways-title" style="background: #FAFAF8; padding: 12px; box-shadow: 0 24px 60px rgba(18, 28, 30, 0.08); margin-bottom: 16px">
-<div style="border: 1px solid rgba(78, 99, 104, 0.3); padding: clamp(26px, 3vw, 40px); display: flex; flex-direction: column; gap: 16px">
-<h2 id="takeaways-title" style="margin: 0; font-family: 'Cormorant Infant', Garamond, serif; font-weight: 400; font-size: 30px; line-height: 1.15; color: #121414">Key <em style="font-style: italic; color: #4E6368">takeaways</em></h2>
-<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px"><li style="display: flex; gap: 14px; font-size: 17px; line-height: 1.6; color: #1F2426"><span aria-hidden="true" style="flex: none; width: 16px; height: 1px; margin-top: 13px; background: #4E6368"></span><span>Squarespace suits service businesses that want to update their own site.</span></li><li style="display: flex; gap: 14px; font-size: 17px; line-height: 1.6; color: #1F2426"><span aria-hidden="true" style="flex: none; width: 16px; height: 1px; margin-top: 13px; background: #4E6368"></span><span>Shopify suits businesses that sell products online.</span></li><li style="display: flex; gap: 14px; font-size: 17px; line-height: 1.6; color: #1F2426"><span aria-hidden="true" style="flex: none; width: 16px; height: 1px; margin-top: 13px; background: #4E6368"></span><span>Custom code suits projects that need full design freedom or features beyond a template.</span></li><li style="display: flex; gap: 14px; font-size: 17px; line-height: 1.6; color: #1F2426"><span aria-hidden="true" style="flex: none; width: 16px; height: 1px; margin-top: 13px; background: #4E6368"></span><span>Think about who will update the site, and how often.</span></li><li style="display: flex; gap: 14px; font-size: 17px; line-height: 1.6; color: #1F2426"><span aria-hidden="true" style="flex: none; width: 16px; height: 1px; margin-top: 13px; background: #4E6368"></span><span>Choose for where your business is heading, not only where it is today.</span></li></ul>
+<div class="ed-intro" id="ed-start" style="grid-row: 1"><p class="ed-standfirst">The platform behind your website shapes what it can do, how easy it is to update and how it grows with you. I build on Squarespace, Shopify and custom code, so I don’t have a favourite to push. The right choice depends on your business. Here’s how the three compare, and the questions that usually point to the right one.</p></div>
+<section class="ed-ch ed-ch-nonote" id="glance" aria-labelledby="glance-h" style="grid-row: 2">
+<div class="ed-ch-main">
+<p class="ed-kick"><span class="ed-kick-n" aria-hidden="true">01</span><span class="ed-kick-l">At a glance</span></p>
+<h2 id="glance-h" class="ed-h2">The three platforms at a glance</h2>
+<p class="ed-p">Each platform is a good choice for the right business. Here’s the short version:</p>
+<div class="ed-pf ed-wide sp-reveal">
+<fieldset class="ed-pf-q"><legend>What matters most to you?</legend><div class="ed-pf-opts"><label class="ed-pf-opt"><input class="ed-vh" type="radio" name="ed-pf" id="ed-pf-sq"><span>Updating my own site</span></label><label class="ed-pf-opt"><input class="ed-vh" type="radio" name="ed-pf" id="ed-pf-sh"><span>Selling products online</span></label><label class="ed-pf-opt"><input class="ed-vh" type="radio" name="ed-pf" id="ed-pf-cu"><span>Full design freedom or custom features</span></label></div></fieldset>
+<div class="ed-pf-cols" role="group" aria-label="Squarespace, Shopify and custom-coded websites compared"><div class="ed-pf-col ed-pf-sq"><p class="ed-pf-fit" aria-hidden="true">Best fit</p><h3 class="ed-pf-h">Squarespace</h3>
+<dl class="ed-pf-dl"><div><dt>Best for</dt><dd>Service businesses that want a polished site they can update themselves.</dd></div><div><dt>Everyday updates</dt><dd>Easy. You can change text, swap photos and add posts yourself.</dd></div><div><dt>Selling online</dt><dd>Works well for a modest range of products, digital goods or gift cards.</dd></div><div><dt>Extra features</dt><dd>Built-in tools, plus a range of extensions.</dd></div><div><dt>Hosting and security</dt><dd>Included and managed for you.</dd></div></dl></div><div class="ed-pf-col ed-pf-sh"><p class="ed-pf-fit" aria-hidden="true">Best fit</p><h3 class="ed-pf-h">Shopify</h3>
+<dl class="ed-pf-dl"><div><dt>Best for</dt><dd>Online stores that need products, payments and shipping managed in one place.</dd></div><div><dt>Everyday updates</dt><dd>Easy for products, collections and store content.</dd></div><div><dt>Selling online</dt><dd>Built for it, from inventory to checkout.</dd></div><div><dt>Extra features</dt><dd>A large app store for almost anything a store needs.</dd></div><div><dt>Hosting and security</dt><dd>Included and managed for you.</dd></div></dl></div><div class="ed-pf-col ed-pf-cu"><p class="ed-pf-fit" aria-hidden="true">Best fit</p><h3 class="ed-pf-h">Custom-coded</h3>
+<dl class="ed-pf-dl"><div><dt>Best for</dt><dd>Projects that need full design freedom or features beyond a template.</dd></div><div><dt>Everyday updates</dt><dd>Depends on how the site is built, so we plan it together first.</dd></div><div><dt>Selling online</dt><dd>Possible, usually by connecting a dedicated store or payment service.</dd></div><div><dt>Extra features</dt><dd>Anything you need, such as a members’ portal or an AI assistant.</dd></div><div><dt>Hosting and security</dt><dd>Arranged separately, as part of the project.</dd></div></dl></div></div>
 </div>
-</aside>
+</div>
 
-<p class="sp-dropcap" style="margin: 0; font-size: 21px; line-height: 1.8; color: #1F2426">The platform behind your website shapes what it can do, how easy it is to update and how it grows with you. I build on Squarespace, Shopify and custom code, so I don’t have a favourite to push. The right choice depends on your business. Here’s how the three compare, and the questions that usually point to the right one.</p>
-<section aria-labelledby="glance" style="display: flex; flex-direction: column; gap: 18px; padding-top: 28px">
-<p aria-hidden="true" style="margin: 0; font-family: 'Cormorant Infant', Garamond, serif; font-style: italic; font-weight: 300; font-size: 56px; line-height: 1; color: #4E6368">01</p>
-<h2 id="glance" style="margin: 0; font-family: 'Cormorant Infant', Garamond, serif; font-weight: 400; font-size: clamp(32px, 3vw, 44px); line-height: 1.12; color: #121414">The three platforms at a glance</h2>
-<p style="margin: 0; font-size: 19px; line-height: 1.8; color: #1F2426">Each platform is a good choice for the right business. Here’s the short version:</p><div class="gd-cmp sp-reveal" role="group" aria-label="Squarespace, Shopify and custom-coded websites compared"><div class="gd-cmp-col">
-<h3 style="margin: 0; padding-bottom: 14px; border-bottom: 1px solid #4E6368; font-family: 'Cormorant Infant', Garamond, serif; font-weight: 400; font-size: 28px; line-height: 1.15; color: #121414">Squarespace</h3>
-<dl style="margin: 0; display: flex; flex-direction: column"><div style="padding: 14px 0; border-bottom: 1px solid rgba(78, 99, 104, 0.22); display: flex; flex-direction: column; gap: 6px"><dt style="font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: #4E5558">Best for</dt><dd style="margin: 0; font-size: 17px; line-height: 1.55; color: #1F2426">Service businesses that want a polished site they can update themselves.</dd></div><div style="padding: 14px 0; border-bottom: 1px solid rgba(78, 99, 104, 0.22); display: flex; flex-direction: column; gap: 6px"><dt style="font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: #4E5558">Everyday updates</dt><dd style="margin: 0; font-size: 17px; line-height: 1.55; color: #1F2426">Easy. You can change text, swap photos and add posts yourself.</dd></div><div style="padding: 14px 0; border-bottom: 1px solid rgba(78, 99, 104, 0.22); display: flex; flex-direction: column; gap: 6px"><dt style="font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: #4E5558">Selling online</dt><dd style="margin: 0; font-size: 17px; line-height: 1.55; color: #1F2426">Works well for a modest range of products, digital goods or gift cards.</dd></div><div style="padding: 14px 0; border-bottom: 1px solid rgba(78, 99, 104, 0.22); display: flex; flex-direction: column; gap: 6px"><dt style="font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: #4E5558">Extra features</dt><dd style="margin: 0; font-size: 17px; line-height: 1.55; color: #1F2426">Built-in tools, plus a range of extensions.</dd></div><div style="padding: 14px 0; border-bottom: 1px solid rgba(78, 99, 104, 0.22); display: flex; flex-direction: column; gap: 6px"><dt style="font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: #4E5558">Hosting and security</dt><dd style="margin: 0; font-size: 17px; line-height: 1.55; color: #1F2426">Included and managed for you.</dd></div></dl>
-</div><div class="gd-cmp-col">
-<h3 style="margin: 0; padding-bottom: 14px; border-bottom: 1px solid #4E6368; font-family: 'Cormorant Infant', Garamond, serif; font-weight: 400; font-size: 28px; line-height: 1.15; color: #121414">Shopify</h3>
-<dl style="margin: 0; display: flex; flex-direction: column"><div style="padding: 14px 0; border-bottom: 1px solid rgba(78, 99, 104, 0.22); display: flex; flex-direction: column; gap: 6px"><dt style="font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: #4E5558">Best for</dt><dd style="margin: 0; font-size: 17px; line-height: 1.55; color: #1F2426">Online stores that need products, payments and shipping managed in one place.</dd></div><div style="padding: 14px 0; border-bottom: 1px solid rgba(78, 99, 104, 0.22); display: flex; flex-direction: column; gap: 6px"><dt style="font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: #4E5558">Everyday updates</dt><dd style="margin: 0; font-size: 17px; line-height: 1.55; color: #1F2426">Easy for products, collections and store content.</dd></div><div style="padding: 14px 0; border-bottom: 1px solid rgba(78, 99, 104, 0.22); display: flex; flex-direction: column; gap: 6px"><dt style="font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: #4E5558">Selling online</dt><dd style="margin: 0; font-size: 17px; line-height: 1.55; color: #1F2426">Built for it, from inventory to checkout.</dd></div><div style="padding: 14px 0; border-bottom: 1px solid rgba(78, 99, 104, 0.22); display: flex; flex-direction: column; gap: 6px"><dt style="font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: #4E5558">Extra features</dt><dd style="margin: 0; font-size: 17px; line-height: 1.55; color: #1F2426">A large app store for almost anything a store needs.</dd></div><div style="padding: 14px 0; border-bottom: 1px solid rgba(78, 99, 104, 0.22); display: flex; flex-direction: column; gap: 6px"><dt style="font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: #4E5558">Hosting and security</dt><dd style="margin: 0; font-size: 17px; line-height: 1.55; color: #1F2426">Included and managed for you.</dd></div></dl>
-</div><div class="gd-cmp-col">
-<h3 style="margin: 0; padding-bottom: 14px; border-bottom: 1px solid #4E6368; font-family: 'Cormorant Infant', Garamond, serif; font-weight: 400; font-size: 28px; line-height: 1.15; color: #121414">Custom-coded</h3>
-<dl style="margin: 0; display: flex; flex-direction: column"><div style="padding: 14px 0; border-bottom: 1px solid rgba(78, 99, 104, 0.22); display: flex; flex-direction: column; gap: 6px"><dt style="font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: #4E5558">Best for</dt><dd style="margin: 0; font-size: 17px; line-height: 1.55; color: #1F2426">Projects that need full design freedom or features beyond a template.</dd></div><div style="padding: 14px 0; border-bottom: 1px solid rgba(78, 99, 104, 0.22); display: flex; flex-direction: column; gap: 6px"><dt style="font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: #4E5558">Everyday updates</dt><dd style="margin: 0; font-size: 17px; line-height: 1.55; color: #1F2426">Depends on how the site is built, so we plan it together first.</dd></div><div style="padding: 14px 0; border-bottom: 1px solid rgba(78, 99, 104, 0.22); display: flex; flex-direction: column; gap: 6px"><dt style="font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: #4E5558">Selling online</dt><dd style="margin: 0; font-size: 17px; line-height: 1.55; color: #1F2426">Possible, usually by connecting a dedicated store or payment service.</dd></div><div style="padding: 14px 0; border-bottom: 1px solid rgba(78, 99, 104, 0.22); display: flex; flex-direction: column; gap: 6px"><dt style="font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: #4E5558">Extra features</dt><dd style="margin: 0; font-size: 17px; line-height: 1.55; color: #1F2426">Anything you need, such as a members’ portal or an AI assistant.</dd></div><div style="padding: 14px 0; border-bottom: 1px solid rgba(78, 99, 104, 0.22); display: flex; flex-direction: column; gap: 6px"><dt style="font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: #4E5558">Hosting and security</dt><dd style="margin: 0; font-size: 17px; line-height: 1.55; color: #1F2426">Arranged separately, as part of the project.</dd></div></dl>
-</div></div>
 </section>
-<blockquote class="sp-reveal" style="margin: 36px 0; padding: clamp(32px, 4vw, 48px) 0; border-top: 1px solid #4E6368; border-bottom: 1px solid #4E6368; text-align: center"><p style="margin: 0; font-family: 'Cormorant Infant', Garamond, serif; font-style: italic; font-weight: 300; font-size: clamp(30px, 3.2vw, 46px); line-height: 1.25; color: #121414; text-wrap: balance">The right platform is the one that fits how your business works, not the one with the longest feature list.</p></blockquote>
-<section aria-labelledby="squarespace" style="display: flex; flex-direction: column; gap: 18px; padding-top: 28px">
-<p aria-hidden="true" style="margin: 0; font-family: 'Cormorant Infant', Garamond, serif; font-style: italic; font-weight: 300; font-size: 56px; line-height: 1; color: #4E6368">02</p>
-<h2 id="squarespace" style="margin: 0; font-family: 'Cormorant Infant', Garamond, serif; font-weight: 400; font-size: clamp(32px, 3vw, 44px); line-height: 1.12; color: #121414">When Squarespace is the right fit</h2>
-<p style="margin: 0; font-size: 19px; line-height: 1.8; color: #1F2426">Squarespace is a great home for service businesses, studios and creatives who want a website that looks polished and stays easy to manage. Hosting, security and updates are handled for you, and everyday changes like editing text, swapping photos or adding a blog post don’t need a designer.</p><p style="margin: 0; font-size: 19px; line-height: 1.8; color: #1F2426">It also handles more than people expect. <a href="Party-With-Laura.dc.html" style="color: #4E6368; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px">pARTy With Laura</a> uses it for program pages, booking requests and digital gift certificates, while <a href="Callum-Frost.dc.html" style="color: #4E6368; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px">Callum Frost’s</a> site keeps things simple with headshots, a resume and media.</p><p style="margin: 0; font-size: 19px; line-height: 1.8; color: #1F2426">Where it can feel limiting is with highly unusual layouts or features it wasn’t designed for. Some of those can be added with code or extensions, but if they’re central to your business, it’s worth looking at custom code.</p>
+<blockquote class="ed-bleed ed-quote" style="grid-row: 3">
+<img class="ed-quote-img" src="/_blob/073cf407ae15e1c7bada61ba8e7a8dd6" alt="" width="852" height="480" loading="lazy">
+<span class="ed-quote-tint" aria-hidden="true"></span>
+<div class="ed-wrap ed-quote-in"><p class="sp-reveal">The right platform is the one that <span class="ed-q-em">fits</span> how your business works, not the one with the longest feature list.</p></div>
+</blockquote>
+<section class="ed-ch" id="squarespace" aria-labelledby="squarespace-h" style="grid-row: 4">
+<div class="ed-ch-main">
+<p class="ed-kick"><span class="ed-kick-n" aria-hidden="true">02</span><span class="ed-kick-l">Squarespace</span></p>
+<h2 id="squarespace-h" class="ed-h2">When Squarespace is the right fit</h2>
+<p class="ed-p">Squarespace is a great home for service businesses, studios and creatives who want a website that looks polished and stays easy to manage. Hosting, security and updates are handled for you, and everyday changes like editing text, swapping photos or adding a blog post don’t need a designer.</p>
+<figure class="ed-browser-fig  sp-reveal"><div class="ed-browser"><div class="ed-browser-bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="/_blob/dcd61ed19cc8b6da096a0a4dd00cea55" alt="The pARTy With Laura homepage, built on Squarespace" width="1800" height="1125" loading="lazy"></div><figcaption class="ed-cap">pARTy With Laura, built on Squarespace.</figcaption></figure>
+<p class="ed-p">It also handles more than people expect. <a href="Party-With-Laura.dc.html" style="color: #4E6368; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px">pARTy With Laura</a> uses it for program pages, booking requests and digital gift certificates, while <a href="Callum-Frost.dc.html" style="color: #4E6368; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px">Callum Frost’s</a> site keeps things simple with headshots, a resume and media.</p>
+</div>
+<aside class="ed-note" aria-label="Good to know"><p class="ed-note-l">Good to know</p><p class="ed-note-t">Where it can feel limiting is with highly unusual layouts or features it wasn’t designed for. Some of those can be added with code or extensions, but if they’re central to your business, it’s worth looking at custom code.</p></aside>
 </section>
-<section aria-labelledby="shopify" style="display: flex; flex-direction: column; gap: 18px; padding-top: 28px">
-<p aria-hidden="true" style="margin: 0; font-family: 'Cormorant Infant', Garamond, serif; font-style: italic; font-weight: 300; font-size: 56px; line-height: 1; color: #4E6368">03</p>
-<h2 id="shopify" style="margin: 0; font-family: 'Cormorant Infant', Garamond, serif; font-weight: 400; font-size: clamp(32px, 3vw, 44px); line-height: 1.12; color: #121414">When Shopify is the right fit</h2>
-<p style="margin: 0; font-size: 19px; line-height: 1.8; color: #1F2426">If selling products is at the heart of your business, Shopify is built for it. Products, inventory, payments, shipping and orders all live in one system, and there’s an app for almost any extra feature a store might need.</p><p style="margin: 0; font-size: 19px; line-height: 1.8; color: #1F2426"><a href="Rooster-Den.dc.html" style="color: #4E6368; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px">The Rooster Den Co</a> is a good example. The redesign focused on making the store easier to shop, page by page, while the day-to-day running of the business stayed in one place.</p><p style="margin: 0; font-size: 19px; line-height: 1.8; color: #1F2426">Apps can add monthly costs, so it’s worth choosing them carefully. And if your business is mostly services with only a few products, Squarespace may be the simpler choice.</p>
+<section class="ed-ch" id="shopify" aria-labelledby="shopify-h" style="grid-row: 5">
+<div class="ed-ch-main">
+<p class="ed-kick"><span class="ed-kick-n" aria-hidden="true">03</span><span class="ed-kick-l">Shopify</span></p>
+<h2 id="shopify-h" class="ed-h2">When Shopify is the right fit</h2>
+<p class="ed-p">If selling products is at the heart of your business, Shopify is built for it. Products, inventory, payments, shipping and orders all live in one system, and there’s an app for almost any extra feature a store might need.</p>
+<figure class="ed-browser-fig  sp-reveal"><div class="ed-browser"><div class="ed-browser-bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="/_blob/a392d0d3f88ef802da8c30746b2b7015" alt="The Rooster Den Co homepage, built on Shopify" width="1800" height="1125" loading="lazy"></div><figcaption class="ed-cap">The Rooster Den Co, built on Shopify.</figcaption></figure>
+<p class="ed-p"><a href="Rooster-Den.dc.html" style="color: #4E6368; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px">The Rooster Den Co</a> is a good example. The redesign focused on making the store easier to shop, page by page, while the day-to-day running of the business stayed in one place.</p>
+</div>
+<aside class="ed-note" aria-label="Good to know"><p class="ed-note-l">Good to know</p><p class="ed-note-t">Apps can add monthly costs, so it’s worth choosing them carefully. And if your business is mostly services with only a few products, Squarespace may be the simpler choice.</p></aside>
 </section>
-<section aria-labelledby="custom" style="display: flex; flex-direction: column; gap: 18px; padding-top: 28px">
-<p aria-hidden="true" style="margin: 0; font-family: 'Cormorant Infant', Garamond, serif; font-style: italic; font-weight: 300; font-size: 56px; line-height: 1; color: #4E6368">04</p>
-<h2 id="custom" style="margin: 0; font-family: 'Cormorant Infant', Garamond, serif; font-weight: 400; font-size: clamp(32px, 3vw, 44px); line-height: 1.12; color: #121414">When custom code is the right fit</h2>
-<p style="margin: 0; font-size: 19px; line-height: 1.8; color: #1F2426">A custom-coded website is built from the ground up for your business. It makes sense when you need complete design freedom, a feature no template offers or a site that brings several tools together.</p><p style="margin: 0; font-size: 19px; line-height: 1.8; color: #1F2426"><a href="Smash.dc.html" style="color: #4E6368; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px">SMASH Performing Arts Studio</a> needed a password-protected portal for families and an AI assistant that answers questions about the studio and its programmes. <a href="Hamish-Ross.dc.html" style="color: #4E6368; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px">Hamish Ross Real Estate</a> needed a high-end, luxury identity carried from page to page. Both are things a custom build does well.</p><p style="margin: 0; font-size: 19px; line-height: 1.8; color: #1F2426">The trade-off is that editing depends on how the site is built. Some custom sites include an easy way to update content, and others are updated with help. We decide that together before the build starts, so there are no surprises.</p>
+<section class="ed-ch" id="custom" aria-labelledby="custom-h" style="grid-row: 6">
+<div class="ed-ch-main">
+<p class="ed-kick"><span class="ed-kick-n" aria-hidden="true">04</span><span class="ed-kick-l">Custom code</span></p>
+<h2 id="custom-h" class="ed-h2">When custom code is the right fit</h2>
+<p class="ed-p">A custom-coded website is built from the ground up for your business. It makes sense when you need complete design freedom, a feature no template offers or a site that brings several tools together.</p>
+<figure class="ed-browser-fig  sp-reveal"><div class="ed-browser"><div class="ed-browser-bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="/_blob/f0c930075e2e8c051a7214d5859d72bb" alt="The SMASH blog with the Ask SMASH assistant open, answering a question about a trial period" width="1800" height="1125" loading="lazy"></div><figcaption class="ed-cap">SMASH Performing Arts Studio, custom-coded, with its AI assistant open.</figcaption></figure>
+<p class="ed-p"><a href="Smash.dc.html" style="color: #4E6368; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px">SMASH Performing Arts Studio</a> needed a password-protected portal for families and an AI assistant that answers questions about the studio and its programmes. <a href="Hamish-Ross.dc.html" style="color: #4E6368; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px">Hamish Ross Real Estate</a> needed a high-end, luxury identity carried from page to page. Both are things a custom build does well.</p>
+</div>
+<aside class="ed-note" aria-label="Good to know"><p class="ed-note-l">Good to know</p><p class="ed-note-t">The trade-off is that editing depends on how the site is built. Some custom sites include an easy way to update content, and others are updated with help. We decide that together before the build starts, so there are no surprises.</p></aside>
 </section>
-<section aria-labelledby="questions" style="display: flex; flex-direction: column; gap: 18px; padding-top: 28px">
-<p aria-hidden="true" style="margin: 0; font-family: 'Cormorant Infant', Garamond, serif; font-style: italic; font-weight: 300; font-size: 56px; line-height: 1; color: #4E6368">05</p>
-<h2 id="questions" style="margin: 0; font-family: 'Cormorant Infant', Garamond, serif; font-weight: 400; font-size: clamp(32px, 3vw, 44px); line-height: 1.12; color: #121414">Questions that point to the right platform</h2>
-<ul style="list-style: none; margin: 4px 0; padding: 0; display: flex; flex-direction: column; gap: 12px"><li style="display: flex; gap: 16px; font-size: 19px; line-height: 1.6; color: #1F2426"><span aria-hidden="true" style="flex: none; width: 18px; height: 1px; margin-top: 15px; background: #4E6368"></span><span>Do you sell products online, or mainly services?</span></li><li style="display: flex; gap: 16px; font-size: 19px; line-height: 1.6; color: #1F2426"><span aria-hidden="true" style="flex: none; width: 18px; height: 1px; margin-top: 15px; background: #4E6368"></span><span>Who will update the website, and how often?</span></li><li style="display: flex; gap: 16px; font-size: 19px; line-height: 1.6; color: #1F2426"><span aria-hidden="true" style="flex: none; width: 18px; height: 1px; margin-top: 15px; background: #4E6368"></span><span>Do you need anything a template can’t do, like a portal, an AI assistant or a connection to another system?</span></li><li style="display: flex; gap: 16px; font-size: 19px; line-height: 1.6; color: #1F2426"><span aria-hidden="true" style="flex: none; width: 18px; height: 1px; margin-top: 15px; background: #4E6368"></span><span>How important is complete control over the design?</span></li><li style="display: flex; gap: 16px; font-size: 19px; line-height: 1.6; color: #1F2426"><span aria-hidden="true" style="flex: none; width: 18px; height: 1px; margin-top: 15px; background: #4E6368"></span><span>Where do you see your business in a few years?</span></li></ul><p style="margin: 0; font-size: 19px; line-height: 1.8; color: #1F2426">If you’re not sure about some of these, that’s normal. We’ll talk through the options before deciding on a direction.</p>
+<div class="ed-bleed ed-spread" style="grid-row: 7">
+<div class="ed-wrap ed-spread-in">
+<figure class="ed-spread-fig sp-reveal"><span class="ed-frame" aria-hidden="true"></span><div class="sp-photo" style="position: relative"><img src="/_blob/30877871fc4f79c536971d91a8d2f627" alt="Three websites side by side: Callum Frost on Squarespace, The Rooster Den Co on Shopify and SMASH Performing Arts Studio, custom-coded" width="1800" height="771" loading="lazy" style="width: 100%; aspect-ratio: 16 / 10; object-fit: cover"></div></figure>
+<div class="ed-spread-t sp-reveal"><p style="margin: 0; display: flex; align-items: center; gap: 16px; font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase; color: #4E6368"><span aria-hidden="true" style="display: block; width: 40px; height: 1px; background: #4E6368"></span>Looking Ahead</p><p class="ed-spread-q">Choose for where your business is <em>heading</em>, not only where it is today.</p></div>
+</div>
+</div>
+<section class="ed-ch" id="questions" aria-labelledby="questions-h" style="grid-row: 8">
+<div class="ed-ch-main">
+<p class="ed-kick"><span class="ed-kick-n" aria-hidden="true">05</span><span class="ed-kick-l">Questions</span></p>
+<h2 id="questions-h" class="ed-h2">Questions that point to the right platform</h2>
+<ol class="ed-qs ed-qs-5 sp-reveal"><li><span class="ed-qs-n" aria-hidden="true">i</span><span class="ed-qs-t">Do you sell products online, or mainly services?</span></li><li><span class="ed-qs-n" aria-hidden="true">ii</span><span class="ed-qs-t">Who will update the website, and how often?</span></li><li><span class="ed-qs-n" aria-hidden="true">iii</span><span class="ed-qs-t">Do you need anything a template can’t do, like a portal, an AI assistant or a connection to another system?</span></li><li><span class="ed-qs-n" aria-hidden="true">iv</span><span class="ed-qs-t">How important is complete control over the design?</span></li><li><span class="ed-qs-n" aria-hidden="true">v</span><span class="ed-qs-t">Where do you see your business in a few years?</span></li></ol>
+</div>
+<aside class="ed-note" aria-label="Good to know"><p class="ed-note-l">Good to know</p><p class="ed-note-t">If you’re not sure about some of these, that’s normal. We’ll talk through the options before deciding on a direction.</p></aside>
 </section>
-<section aria-labelledby="switching" style="display: flex; flex-direction: column; gap: 18px; padding-top: 28px">
-<p aria-hidden="true" style="margin: 0; font-family: 'Cormorant Infant', Garamond, serif; font-style: italic; font-weight: 300; font-size: 56px; line-height: 1; color: #4E6368">06</p>
-<h2 id="switching" style="margin: 0; font-family: 'Cormorant Infant', Garamond, serif; font-weight: 400; font-size: clamp(32px, 3vw, 44px); line-height: 1.12; color: #121414">What about switching later?</h2>
-<p style="margin: 0; font-size: 19px; line-height: 1.8; color: #1F2426">Moving a website from one platform to another is often possible. What’s involved depends on where your site is now and where it’s going.</p><p style="margin: 0; font-size: 19px; line-height: 1.8; color: #1F2426">It’s still worth choosing for where your business is heading, not just where it is today. A platform that fits your plans saves you from rebuilding sooner than you’d like.</p>
+<section class="ed-ch ed-ch-nonote" id="switching" aria-labelledby="switching-h" style="grid-row: 9">
+<div class="ed-ch-main">
+<p class="ed-kick"><span class="ed-kick-n" aria-hidden="true">06</span><span class="ed-kick-l">Switching later</span></p>
+<h2 id="switching-h" class="ed-h2">What about switching later?</h2>
+<p class="ed-p">Moving a website from one platform to another is often possible. What’s involved depends on where your site is now and where it’s going.</p>
+<div class="ed-path sp-reveal" aria-hidden="true">
+<div class="ed-path-a"><span>Where you are now</span></div>
+<span class="ed-path-arrow"><svg width="64" height="14" viewBox="0 0 64 14" fill="none"><path d="M0 7h60M54 1l6 6-6 6" stroke="currentColor" stroke-width="1.1"></path></svg></span>
+<div class="ed-path-b"><span>Where your business is heading</span></div>
+</div>
+<p class="ed-p">It’s still worth choosing for where your business is heading, not just where it is today. A platform that fits your plans saves you from rebuilding sooner than you’d like.</p>
+</div>
+
 </section>
-<section class="sp-on-dark sp-reveal" aria-labelledby="bottom-line" style="margin-top: 36px; background: #4E6368; padding: 12px; box-shadow: 0 30px 70px rgba(18, 28, 30, 0.18)">
-<div style="border: 1px solid rgba(255, 255, 255, 0.4); padding: clamp(30px, 4vw, 52px); display: flex; flex-direction: column; gap: 20px">
-<h2 id="bottom-line" style="margin: 0; font-family: 'Cormorant Infant', Garamond, serif; font-weight: 300; font-size: clamp(34px, 3.2vw, 48px); line-height: 1.1; color: #FFFFFF">The bottom <em style="font-style: italic; color: #DCE4E5">line</em></h2>
-<p style="margin: 0; font-size: 19px; line-height: 1.8; color: #FFFFFF">There’s no single best platform, only the best fit for your business. Squarespace keeps things simple and easy to manage, Shopify is built for selling and custom code gives you complete freedom. Tell me about your business and what you need your website to do, and I’ll recommend the platform that suits it.</p>
-<a class="sp-btn sp-btn-light" href="Contact.dc.html" style="align-self: flex-start; margin-top: 6px; display: inline-flex; align-items: center; justify-content: center; gap: 14px; min-height: 56px; padding: 0 30px; background: #FAFAF8; border: 1px solid #FAFAF8; color: #121414; text-decoration: none; font-size: 18px; letter-spacing: 0.03em">Enquire About Your Project<svg width="22" height="10" viewBox="0 0 26 10" fill="none" aria-hidden="true"><path d="M0 5h24M20 1l4 4-4 4" stroke="currentColor" stroke-width="1.1"></path></svg></a>
+<section class="ed-bleed ed-bottom sp-on-dark" aria-labelledby="bottom-line" id="ed-bottom" style="grid-row: 10">
+<img class="sp-sway" src="/_blob/fddc24a18e2595d21f63da9f1d7bf0d5" alt="" width="1800" height="1200" style="position: absolute; top: -60px; right: -120px; width: min(1320px, 110vw); height: auto; max-width: none; opacity: 0.22; mix-blend-mode: multiply; pointer-events: none; z-index: 0">
+<div class="ed-wrap ed-bottom-in">
+<h2 id="bottom-line" class="ed-bottom-h sp-reveal">The bottom <em>line</em></h2>
+<div class="ed-bottom-t sp-reveal"><p>There’s no single best platform, only the best fit for your business. Squarespace keeps things simple and easy to manage, Shopify is built for selling and custom code gives you complete freedom. Tell me about your business and what you need your website to do, and I’ll recommend the platform that suits it.</p>
+<a class="sp-btn sp-btn-light" href="Contact.dc.html" style="align-self: flex-start; display: inline-flex; align-items: center; justify-content: center; gap: 14px; min-height: 56px; padding: 0 30px; background: #FAFAF8; border: 1px solid #FAFAF8; color: #121414; text-decoration: none; font-size: 18px; letter-spacing: 0.03em">Enquire About Your Project<svg width="22" height="10" viewBox="0 0 26 10" fill="none" aria-hidden="true"><path d="M0 5h24M20 1l4 4-4 4" stroke="currentColor" stroke-width="1.1"></path></svg></a></div>
 </div>
 </section>
-<aside class="sp-card sp-reveal" aria-label="About the author" style="margin-top: 36px; background: #FAFAF8; padding: 12px; box-shadow: 0 24px 60px rgba(18, 28, 30, 0.08)">
+</div>
+</div>
+
+</article>
+
+<!-- AUTHOR -->
+<section aria-label="About the author" style="background: #FFFFFF">
+<div class="ed-wrap" style="padding-top: clamp(72px, 8vw, 112px); padding-bottom: clamp(56px, 6vw, 88px); display: flex; flex-direction: column; align-items: center; gap: 28px">
+<div style="width: 100%; max-width: 960px"><aside class="sp-card sp-reveal" aria-label="About the author" style="background: #FAFAF8; padding: 12px; box-shadow: 0 24px 60px rgba(18, 28, 30, 0.08)">
 <div style="border: 1px solid rgba(78, 99, 104, 0.3); padding: clamp(26px, 3vw, 40px); display: flex; flex-wrap: wrap; align-items: center; gap: 24px 32px">
 <div style="flex: none; width: 120px; position: relative; padding: 0 10px 10px 0">
 <span aria-hidden="true" style="position: absolute; top: 10px; left: 10px; right: 0; bottom: 0; border: 1px solid rgba(78, 99, 104, 0.45)"></span>
@@ -315,18 +951,24 @@ html{scroll-padding-top:104px}
 <a class="sp-link" href="About.dc.html" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 12px; min-height: 44px; color: #4E6368; font-size: 17px; letter-spacing: 0.03em; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 6px">More About Natasha<svg width="22" height="10" viewBox="0 0 26 10" fill="none" aria-hidden="true"><path d="M0 5h24M20 1l4 4-4 4" stroke="currentColor" stroke-width="1.1"></path></svg></a>
 </div>
 </div>
-</aside>
-<a class="gd-next sp-reveal" href="Guide-Branding.dc.html"><span style="display: flex; flex-direction: column; gap: 6px; min-width: 0"><span style="font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: #4E6368">Next guide · 03</span><span style="font-family: 'Cormorant Infant', Garamond, serif; font-size: clamp(24px, 2.2vw, 30px); line-height: 1.2; color: #121414">What to have ready before branding or a website build</span></span><span class="gd-next-arrow" aria-hidden="true" style="flex: none; color: #4E6368"><svg width="30" height="12" viewBox="0 0 26 10" fill="none"><path d="M0 5h24M20 1l4 4-4 4" stroke="currentColor" stroke-width="1.1"></path></svg></span></a>
-<a class="sp-link" href="Journal.dc.html" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 12px; min-height: 44px; color: #4E6368; font-size: 17px; letter-spacing: 0.03em; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 6px">Browse All Guides<svg width="22" height="10" viewBox="0 0 26 10" fill="none" aria-hidden="true"><path d="M0 5h24M20 1l4 4-4 4" stroke="currentColor" stroke-width="1.1"></path></svg></a>
-
+</aside></div>
 </div>
+</section>
 
-<div class="sp-spacer" aria-hidden="true" style="flex: 0 0 260px"></div>
-
+<!-- UP NEXT -->
+<section class="ed-next-band" aria-labelledby="ed-next-h">
+<div class="ed-wrap" style="padding-top: clamp(56px, 6vw, 88px); padding-bottom: clamp(80px, 9vw, 128px)">
+<a class="ed-next" href="Guide-Branding.dc.html">
+<span class="ed-next-t">
+<p style="margin: 0; display: flex; align-items: center; gap: 16px; font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase; color: #4E6368"><span aria-hidden="true" style="display: block; width: 40px; height: 1px; background: #4E6368"></span>Up Next · Guide 03</p>
+<span id="ed-next-h" class="ed-next-h">What to have ready before <em>branding or a website build</em></span>
+<span class="ed-next-go">Read the Guide<svg width="22" height="10" viewBox="0 0 26 10" fill="none" aria-hidden="true"><path d="M0 5h24M20 1l4 4-4 4" stroke="currentColor" stroke-width="1.1"></path></svg></span>
+</span>
+<span class="ed-next-img"><span class="ed-frame" aria-hidden="true"></span><span class="sp-photo" style="position: relative; display: block"><img src="/_blob/5cff939fb0c6c09242fc1bc76414a376" alt="Five colour palettes from recent projects: SMASH, Hamish Ross, pARTy With Laura, The Rooster Den Co and Callum Frost" width="1800" height="771" loading="lazy" style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover"></span></span>
+</a>
+<a class="sp-link" href="Journal.dc.html" style="margin-top: 36px; display: inline-flex; align-items: center; gap: 12px; min-height: 44px; color: #4E6368; font-size: 17px; letter-spacing: 0.03em; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 6px">Browse All Guides<svg width="22" height="10" viewBox="0 0 26 10" fill="none" aria-hidden="true"><path d="M0 5h24M20 1l4 4-4 4" stroke="currentColor" stroke-width="1.1"></path></svg></a>
 </div>
-</div>
-
-</article>
+</section>
 
 <!-- SEE IT IN PRACTICE -->
 <section aria-labelledby="more-title" style="background: #ECEEED">
@@ -426,7 +1068,7 @@ html{scroll-padding-top:104px}
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":9150}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":12910}}'>
 class Component extends DCLogic {
   getHeaderRef() {
     // Sticky header: turns solid once the page scrolls, shows the back-to-top
