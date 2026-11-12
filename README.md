@@ -11,6 +11,7 @@ It's a plain static site (HTML, CSS and a small script), hosted on Cloudflare Pa
 | `site/` | **The live website.** Cloudflare Pages publishes this folder exactly as it is. |
 | `design-source/` | The page designs exported from the Claude Design canvas (`*.dc.html`). |
 | `build/` | The script that turns the designs into the website, plus the original images (`build/blobs/`) and the checks. |
+| `templates-src/` | The three actor website demos (Editorial, Luminous, Feature). The build copies them to `/templates/`, kept out of search, and leaves out each demo's `HANDOFF.md`, which is also kept out of this repo. |
 
 ## Publishing on Cloudflare Pages
 

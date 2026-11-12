@@ -1,0 +1,107 @@
+/* Luminous template demo.
+   Every colour on the pages comes from these palettes, so a new colourway is
+   one new block below (16 colours each). Most layout styling is inline in each page. */
+
+html[data-palette="blue"] {
+  color-scheme: light;
+  --bg: #f7f2e9;            /* page background */
+  --paper: #f7f2e9;         /* light text on dark bands, button text */
+  --ink: #1c2b45;           /* main text, dark bands, solid buttons */
+  --accent: #c2a060;        /* frames, rules, ornaments, outlined buttons */
+  --accent-on-dark: #c2a060;/* accent used on dark bands */
+  --label: #765923;         /* small uppercase labels on light backgrounds */
+  --muted: #586274;         /* secondary text */
+  --soft: #3d4a61;          /* body copy on light backgrounds */
+  --rule: #e3dccd;          /* thin dividers */
+  --panel: #e4ecf3;         /* tinted sections and cards */
+  --panel-rule: #b9c9da;    /* dividers inside tinted sections */
+  --on-dark-muted: #c9d3e0; /* secondary text on dark bands */
+  --frame-dark: #0f1a2d;    /* behind the reel video */
+  --dark-rule: #2f3f5c;     /* dividers on dark bands */
+  --band: #1c2b45;          /* dark bands and the footer */
+  --on-dark: #f7f2e9;       /* text on dark bands and the footer */
+}
+
+html[data-palette="sage"] {
+  color-scheme: light;
+  --bg: #e9e2d8;
+  --paper: #f4f0ea;
+  --ink: #2e4347;
+  --accent: #5c757a;
+  --accent-on-dark: #c7cdbf;
+  --label: #3f555a;
+  --muted: #4b5557;
+  --soft: #3a4a4d;
+  --rule: #d6cec1;
+  --panel: #c7cdbf;
+  --panel-rule: #aeb6a6;
+  --on-dark-muted: #c7cdbf;
+  --frame-dark: #22343a;
+  --dark-rule: #435a5e;
+  --band: #2e4347;
+  --on-dark: #f4f0ea;
+}
+
+/* A dark colourway: the same roles, with light text on a dark page */
+html[data-palette="plum"] {
+  color-scheme: dark;
+  --bg: #2a1a26;            /* deep plum */
+  --paper: #2a1a26;         /* text on the light buttons */
+  --ink: #f2e8dc;           /* champagne cream */
+  --accent: #c9a66b;        /* champagne gold */
+  --accent-on-dark: #c9a66b;
+  --label: #d9b97f;
+  --muted: #bcaab4;
+  --soft: #ddd0d4;
+  --rule: #4a3242;
+  --panel: #3b2634;
+  --panel-rule: #5a4253;
+  --on-dark-muted: #c7b6bf;
+  --frame-dark: #120a10;
+  --dark-rule: #3a2633;
+  --band: #170e15;          /* deeper plum for bands and the footer */
+  --on-dark: #f2e8dc;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; }
+a { color: var(--ink); }
+a:hover { color: var(--label); }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+button, select { font: inherit; }
+select option { background: var(--bg); color: var(--ink); }
+.demo-note { margin: 0; font-size: 14px; color: var(--ink); background: var(--bg); border: 1px solid var(--accent); padding: 12px 14px; }
+
+/* Phones: name first, both menus centred underneath */
+@media (max-width: 760px) {
+  .site-header .brand { order: -1 !important; width: 100% !important; }
+  .site-header .nav-left, .site-header .nav-right { flex: 1 1 100% !important; justify-content: center !important; gap: 0 22px !important; }
+}
+
+/* Colour switcher (template demo only) */
+.palette-switch {
+  position: fixed; left: 16px; bottom: 16px; z-index: 50;
+  display: flex; align-items: center; gap: 6px; padding: 6px 6px 6px 14px;
+  background: var(--paper); color: var(--ink); border: 1px solid var(--accent);
+  font-family: Figtree, 'Helvetica Neue', Arial, sans-serif; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+}
+.palette-switch button {
+  white-space: nowrap;
+  display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 14px;
+  border: 1px solid transparent; background: transparent; color: var(--ink); cursor: pointer;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+}
+.palette-switch button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.palette-switch .swatch { display: inline-flex; width: 22px; height: 22px; border-radius: 50%; overflow: hidden; border: 1px solid rgba(0,0,0,0.15); }
+.palette-switch .swatch i { flex: 1; }
+.palette-switch .short { display: none; }
+@media (max-width: 680px) {
+  .palette-switch { left: 12px; right: 12px; bottom: 12px; justify-content: center; gap: 2px; padding: 4px; }
+  .palette-switch .label, .palette-switch .full { display: none; }
+  .palette-switch .short { display: inline; }
+  .palette-switch button { flex: 1 1 0; justify-content: center; padding: 0 8px; letter-spacing: 0.06em; }
+}
+@media print { .palette-switch { display: none; } }

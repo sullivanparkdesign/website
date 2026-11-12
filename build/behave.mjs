@@ -33,6 +33,18 @@ const faq = await p.$('[data-faq-btn="1"]');
 if (faq) { await faq.scrollIntoViewIfNeeded(); await faq.click();
   ok('FAQ opens', !(await p.$eval('[data-faq-panel="1"]', e => e.hidden)), await faq.getAttribute('aria-expanded'));
   await faq.click(); ok('FAQ closes', await p.$eval('[data-faq-panel="1"]', e => e.hidden)); } else ok('FAQ present', false);
+// actor websites: colourway preview and live demos
+await p.goto(O + '/services/actor-websites', { waitUntil: 'load' });
+const shown = k => p.$$eval(`.aw-look-${k} .aw-shots img`, a => a.findIndex(i => getComputedStyle(i).opacity === '1'));
+ok('first colourway shows to start', await shown('luminous') === 0);
+await p.click('.aw-look-luminous .aw-sw:nth-of-type(3)'); await p.waitForTimeout(700);
+ok('choosing a colourway swaps the preview', await shown('luminous') === 2);
+for (const k of ['editorial', 'luminous', 'feature']) {
+  const href = await p.$eval(`.aw-look-${k} .aw-demo`, a => a.getAttribute('href'));
+  const [st, body] = await p.evaluate(u => fetch(u).then(async r => [r.status, await r.text()]), O + new URL(href).pathname);
+  ok(`${k} demo link works`, st === 200 && /noindex/.test(body), href);
+}
+ok('handoff notes are not published', await p.evaluate(u => fetch(u).then(r => r.status), O + '/templates/editorial/HANDOFF.md') === 404);
 // placeholders hidden
 for (const u of ['/portfolio/the-rooster-den-co', '/portfolio/party-with-laura', '/portfolio/callum-frost', '/testimonials']) {
   await p.goto(O + u, { waitUntil: 'load' });

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en" data-palette="blue">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Headshots | Hannah Ross</title>
+<meta name="description" content="Luminous actor website template by Sullivan Park Design: headshots page.">
+<!-- Template demo with placeholder content: kept out of search results. Remove this line to let it be indexed. -->
+<meta name="robots" content="noindex">
+<script src="luminous-palette.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..600&amp;family=Figtree:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="luminous.css">
+<script src="luminous.js" defer></script>
+</head>
+<body>
+<div style="background: var(--bg); color: var(--ink); font-family: Figtree, 'Helvetica Neue', Arial, sans-serif; min-height: 100%">
+
+<header class="site-header" style="background: var(--bg); border-bottom: 1px solid var(--rule)">
+<div style="max-width: 1320px; margin: 0 auto; padding: 22px clamp(20px, 4vw, 56px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px">
+<nav class="nav-left" aria-label="Main" style="flex: 1 1 260px; display: flex; flex-wrap: wrap; gap: 4px 30px; font-size: 13px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase">
+<a href="about.html" style="display: inline-flex; align-items: center; min-height: 44px; text-decoration: none">About</a>
+<a href="headshots.html" aria-current="page" style="display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; color: var(--label); box-shadow: inset 0 -1px 0 var(--accent)">Headshots</a>
+<a href="reel.html" style="display: inline-flex; align-items: center; min-height: 44px; text-decoration: none">Reel</a>
+</nav>
+<a class="brand" href="index.html" style="flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; gap: 4px; text-decoration: none">
+<span style="font-family: 'Bodoni Moda', Didot, Georgia, serif; font-size: 32px; font-weight: 400; letter-spacing: 0.02em; line-height: 1">Hannah Ross</span>
+<span style="display: flex; align-items: center; gap: 8px"><span style="width: 28px; height: 1px; background: var(--accent)"></span><svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l1.6 8.4L22 12l-8.4 1.6L12 22l-1.6-8.4L2 12l8.4-1.6z" style="fill: var(--accent)"></path></svg><span style="width: 28px; height: 1px; background: var(--accent)"></span></span>
+</a>
+<nav class="nav-right" aria-label="Secondary" style="flex: 1 1 260px; display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 4px 30px; font-size: 13px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase">
+<a href="resume.html" style="display: inline-flex; align-items: center; min-height: 44px; text-decoration: none">Resume</a>
+<a href="contact.html" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border: 1px solid var(--accent); text-decoration: none">Book Hannah</a>
+</nav>
+</div>
+</header>
+
+<section style="max-width: 1320px; margin: 0 auto; padding: clamp(48px, 6vw, 88px) clamp(20px, 4vw, 56px) 0; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 20px 48px">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<p style="margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.26em; text-transform: uppercase; color: var(--label)">Gallery</p>
+<h1 style="margin: 0; font-family: 'Bodoni Moda', Didot, Georgia, serif; font-weight: 400; font-size: clamp(60px, 7vw, 108px); line-height: 0.95">Headshots</h1>
+</div>
+<p style="margin: 0; font-size: 14px; letter-spacing: 0.08em; color: var(--muted)">Updated [Month Year]</p>
+</div>
+<p style="margin: 0; font-size: clamp(17px, 1.4vw, 20px); line-height: 1.6; color: var(--soft)">Current headshots for casting. High-resolution files are available through [Agency].</p>
+<div role="group" aria-label="Filter headshots" style="display: flex; flex-wrap: wrap; gap: 10px; padding: 8px 0 4px">
+<button type="button" data-filter="all" aria-pressed="true" style="min-height: 44px; padding: 0 20px; border: 1px solid var(--ink); background: var(--ink); color: var(--paper); font: inherit; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer">All</button>
+<button type="button" data-filter="commercial" aria-pressed="false" style="min-height: 44px; padding: 0 20px; border: 1px solid var(--accent); background: transparent; color: var(--ink); font: inherit; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer">Commercial</button>
+<button type="button" data-filter="film-tv" aria-pressed="false" style="min-height: 44px; padding: 0 20px; border: 1px solid var(--accent); background: transparent; color: var(--ink); font: inherit; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer">Film / TV</button>
+<button type="button" data-filter="theatre" aria-pressed="false" style="min-height: 44px; padding: 0 20px; border: 1px solid var(--accent); background: transparent; color: var(--ink); font: inherit; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer">Theatre</button>
+<button type="button" data-filter="disney" aria-pressed="false" style="min-height: 44px; padding: 0 20px; border: 1px solid var(--accent); background: transparent; color: var(--ink); font: inherit; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer">Disney</button>
+</div>
+</section>
+
+<section style="max-width: 1320px; margin: 0 auto; padding: 36px clamp(20px, 4vw, 56px) clamp(64px, 8vw, 104px); display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 40px 32px">
+<figure data-cat="commercial" style="margin: 0; display: flex; flex-direction: column; gap: 16px">
+<div style="position: relative; padding: 0 0 16px 16px"><div aria-hidden="true" style="position: absolute; top: 16px; left: 0; right: 16px; bottom: 0; border: 1px solid var(--accent)"></div><img src="images/hannah-commercial.jpg" alt="Commercial headshot of Hannah Ross smiling in a pink t-shirt" style="position: relative; display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 18%"></div>
+<figcaption style="display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-left: 16px"><span style="display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted)"><span style="width: 20px; height: 1px; background: var(--accent)"></span>Commercial</span><a href="images/hannah-commercial.jpg" target="_blank" rel="noopener" style="font-size: 13px; text-underline-offset: 4px">View larger</a></figcaption>
+</figure>
+<figure data-cat="film-tv" style="margin: 0; display: flex; flex-direction: column; gap: 16px">
+<div style="position: relative; padding: 0 0 16px 16px"><div aria-hidden="true" style="position: absolute; top: 16px; left: 0; right: 16px; bottom: 0; border: 1px solid var(--accent)"></div><img src="images/hannah-film-tv.jpg" alt="Film and television headshot of Hannah Ross on a dark background" style="position: relative; display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 18%"></div>
+<figcaption style="display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-left: 16px"><span style="display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted)"><span style="width: 20px; height: 1px; background: var(--accent)"></span>Film / TV</span><a href="images/hannah-film-tv.jpg" target="_blank" rel="noopener" style="font-size: 13px; text-underline-offset: 4px">View larger</a></figcaption>
+</figure>
+<figure data-cat="theatre" style="margin: 0; display: flex; flex-direction: column; gap: 16px">
+<div style="position: relative; padding: 0 0 16px 16px"><div aria-hidden="true" style="position: absolute; top: 16px; left: 0; right: 16px; bottom: 0; border: 1px solid var(--accent)"></div><img src="images/hannah-theatre.jpg" alt="Theatre headshot of Hannah Ross in a white top" style="position: relative; display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 18%"></div>
+<figcaption style="display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-left: 16px"><span style="display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted)"><span style="width: 20px; height: 1px; background: var(--accent)"></span>Theatre</span><a href="images/hannah-theatre.jpg" target="_blank" rel="noopener" style="font-size: 13px; text-underline-offset: 4px">View larger</a></figcaption>
+</figure>
+<figure data-cat="disney" style="margin: 0; display: flex; flex-direction: column; gap: 16px">
+<div style="position: relative; padding: 0 0 16px 16px"><div aria-hidden="true" style="position: absolute; top: 16px; left: 0; right: 16px; bottom: 0; border: 1px solid var(--accent)"></div><img src="images/hannah-disney.jpg" alt="Disney style headshot of Hannah Ross in a pink sweater" style="position: relative; display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 12%"></div>
+<figcaption style="display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-left: 16px"><span style="display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted)"><span style="width: 20px; height: 1px; background: var(--accent)"></span>Disney</span><a href="images/hannah-disney.jpg" target="_blank" rel="noopener" style="font-size: 13px; text-underline-offset: 4px">View larger</a></figcaption>
+</figure>
+</section>
+
+<section style="background: var(--panel)">
+<div style="max-width: 1320px; margin: 0 auto; padding: clamp(56px, 7vw, 96px) clamp(20px, 4vw, 56px); display: flex; flex-direction: column; gap: 36px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 12px 32px">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.26em; text-transform: uppercase; color: var(--label)">More looks</p>
+<h2 style="margin: 0; font-family: 'Bodoni Moda', Didot, Georgia, serif; font-weight: 400; font-size: clamp(36px, 3.8vw, 52px); line-height: 1">Close-ups and details</h2>
+</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px">
+<div style="overflow: hidden; aspect-ratio: 3 / 4"><img src="images/hannah-theatre.jpg" alt="Close crop of Hannah Ross" style="display: block; width: 100%; height: 100%; object-fit: cover; transform: scale(-1.5, 1.5); transform-origin: 50% 30%"></div>
+<div style="overflow: hidden; aspect-ratio: 3 / 4"><img src="images/hannah-film-tv.jpg" alt="Close crop of Hannah Ross on a dark background" style="display: block; width: 100%; height: 100%; object-fit: cover; transform: scale(-1.35, 1.35); transform-origin: 50% 30%"></div>
+<div style="overflow: hidden; aspect-ratio: 3 / 4"><img src="images/hannah-disney.jpg" alt="Close crop of Hannah Ross resting her chin on her hand" style="display: block; width: 100%; height: 100%; object-fit: cover; transform: scale(1.4); transform-origin: 50% 32%"></div>
+<div style="overflow: hidden; aspect-ratio: 3 / 4"><img src="images/hannah-commercial.jpg" alt="Close crop of Hannah Ross smiling" style="display: block; width: 100%; height: 100%; object-fit: cover; transform: scale(-1.45, 1.45); transform-origin: 50% 30%"></div>
+</div>
+</div>
+</section>
+
+<section>
+<div style="max-width: 1320px; margin: 0 auto; padding: clamp(56px, 7vw, 96px) clamp(20px, 4vw, 56px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px 48px; border-top: 1px solid var(--accent)">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0; font-family: 'Bodoni Moda', Didot, Georgia, serif; font-weight: 400; font-size: clamp(30px, 3vw, 42px); line-height: 1.1">Casting directors</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: var(--soft)">Request high-resolution headshots or a printed resume through [Agency].</p>
+</div>
+<a href="contact.html" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 30px; background: var(--ink); color: var(--paper); text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase">Request files</a>
+</div>
+</section>
+
+<footer style="background: var(--band); color: var(--on-dark)">
+<div style="max-width: 1320px; margin: 0 auto; padding: 56px clamp(20px, 4vw, 56px) 36px; display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center">
+<span style="font-family: 'Bodoni Moda', Didot, Georgia, serif; font-size: 34px; line-height: 1">Hannah Ross</span>
+<span style="display: flex; align-items: center; gap: 10px"><span style="width: 40px; height: 1px; background: var(--accent-on-dark)"></span><svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l1.6 8.4L22 12l-8.4 1.6L12 22l-1.6-8.4L2 12l8.4-1.6z" style="fill: var(--accent-on-dark)"></path></svg><span style="width: 40px; height: 1px; background: var(--accent-on-dark)"></span></span>
+<nav aria-label="Footer" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 28px; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase">
+<a href="about.html" style="display: inline-flex; align-items: center; min-height: 44px; color: var(--on-dark); text-decoration: none">About</a>
+<a href="resume.html" style="display: inline-flex; align-items: center; min-height: 44px; color: var(--on-dark); text-decoration: none">Resume</a>
+<a href="headshots.html" style="display: inline-flex; align-items: center; min-height: 44px; color: var(--on-dark); text-decoration: none">Headshots</a>
+<a href="reel.html" style="display: inline-flex; align-items: center; min-height: 44px; color: var(--on-dark); text-decoration: none">Reel</a>
+<a href="contact.html" style="display: inline-flex; align-items: center; min-height: 44px; color: var(--on-dark); text-decoration: none">Contact</a>
+</nav>
+<span style="font-size: 13px; color: var(--on-dark-muted)">© 2026 Hannah Ross · Website by <a href="https://sullivanparkdesign.com" style="color: var(--on-dark)">Sullivan Park Design</a></span>
+</div>
+</footer>
+
+</div>
+</body>
+</html>

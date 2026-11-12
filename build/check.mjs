@@ -31,9 +31,10 @@ for (const u of list) {
   const issues = [];
   if (r.bad.length) issues.push('broken images ' + r.bad.join(','));
   if (dead.length) issues.push('dead links ' + dead.join(','));
-  if (r.anchors.length) issues.push('dead anchors ' + [...new Set(r.anchors)].join(','));
+  const demo = u.startsWith('/templates/'); // template demos: placeholder links and noindex are intentional
+  if (r.anchors.length && !demo) issues.push('dead anchors ' + [...new Set(r.anchors)].join(','));
   if (r.blob) issues.push('canvas image path left'); if (r.dc) issues.push('.dc.html link left'); if (r.holes) issues.push('template hole left');
-  if (r.h1 !== 1) issues.push('h1 count ' + r.h1); if (r.robots) issues.push('robots ' + r.robots);
+  if (r.h1 !== 1) issues.push('h1 count ' + r.h1); if (r.robots && !(demo && /noindex/.test(r.robots))) issues.push('robots ' + r.robots);
   if (issues.length) { problems++; console.log(u, issues.join(' | ')); }
 }
 console.log(list.length, 'pages checked,', problems, 'problems');

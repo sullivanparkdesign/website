@@ -23,6 +23,7 @@ const PAGES = [
   { src: 'Website-Design', url: '/services/website-design', crumb: 'Website Design', parent: 'Services' },
   { src: 'Brand-Marketing-Design', url: '/services/brand-marketing-design', crumb: 'Brand and Marketing Design', parent: 'Services' },
   { src: 'SEO', url: '/services/seo', crumb: 'SEO', parent: 'Services' },
+  { src: 'Actor-Websites', url: '/services/actor-websites', crumb: 'Actor Websites', parent: 'Services', og: '/_blob/27ba9b04cd03f43bd885f8e6753ad706' },
   { src: 'Portfolio', url: '/portfolio', crumb: 'Portfolio' },
   { src: 'Hamish-Ross', url: '/portfolio/hamish-ross-real-estate', crumb: 'Hamish Ross Real Estate', parent: 'Portfolio' },
   { src: 'Smash', url: '/portfolio/smash-performing-arts', crumb: 'SMASH Performing Arts Studio', parent: 'Portfolio' },
@@ -246,7 +247,7 @@ for (const page of PAGES) {
   const helmet = [...new Set(r.pageHead)];
   // og image: the page's first large picture, or the home poster
   const $b = cheerio.load(body);
-  let og = '';
+  let og = page.og || '';
   // skip decorative images (empty alt); the home page always uses the ocean poster
   if (page.url !== '/') $b('main img').each((_, el) => { if (!og && ($b(el).attr('alt') || '').trim() && +($b(el).attr('width') || 0) >= 800 && ($b(el).attr('src') || '').startsWith('/_blob/')) og = $b(el).attr('src'); });
   if (!og) og = CONFIG.defaultOg;
@@ -300,6 +301,29 @@ ${body}
 
 // ---------- runtime, sitemap, robots, headers, redirects ----------
 fs.copyFileSync(path.join(ROOT, 'build', 'site.js'), path.join(SITE, 'assets', 'site.js'));
+
+// ---------- actor website template demos (/templates/<look>/) ----------
+// Copied as they are, except: internal notes (HANDOFF.md) are never published, and the
+// "Website by Sullivan Park Design" credit points back to the Actor Websites page.
+const DEMOS_SRC = path.join(ROOT, 'templates-src');
+const DEMOS_OUT = path.join(SITE, 'templates');
+fs.rmSync(DEMOS_OUT, { recursive: true, force: true });
+if (fs.existsSync(DEMOS_SRC)) {
+  const copyDemo = (src, out) => {
+    fs.mkdirSync(out, { recursive: true });
+    for (const ent of fs.readdirSync(src, { withFileTypes: true })) {
+      if (ent.name === 'HANDOFF.md' || ent.name.startsWith('.')) continue;
+      const s = path.join(src, ent.name), o = path.join(out, ent.name);
+      if (ent.isDirectory()) { copyDemo(s, o); continue; }
+      if (ent.name.endsWith('.html')) {
+        const html = fs.readFileSync(s, 'utf8').replaceAll('href="https://sullivanparkdesign.com"', 'href="https://www.sullivanparkdesign.com/services/actor-websites"');
+        fs.writeFileSync(o, html);
+      } else fs.copyFileSync(s, o);
+    }
+  };
+  for (const look of fs.readdirSync(DEMOS_SRC)) if (fs.statSync(path.join(DEMOS_SRC, look)).isDirectory()) copyDemo(path.join(DEMOS_SRC, look), path.join(DEMOS_OUT, look));
+}
+
 fs.writeFileSync(path.join(SITE, 'sitemap.xml'), '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
   built.map(u => `  <url><loc>${ORIGIN}${u === '/' ? '/' : u}</loc></url>`).join('\n') + '\n</urlset>\n');
 fs.writeFileSync(path.join(SITE, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${ORIGIN}/sitemap.xml\n`);
@@ -318,6 +342,10 @@ https://:version.:project.pages.dev/*
   Cache-Control: public, max-age=31536000, immutable
 /media/*
   Cache-Control: public, max-age=31536000, immutable
+
+# Template demos are mostly placeholder text, so keep them out of search results
+/templates/*
+  X-Robots-Tag: noindex
 `);
 fs.writeFileSync(path.join(SITE, '_redirects'), `# Old Squarespace addresses -> new pages
 /home            /            301

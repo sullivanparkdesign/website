@@ -2,9 +2,9 @@
 import fs from 'node:fs'; import path from 'node:path'; import { createRequire } from 'node:module';
 const require = createRequire('/tmp/x.js'); const { chromium } = require('playwright');
 const SITE = path.resolve('site');
-const file = (p) => { p = decodeURIComponent(p.split('?')[0].split('#')[0]); if (p === '/') return 'index.html'; const f = p.slice(1);
+const file = (p) => { p = decodeURIComponent(p.split('?')[0].split('#')[0]); if (p === '/') return 'index.html'; let f = p.slice(1); if (f.endsWith('/')) f += 'index.html';
   if (fs.existsSync(path.join(SITE, f)) && fs.statSync(path.join(SITE, f)).isFile()) return f; if (fs.existsSync(path.join(SITE, f + '.html'))) return f + '.html'; return null; };
-const type = (f) => ({ '.html': 'text/html', '.js': 'text/javascript', '.webp': 'image/webp', '.png': 'image/png', '.jpg': 'image/jpeg', '.mp4': 'video/mp4', '.xml': 'application/xml', '.txt': 'text/plain' })[path.extname(f)] || 'application/octet-stream';
+const type = (f) => ({ '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.woff2': 'font/woff2', '.webp': 'image/webp', '.png': 'image/png', '.jpg': 'image/jpeg', '.mp4': 'video/mp4', '.xml': 'application/xml', '.txt': 'text/plain' })[path.extname(f)] || 'application/octet-stream';
 export async function open(widths = [1440]) {
   const b = await chromium.launch();
   return { b, async page(w, h = 900) { const ctx = await b.newContext({ viewport: { width: w, height: h } });
