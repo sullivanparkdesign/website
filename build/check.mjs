@@ -1,4 +1,6 @@
 import { open, pages, file } from './test-site.mjs';
+import fs from 'node:fs';
+const HIDDEN = JSON.parse(fs.readFileSync(new URL('./config.json', import.meta.url), 'utf8')).hiddenPages || [];
 const O = 'https://www.sullivanparkdesign.com';
 const { b, page } = await open();
 const list = pages(); let problems = 0;
@@ -32,9 +34,12 @@ for (const u of list) {
   if (r.bad.length) issues.push('broken images ' + r.bad.join(','));
   if (dead.length) issues.push('dead links ' + dead.join(','));
   const demo = u.startsWith('/templates/'); // template demos: placeholder links and noindex are intentional
+  const hidden = HIDDEN.includes(u.replace(/\.html$/, '')); // built but not launched yet: noindex on purpose
+  const linksHidden = r.links.filter(h => HIDDEN.includes(h.split('#')[0]) && !hidden);
+  if (linksHidden.length && !demo) issues.push('links to a hidden page ' + [...new Set(linksHidden)].join(','));
   if (r.anchors.length && !demo) issues.push('dead anchors ' + [...new Set(r.anchors)].join(','));
   if (r.blob) issues.push('canvas image path left'); if (r.dc) issues.push('.dc.html link left'); if (r.holes) issues.push('template hole left');
-  if (r.h1 !== 1) issues.push('h1 count ' + r.h1); if (r.robots && !(demo && /noindex/.test(r.robots))) issues.push('robots ' + r.robots);
+  if (r.h1 !== 1) issues.push('h1 count ' + r.h1); if (r.robots && !((demo || hidden) && /noindex/.test(r.robots))) issues.push('robots ' + r.robots);
   if (issues.length) { problems++; console.log(u, issues.join(' | ')); }
 }
 console.log(list.length, 'pages checked,', problems, 'problems');

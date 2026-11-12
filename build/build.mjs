@@ -40,6 +40,8 @@ const PAGES = [
   { src: 'Contact', url: '/contact', crumb: 'Contact' },
 ];
 if (fs.existsSync(path.join(SRC, 'Privacy.dc.html'))) PAGES.push({ src: 'Privacy', url: '/privacy', crumb: 'Privacy Policy' });
+// pages in config.hiddenPages are built and reachable by address only: noindex, no sitemap entry
+for (const p of PAGES) if ((CONFIG.hiddenPages || []).includes(p.url)) p.hidden = true;
 const BY_SRC = Object.fromEntries(PAGES.map(p => [p.src, p]));
 
 function linkMap(u) {
@@ -200,6 +202,7 @@ function head(page, meta, helmet, ogImage, extra = '') {
     `<title>${meta.title}</title>`,
     d ? `<meta name="description" content="${escAttr(d)}">` : '',
     `<link rel="canonical" href="${canonical}">`,
+    page.hidden ? '<meta name="robots" content="noindex">' : '',
     `<meta property="og:type" content="${page.guide ? 'article' : 'website'}">`,
     '<meta property="og:site_name" content="Sullivan Park Design">',
     `<meta property="og:title" content="${escAttr(t)}">`,
@@ -272,7 +275,7 @@ ${body}
   const file = outFile(page.url);
   fs.mkdirSync(path.dirname(file), { recursive: true });
   fs.writeFileSync(file, html);
-  built.push(page.url);
+  if (!page.hidden) built.push(page.url);
   if (page.src === 'Journal') shell = html;
 }
 
