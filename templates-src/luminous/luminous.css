@@ -1,6 +1,6 @@
 /* Luminous template demo.
    Every colour on the pages comes from these palettes, so a new colourway is
-   one new block below (16 colours each). Most layout styling is inline in each page. */
+   one new block below (20 colours each). Most layout styling is inline in each page. */
 
 html[data-palette="blue"] {
   color-scheme: light;
@@ -13,64 +13,81 @@ html[data-palette="blue"] {
   --muted: #586274;         /* secondary text */
   --soft: #3d4a61;          /* body copy on light backgrounds */
   --rule: #e3dccd;          /* thin dividers */
-  --panel: #e4ecf3;         /* tinted sections and cards */
-  --panel-rule: #b9c9da;    /* dividers inside tinted sections */
+  --panel: #e2e6e9;         /* tinted sections and cards (a light slate grey) */
+  --panel-rule: #c3cad1;    /* dividers inside tinted sections */
   --on-dark-muted: #c9d3e0; /* secondary text on dark bands */
   --frame-dark: #0f1a2d;    /* behind the reel video */
   --dark-rule: #2f3f5c;     /* dividers on dark bands */
   --band: #1c2b45;          /* dark bands and the footer */
   --on-dark: #f7f2e9;       /* text on dark bands and the footer */
+  --header-bg: var(--bg);   /* header background */
+  --footer-bg: var(--band); /* footer background */
+  --stills-bg: var(--bg);   /* production stills section */
+  --stills-rule: var(--bg); /* line above the production stills (hidden here) */
+  --footer-line-gap: 0px;   /* space above the gold line at the top of the footer (About and Gallery) */
 }
 
-html[data-palette="sage"] {
+/* Sea glass: calm coastal colours, sand white, sea glass aqua frames and a deep sea teal for dark bands */
+html[data-palette="sea"] {
   color-scheme: light;
-  --bg: #e9e2d8;
-  --paper: #f4f0ea;
-  --ink: #2e4347;
-  --accent: #5c757a;
-  --accent-on-dark: #c7cdbf;
-  --label: #3f555a;
-  --muted: #4b5557;
-  --soft: #3a4a4d;
-  --rule: #d6cec1;
-  --panel: #c7cdbf;
-  --panel-rule: #aeb6a6;
-  --on-dark-muted: #c7cdbf;
-  --frame-dark: #22343a;
-  --dark-rule: #435a5e;
-  --band: #2e4347;
-  --on-dark: #f4f0ea;
+  --bg: #f5f3ee;
+  --paper: #f5f3ee;
+  --ink: #1f3a3d;
+  --accent: #8fbcb6;
+  --accent-on-dark: #a9d3cd;
+  --label: #2c6766;
+  --muted: #536669;
+  --soft: #34494c;
+  --rule: #dfe2dc;
+  --panel: #e1edeb;
+  --panel-rule: #bfd5d1;
+  --on-dark-muted: #c9ddd9;
+  --frame-dark: #14282a;
+  --dark-rule: #3a5d60;
+  --band: #2b4f52;
+  --on-dark: #f5f3ee;
+  --header-bg: var(--bg);
+  --footer-bg: var(--band);
+  --stills-bg: var(--bg);
+  --stills-rule: var(--bg);
+  --footer-line-gap: 0px;
 }
 
-/* A dark colourway: the same roles, with light text on a dark page */
-html[data-palette="plum"] {
-  color-scheme: dark;
-  --bg: #2a1a26;            /* deep plum */
-  --paper: #2a1a26;         /* text on the light buttons */
-  --ink: #f2e8dc;           /* champagne cream */
-  --accent: #c9a66b;        /* champagne gold */
-  --accent-on-dark: #c9a66b;
-  --label: #d9b97f;
-  --muted: #bcaab4;
-  --soft: #ddd0d4;
-  --rule: #4a3242;
-  --panel: #3b2634;
-  --panel-rule: #5a4253;
-  --on-dark-muted: #c7b6bf;
-  --frame-dark: #120a10;
-  --dark-rule: #3a2633;
-  --band: #170e15;          /* deeper plum for bands and the footer */
-  --on-dark: #f2e8dc;
+/* Popcorn: a soft butter ground with a popcorn white header and sections, a yellow footer, charcoal text and honey frames */
+html[data-palette="popcorn"] {
+  color-scheme: light;
+  --bg: #fbf3d6;
+  --paper: #fbf3d6;
+  --ink: #2b2822;
+  --accent: #c99b2c;
+  --accent-on-dark: #876410;   /* here the "dark" bands are popcorn white, so this is a deep honey */
+  --label: #6b4f0e;
+  --muted: #5c5444;
+  --soft: #3d382c;
+  --rule: #ecdfb3;
+  --panel: #f4e3a1;
+  --panel-rule: #d8c37c;
+  --on-dark-muted: #5c5444;
+  --frame-dark: #2b2822;
+  --dark-rule: #eadfc2;
+  --band: #fffbf2;
+  --on-dark: #2b2822;
+  --header-bg: #fffbf2;        /* popcorn white header */
+  --footer-bg: #f4e3a1;        /* yellow footer */
+  --stills-bg: #fffbf2;        /* production stills on popcorn white */
+  --stills-rule: #c99b2c;      /* honey line above them */
+  --footer-line-gap: 40px;     /* the footer is a new colour here, so the gold line sits inside it */
 }
 
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
-body { margin: 0; background: var(--bg); -webkit-font-smoothing: antialiased; }
+body { margin: 0; background: var(--bg); font-family: Figtree, 'Helvetica Neue', Arial, sans-serif; -webkit-font-smoothing: antialiased; }
 img { max-width: 100%; }
 a { color: var(--ink); }
 a:hover { color: var(--label); }
 :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
-button, select { font: inherit; }
+button, select, input, textarea { font: inherit; }
+[style*="Fraunces"] { font-variation-settings: "SOFT" 50; }
 select option { background: var(--bg); color: var(--ink); }
 .demo-note { margin: 0; font-size: 14px; color: var(--ink); background: var(--bg); border: 1px solid var(--accent); padding: 12px 14px; }
 
@@ -79,6 +96,34 @@ select option { background: var(--bg); color: var(--ink); }
   .site-header .brand { order: -1 !important; width: 100% !important; }
   .site-header .nav-left, .site-header .nav-right { flex: 1 1 100% !important; justify-content: center !important; gap: 0 22px !important; }
 }
+
+/* The resume sheet: a printed page. On small screens its top block and columns stack */
+@media (max-width: 760px) {
+  .resume-sheet { aspect-ratio: auto !important; }
+}
+
+/* Printing the resume: only the framed sheet, on one letter page, with the agency header at the top */
+@page { size: letter; margin: 0; }
+@media print {
+  html, body { background: #ffffff !important; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .resume-page header, .resume-page footer, .resume-page .resume-intro { display: none !important; }
+  .resume-page .resume-wrap { padding: 0 !important; background: #ffffff !important; }
+  .resume-page .resume-sheet { width: 8.5in !important; height: 11in !important; max-width: none !important; aspect-ratio: auto !important; margin: 0 !important; box-shadow: none !important; overflow: hidden; }
+}
+
+/* Home headshots: four in a row on wide screens, two on smaller ones. Gallery photos: three in a row, two on phones */
+@media (max-width: 900px) { .hs-row { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; } }
+@media (max-width: 640px) { .g3 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 28px 16px !important; } }
+
+/* Gallery: click a photo to see it larger */
+[data-lightbox] { cursor: zoom-in; }
+[data-lightbox] img { transition: opacity 0.2s ease; }
+[data-lightbox]:hover img { opacity: 0.88; }
+.lightbox { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: 56px 20px; background: rgba(10, 14, 20, 0.88); }
+.lightbox img { display: block; max-width: min(100%, 1100px); max-height: 100%; object-fit: contain; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5); }
+.lightbox button { position: absolute; top: 12px; right: 12px; width: 48px; height: 48px; border: 1px solid rgba(255, 255, 255, 0.7); border-radius: 50%; background: transparent; color: #ffffff; font-size: 26px; line-height: 1; cursor: pointer; }
+.lightbox button:focus-visible { outline: 2px solid #ffffff; outline-offset: 3px; }
 
 /* Colour switcher (template demo only) */
 .palette-switch {

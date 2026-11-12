@@ -39,7 +39,7 @@ const shown = k => p.$$eval(`.aw-look-${k} .aw-shots img`, a => a.findIndex(i =>
 ok('first colourway shows to start', await shown('luminous') === 0);
 await p.click('.aw-look-luminous .aw-sw:nth-of-type(3)'); await p.waitForTimeout(700);
 ok('choosing a colourway swaps the preview', await shown('luminous') === 2);
-for (const k of ['editorial', 'luminous', 'feature']) {
+for (const k of ['luminous', 'editorial', 'headliner']) {
   const href = await p.$eval(`.aw-look-${k} .aw-demo`, a => a.getAttribute('href'));
   const [st, body] = await p.evaluate(u => fetch(u).then(async r => [r.status, await r.text()]), O + new URL(href).pathname);
   ok(`${k} demo link works`, st === 200 && /noindex/.test(body), href);

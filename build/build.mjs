@@ -23,7 +23,7 @@ const PAGES = [
   { src: 'Website-Design', url: '/services/website-design', crumb: 'Website Design', parent: 'Services' },
   { src: 'Brand-Marketing-Design', url: '/services/brand-marketing-design', crumb: 'Brand and Marketing Design', parent: 'Services' },
   { src: 'SEO', url: '/services/seo', crumb: 'SEO', parent: 'Services' },
-  { src: 'Actor-Websites', url: '/services/actor-websites', crumb: 'Actor Websites', parent: 'Services', og: '/_blob/27ba9b04cd03f43bd885f8e6753ad706' },
+  { src: 'Actor-Websites', url: '/services/actor-websites', crumb: 'Actor Websites', parent: 'Services', og: '/_blob/d42d37c59ae9c3b6be701fdf2d142351' },
   { src: 'Portfolio', url: '/portfolio', crumb: 'Portfolio' },
   { src: 'Hamish-Ross', url: '/portfolio/hamish-ross-real-estate', crumb: 'Hamish Ross Real Estate', parent: 'Portfolio' },
   { src: 'Smash', url: '/portfolio/smash-performing-arts', crumb: 'SMASH Performing Arts Studio', parent: 'Portfolio' },
@@ -360,6 +360,12 @@ fs.writeFileSync(path.join(SITE, '_redirects'), `# Old Squarespace addresses -> 
 /web-design      /services/website-design   301
 /branding        /services/brand-marketing-design   301
 /seo             /services/seo   301
+
+# Actor template demos that were renamed
+/templates/feature/headshots.html   /templates/headliner/gallery.html   301
+/templates/feature/reel.html        /templates/headliner/media.html     301
+/templates/feature/*                /templates/headliner/:splat         301
+/templates/luminous/headshots.html  /templates/luminous/gallery.html    301
 `);
 fs.writeFileSync(path.join(ROOT, 'build', 'last-build.json'), JSON.stringify({ pages: built, images: Object.fromEntries(imgNames), warnings: r.warnings }, null, 1));
 console.log(`built ${built.length} pages + 404, ${imgNames.size} images`);

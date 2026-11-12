@@ -10,120 +10,75 @@
 <script src="luminous-palette.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..600&amp;family=Figtree:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,0..100;1,9..144,300..600,0..100&amp;family=Figtree:wght@400;500;600&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="luminous.css">
 <script src="luminous.js" defer></script>
 </head>
-<body>
-<div style="background: var(--bg); color: var(--ink); font-family: Figtree, 'Helvetica Neue', Arial, sans-serif; min-height: 100%">
-
-<header class="site-header" style="background: var(--bg); border-bottom: 1px solid var(--rule)">
-<div style="max-width: 1320px; margin: 0 auto; padding: 22px clamp(20px, 4vw, 56px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px">
+<body class="resume-page">
+<header style="background: var(--header-bg); border-bottom: 1px solid var(--rule)">
+<div class="site-header" style="max-width: 1320px; margin: 0 auto; padding: 22px clamp(20px, 4vw, 56px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px">
 <nav class="nav-left" aria-label="Main" style="flex: 1 1 260px; display: flex; flex-wrap: wrap; gap: 4px 30px; font-size: 13px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase">
-<a href="about.html" style="display: inline-flex; align-items: center; min-height: 44px; text-decoration: none">About</a>
-<a href="headshots.html" style="display: inline-flex; align-items: center; min-height: 44px; text-decoration: none">Headshots</a>
-<a href="reel.html" style="display: inline-flex; align-items: center; min-height: 44px; text-decoration: none">Reel</a>
+<a href="about.html" style="display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; color: var(--ink)">About</a>
+<a href="gallery.html" style="display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; color: var(--ink)">Gallery</a>
+<a href="reel.html" style="display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; color: var(--ink)">Reels</a>
+<a href="resume.html" aria-current="page" style="display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; color: var(--ink); box-shadow: inset 0 -1px 0 var(--accent)">Resume</a>
 </nav>
-<a class="brand" href="index.html" style="flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; gap: 4px; text-decoration: none">
-<span style="font-family: 'Bodoni Moda', Didot, Georgia, serif; font-size: 32px; font-weight: 400; letter-spacing: 0.02em; line-height: 1">Hannah Ross</span>
-<span style="display: flex; align-items: center; gap: 8px"><span style="width: 28px; height: 1px; background: var(--accent)"></span><svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l1.6 8.4L22 12l-8.4 1.6L12 22l-1.6-8.4L2 12l8.4-1.6z" style="fill: var(--accent)"></path></svg><span style="width: 28px; height: 1px; background: var(--accent)"></span></span>
+<a class="brand" href="index.html" style="flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; gap: 4px; text-decoration: none; color: var(--ink)">
+<span style="font-family: Fraunces, Georgia, serif; font-size: 32px; font-weight: 400; letter-spacing: 0.01em; line-height: 1">Hannah Ross</span>
+<span style="display: flex; align-items: center; gap: 8px"><span style="width: 28px; height: 1px; background: var(--accent)"></span><svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true" style="fill: var(--accent)"><path d="M12 2l1.6 8.4L22 12l-8.4 1.6L12 22l-1.6-8.4L2 12l8.4-1.6z"></path></svg><span style="width: 28px; height: 1px; background: var(--accent)"></span></span>
 </a>
-<nav class="nav-right" aria-label="Secondary" style="flex: 1 1 260px; display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 4px 30px; font-size: 13px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase">
-<a href="#resume" aria-current="page" style="display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; color: var(--label); box-shadow: inset 0 -1px 0 var(--accent)">Resume</a>
-<a href="contact.html" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border: 1px solid var(--accent); text-decoration: none">Book Hannah</a>
+<nav class="nav-right" aria-label="Secondary" style="flex: 1 1 260px; justify-content: flex-end; align-items: center; display: flex; flex-wrap: wrap; gap: 4px 30px; font-size: 13px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase">
+<a href="contact.html" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border: 1px solid var(--accent); text-decoration: none; color: var(--ink)">Book Hannah</a>
 </nav>
 </div>
 </header>
-
-<div style="max-width: 1320px; margin: 0 auto; padding: clamp(48px, 6vw, 88px) clamp(20px, 4vw, 56px) 36px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px 48px; border-bottom: 1px solid var(--accent)">
-<div style="display: flex; flex-direction: column; gap: 14px">
-<p style="margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.26em; text-transform: uppercase; color: var(--label)">Resume</p>
-<h1 style="margin: 0; font-family: 'Bodoni Moda', Didot, Georgia, serif; font-weight: 400; font-size: clamp(60px, 7vw, 108px); line-height: 0.95">Hannah Ross</h1>
-<p style="margin: 0; font-size: 15px; letter-spacing: 0.08em; color: var(--muted)">[Union status] · Actor · [City], [Province]</p>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 12px">
-<a href="#print" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; background: var(--ink); color: var(--paper); text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase">Print resume</a>
-<a href="#pdf" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; border: 1px solid var(--accent); color: var(--ink); text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase">Download PDF</a>
-</div>
-</div>
-
-<main id="resume" style="max-width: 1320px; margin: 0 auto; padding: clamp(40px, 5vw, 72px) clamp(20px, 4vw, 56px) clamp(64px, 8vw, 112px); display: flex; flex-wrap: wrap; gap: 48px 80px; align-items: flex-start">
-
-<aside style="flex: 1 1 300px; min-width: 0; max-width: 420px; display: flex; flex-direction: column; gap: 28px">
-<div style="position: relative; padding: 0 0 20px 20px">
-<div aria-hidden="true" style="position: absolute; top: 20px; left: 0; right: 20px; bottom: 0; border: 1px solid var(--accent)"></div>
-<img src="images/hannah-commercial.jpg" alt="Headshot of Hannah Ross" style="position: relative; display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 18%">
-</div>
-<dl style="margin: 0; padding: 24px; background: var(--panel); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 20px">
-<div style="display: flex; flex-direction: column; gap: 4px"><dt style="font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--label)">Height</dt><dd style="margin: 0; font-family: 'Bodoni Moda', Didot, Georgia, serif; font-size: 22px">[Height]</dd></div>
-<div style="display: flex; flex-direction: column; gap: 4px"><dt style="font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--label)">Playing age</dt><dd style="margin: 0; font-family: 'Bodoni Moda', Didot, Georgia, serif; font-size: 22px">[Range]</dd></div>
-<div style="display: flex; flex-direction: column; gap: 4px"><dt style="font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--label)">Hair</dt><dd style="margin: 0; font-family: 'Bodoni Moda', Didot, Georgia, serif; font-size: 22px">[Hair]</dd></div>
-<div style="display: flex; flex-direction: column; gap: 4px"><dt style="font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--label)">Eyes</dt><dd style="margin: 0; font-family: 'Bodoni Moda', Didot, Georgia, serif; font-size: 22px">[Eyes]</dd></div>
-</dl>
-<div style="display: flex; flex-direction: column; gap: 6px; padding-top: 22px; border-top: 1px solid var(--accent)">
-<span style="font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--label)">Representation</span>
-<span style="font-family: 'Bodoni Moda', Didot, Georgia, serif; font-size: 26px">[Agent name]</span>
-<span style="font-size: 16px; line-height: 1.7; color: var(--soft)">[Agency]<br>[Phone]<br>[Email]</span>
-</div>
-</aside>
-
-<div style="flex: 2 1 620px; min-width: 0; display: flex; flex-direction: column; gap: 52px">
-
-<section style="display: flex; flex-direction: column">
-<h2 style="margin: 0 0 12px; display: flex; align-items: center; gap: 14px; font-family: 'Bodoni Moda', Didot, Georgia, serif; font-weight: 400; font-size: 36px">Film<span style="flex: 1; height: 1px; background: var(--accent)"></span></h2>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 4px 28px; padding: 16px 0; border-bottom: 1px solid var(--rule); align-items: baseline"><span style="font-family: 'Bodoni Moda', Didot, Georgia, serif; font-style: italic; font-size: 22px">[Production title]</span><span style="font-size: 15px">[Role]</span><span style="font-size: 15px; color: var(--muted)">[Director]</span></div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 4px 28px; padding: 16px 0; border-bottom: 1px solid var(--rule); align-items: baseline"><span style="font-family: 'Bodoni Moda', Didot, Georgia, serif; font-style: italic; font-size: 22px">[Production title]</span><span style="font-size: 15px">[Role]</span><span style="font-size: 15px; color: var(--muted)">[Director]</span></div>
+<section class="resume-intro" style="max-width: 1320px; margin: 0 auto; padding: clamp(48px, 6vw, 88px) clamp(20px, 4vw, 56px) 40px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 20px 48px">
+<div style="display: flex; flex-direction: column; gap: 16px"><p style="margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.26em; text-transform: uppercase; color: var(--label)">Resume</p><h1 style="margin: 0; font-family: Fraunces, Georgia, serif; font-weight: 400; font-size: clamp(60px, 7vw, 108px); line-height: 0.95">Resume</h1><div aria-hidden="true" style="display: flex; align-items: center; gap: 12px"><span style="width: 72px; height: 1px; background: var(--accent)"></span><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" style="fill: var(--accent)"><path d="M12 2l1.6 8.4L22 12l-8.4 1.6L12 22l-1.6-8.4L2 12l8.4-1.6z"></path></svg></div><p style="margin: 0; font-size: 17px; line-height: 1.6; color: var(--soft)">One page, in the format agencies and casting directors expect. Print it or save it as a PDF.</p></div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px"><a href="#print" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 30px; text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; background: var(--ink); color: var(--paper)">Print resume</a><a href="#pdf" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 30px; text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; border: 1px solid var(--accent); color: var(--ink)">PDF</a></div>
 </section>
-
-<section style="display: flex; flex-direction: column">
-<h2 style="margin: 0 0 12px; display: flex; align-items: center; gap: 14px; font-family: 'Bodoni Moda', Didot, Georgia, serif; font-weight: 400; font-size: 36px">Television<span style="flex: 1; height: 1px; background: var(--accent)"></span></h2>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 4px 28px; padding: 16px 0; border-bottom: 1px solid var(--rule); align-items: baseline"><span style="font-family: 'Bodoni Moda', Didot, Georgia, serif; font-style: italic; font-size: 22px">[Series title]</span><span style="font-size: 15px">[Role]</span><span style="font-size: 15px; color: var(--muted)">[Network or studio]</span></div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 4px 28px; padding: 16px 0; border-bottom: 1px solid var(--rule); align-items: baseline"><span style="font-family: 'Bodoni Moda', Didot, Georgia, serif; font-style: italic; font-size: 22px">[Series title]</span><span style="font-size: 15px">[Role]</span><span style="font-size: 15px; color: var(--muted)">[Network or studio]</span></div>
-</section>
-
-<section style="display: flex; flex-direction: column">
-<h2 style="margin: 0 0 12px; display: flex; align-items: center; gap: 14px; font-family: 'Bodoni Moda', Didot, Georgia, serif; font-weight: 400; font-size: 36px">Theatre <span style="font-family: Figtree, Arial, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--label)">[Season]</span><span style="flex: 1; height: 1px; background: var(--accent)"></span></h2>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 4px 28px; padding: 16px 0; border-bottom: 1px solid var(--rule); align-items: baseline"><span style="font-family: 'Bodoni Moda', Didot, Georgia, serif; font-style: italic; font-size: 22px">[Show title]</span><span style="font-size: 15px">[Role]</span><span style="font-size: 15px; color: var(--muted)">[Theatre company]</span></div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 4px 28px; padding: 16px 0; border-bottom: 1px solid var(--rule); align-items: baseline"><span style="font-family: 'Bodoni Moda', Didot, Georgia, serif; font-style: italic; font-size: 22px">[Show title]</span><span style="font-size: 15px">[Role]</span><span style="font-size: 15px; color: var(--muted)">[Theatre company]</span></div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 4px 28px; padding: 16px 0; border-bottom: 1px solid var(--rule); align-items: baseline"><span style="font-family: 'Bodoni Moda', Didot, Georgia, serif; font-style: italic; font-size: 22px">[Show title]</span><span style="font-size: 15px">[Role]</span><span style="font-size: 15px; color: var(--muted)">[Theatre company]</span></div>
-</section>
-
-<section style="display: flex; flex-direction: column">
-<h2 style="margin: 0 0 12px; display: flex; align-items: center; gap: 14px; font-family: 'Bodoni Moda', Didot, Georgia, serif; font-weight: 400; font-size: 36px">Commercial &amp; Voice<span style="flex: 1; height: 1px; background: var(--accent)"></span></h2>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 4px 28px; padding: 16px 0; border-bottom: 1px solid var(--rule); align-items: baseline"><span style="font-family: 'Bodoni Moda', Didot, Georgia, serif; font-style: italic; font-size: 22px">[Brand or project]</span><span style="font-size: 15px">[Role]</span><span style="font-size: 15px; color: var(--muted)">[Production company]</span></div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 4px 28px; padding: 16px 0; border-bottom: 1px solid var(--rule); align-items: baseline"><span style="font-family: 'Bodoni Moda', Didot, Georgia, serif; font-style: italic; font-size: 22px">[Brand or project]</span><span style="font-size: 15px">[Role]</span><span style="font-size: 15px; color: var(--muted)">[Production company]</span></div>
-</section>
-
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 40px 56px">
-<section style="display: flex; flex-direction: column; gap: 12px">
-<h2 style="margin: 0; font-family: 'Bodoni Moda', Didot, Georgia, serif; font-weight: 400; font-size: 30px">Training</h2>
-<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 16px; line-height: 1.6; color: var(--soft)">
-<li>[Acting school or coach]</li>
-<li>[Singing teacher]</li>
-<li>[Dance training]</li>
-</ul>
-</section>
-<section style="display: flex; flex-direction: column; gap: 12px">
-<h2 style="margin: 0; font-family: 'Bodoni Moda', Didot, Georgia, serif; font-weight: 400; font-size: 30px">Special skills</h2>
-<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 16px; line-height: 1.6; color: var(--soft)">
-<li>[Singing range]</li>
-<li>[Dance styles]</li>
-<li>[Sports, accents, instruments]</li>
-</ul>
-</section>
+<section class="resume-wrap" style="background: var(--panel); padding: clamp(32px, 5vw, 72px) clamp(20px, 4vw, 56px)">
+<article class="resume-sheet" style="max-width: 8.5in; margin: 0 auto; aspect-ratio: 8.5 / 11; background: #ffffff; color: #1c2b45; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 16px 40px rgba(0, 0, 0, 0.14); display: flex; flex-direction: column; font-family: Figtree, 'Helvetica Neue', Arial, sans-serif; font-size: 9pt; line-height: 1.4">
+<div class="sheet-agency" style="background: #1c2b45; color: #ffffff; padding: 11pt 28pt; display: flex; align-items: center; justify-content: center"><span style="border: 1px dashed rgba(255, 255, 255, 0.65); padding: 8pt 20pt; font-size: 8pt; letter-spacing: 0.22em; text-transform: uppercase">[Agency logo and header]</span></div>
+<div style="flex: 1; display: flex; padding: 14pt 20pt 18pt">
+<div style="flex: 1; display: flex; border: 0.75pt solid #b08d4f; padding: 3pt">
+<div style="flex: 1; display: flex; flex-direction: column; gap: 3em; border: 0.75pt solid #b08d4f; padding: 22pt 24pt">
+<div class="sheet-top" style="display: flex; flex-wrap: wrap; gap: 14pt 18pt; align-items: flex-start">
+<img src="images/hannah-film-tv.jpg" alt="Headshot of Hannah Ross" style="flex: 0 0 auto; display: block; width: 1.45in; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 18%; border: 0.75pt solid #b08d4f; padding: 2.5pt; background: #ffffff">
+<div style="flex: 1 1 3in; min-width: 0; display: flex; flex-direction: column; gap: 0.65em">
+<p style="margin: 0; font-family: Fraunces, Georgia, serif; font-size: 3em; font-weight: 400; line-height: 1">Hannah Ross</p>
+<div aria-hidden="true" style="display: flex; align-items: center; gap: 6pt"><span style="width: 36pt; height: 0.75pt; background: #b08d4f"></span><svg width="8" height="8" viewBox="0 0 24 24" style="fill: #b08d4f"><path d="M12 2l1.6 8.4L22 12l-8.4 1.6L12 22l-1.6-8.4L2 12l8.4-1.6z"></path></svg></div>
+<p style="margin: 0">[Union status] · Actor · [City], [Province]</p>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.4em 1em; padding-top: 0.4em"><div><span style="display: block; font-size: 0.76em; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #7a5c22">Height</span><span>[Height]</span></div><div><span style="display: block; font-size: 0.76em; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #7a5c22">Weight</span><span>[Weight]</span></div><div><span style="display: block; font-size: 0.76em; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #7a5c22">Hair</span><span>[Hair]</span></div><div><span style="display: block; font-size: 0.76em; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #7a5c22">Eyes</span><span>[Eyes]</span></div></div>
+<div style="padding-top: 0.4em"><span style="display: block; font-size: 0.76em; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #7a5c22">Representation</span><span>[Agent name], [Agency] · [Phone] · [Email]</span></div>
 </div>
-
 </div>
-</main>
+<section class="sheet-section"><p style="margin: 0 0 0.8em; display: flex; align-items: center; gap: 0.9em; font-size: 0.9em; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: #1c2b45"><span style="flex: 1; height: 0.75pt; background: #b08d4f"></span>Film<span style="flex: 1; height: 0.75pt; background: #b08d4f"></span></p><div style="display: grid; grid-template-columns: 38% 30% 32%; gap: 0 0.9em; padding: 0.4em 0; border-bottom: 0.5pt solid #e6e1d6"><span style="font-family: Fraunces, Georgia, serif; font-style: italic">[Production title]</span><span>[Role] ([Billing])</span><span style="color: #4a5568">Dir. [Director]</span></div><div style="display: grid; grid-template-columns: 38% 30% 32%; gap: 0 0.9em; padding: 0.4em 0; border-bottom: 0.5pt solid #e6e1d6"><span style="font-family: Fraunces, Georgia, serif; font-style: italic">[Production title]</span><span>[Role] ([Billing])</span><span style="color: #4a5568">Dir. [Director]</span></div></section>
+<section class="sheet-section"><p style="margin: 0 0 0.8em; display: flex; align-items: center; gap: 0.9em; font-size: 0.9em; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: #1c2b45"><span style="flex: 1; height: 0.75pt; background: #b08d4f"></span>Television<span style="flex: 1; height: 0.75pt; background: #b08d4f"></span></p><div style="display: grid; grid-template-columns: 38% 30% 32%; gap: 0 0.9em; padding: 0.4em 0; border-bottom: 0.5pt solid #e6e1d6"><span style="font-family: Fraunces, Georgia, serif; font-style: italic">[Series title]</span><span>[Role] ([Billing])</span><span style="color: #4a5568">[Network or studio]</span></div><div style="display: grid; grid-template-columns: 38% 30% 32%; gap: 0 0.9em; padding: 0.4em 0; border-bottom: 0.5pt solid #e6e1d6"><span style="font-family: Fraunces, Georgia, serif; font-style: italic">[Series title]</span><span>[Role] ([Billing])</span><span style="color: #4a5568">[Network or studio]</span></div></section>
+<section class="sheet-section"><p style="margin: 0 0 0.8em; display: flex; align-items: center; gap: 0.9em; font-size: 0.9em; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: #1c2b45"><span style="flex: 1; height: 0.75pt; background: #b08d4f"></span>Commercial &amp; Voice<span style="flex: 1; height: 0.75pt; background: #b08d4f"></span></p><div style="display: grid; grid-template-columns: 38% 30% 32%; gap: 0 0.9em; padding: 0.4em 0; border-bottom: 0.5pt solid #e6e1d6"><span style="font-family: Fraunces, Georgia, serif; font-style: italic">[Brand or project]</span><span>[Role]</span><span style="color: #4a5568">[Production company]</span></div><div style="display: grid; grid-template-columns: 38% 30% 32%; gap: 0 0.9em; padding: 0.4em 0; border-bottom: 0.5pt solid #e6e1d6"><span style="font-family: Fraunces, Georgia, serif; font-style: italic">[Brand or project]</span><span>[Role]</span><span style="color: #4a5568">[Production company]</span></div></section>
+<section class="sheet-section"><p style="margin: 0 0 0.8em; display: flex; align-items: center; gap: 0.9em; font-size: 0.9em; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: #1c2b45"><span style="flex: 1; height: 0.75pt; background: #b08d4f"></span>Theatre<span style="flex: 1; height: 0.75pt; background: #b08d4f"></span></p><div style="display: grid; grid-template-columns: 38% 30% 32%; gap: 0 0.9em; padding: 0.4em 0; border-bottom: 0.5pt solid #e6e1d6"><span style="font-family: Fraunces, Georgia, serif; font-style: italic">[Show title]</span><span>[Role] ([Billing])</span><span style="color: #4a5568">[Theatre company]</span></div><div style="display: grid; grid-template-columns: 38% 30% 32%; gap: 0 0.9em; padding: 0.4em 0; border-bottom: 0.5pt solid #e6e1d6"><span style="font-family: Fraunces, Georgia, serif; font-style: italic">[Show title]</span><span>[Role] ([Billing])</span><span style="color: #4a5568">[Theatre company]</span></div><div style="display: grid; grid-template-columns: 38% 30% 32%; gap: 0 0.9em; padding: 0.4em 0; border-bottom: 0.5pt solid #e6e1d6"><span style="font-family: Fraunces, Georgia, serif; font-style: italic">[Show title]</span><span>[Role] ([Billing])</span><span style="color: #4a5568">[Theatre company]</span></div></section>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 1.8em">
+<section><p style="margin: 0 0 0.8em; display: flex; align-items: center; gap: 0.9em; font-size: 0.9em; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: #1c2b45"><span style="flex: 1; height: 0.75pt; background: #b08d4f"></span>Training<span style="flex: 1; height: 0.75pt; background: #b08d4f"></span></p><p style="margin: 0">[Acting coach or studio]<br>[Singing teacher]<br>[Dance training]</p></section>
+<section><p style="margin: 0 0 0.8em; display: flex; align-items: center; gap: 0.9em; font-size: 0.9em; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: #1c2b45"><span style="flex: 1; height: 0.75pt; background: #b08d4f"></span>Special skills<span style="flex: 1; height: 0.75pt; background: #b08d4f"></span></p><p style="margin: 0">[Singing range]<br>[Dance styles]<br>[Sports, accents, instruments]</p></section>
+</div>
+</div>
+</div>
+</div>
+</article>
+</section>
+<footer style="background: var(--footer-bg); color: var(--on-dark)">
 
-<footer style="background: var(--band); color: var(--on-dark)">
-<div style="max-width: 1320px; margin: 0 auto; padding: 56px clamp(20px, 4vw, 56px) 36px; display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center">
-<span style="font-family: 'Bodoni Moda', Didot, Georgia, serif; font-size: 34px; line-height: 1">Hannah Ross</span>
-<span style="display: flex; align-items: center; gap: 10px"><span style="width: 40px; height: 1px; background: var(--accent-on-dark)"></span><svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l1.6 8.4L22 12l-8.4 1.6L12 22l-1.6-8.4L2 12l8.4-1.6z" style="fill: var(--accent-on-dark)"></path></svg><span style="width: 40px; height: 1px; background: var(--accent-on-dark)"></span></span>
+<div style="max-width: 1320px; margin: 0 auto; padding: 64px clamp(20px, 4vw, 56px) 40px; display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center">
+<span style="font-family: Fraunces, Georgia, serif; font-size: 36px; line-height: 1">Hannah Ross</span>
+<div aria-hidden="true" style="display: flex; align-items: center; gap: 12px"><span style="width: 40px; height: 1px; background: var(--accent-on-dark)"></span><svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true" style="fill: var(--accent-on-dark)"><path d="M12 2l1.6 8.4L22 12l-8.4 1.6L12 22l-1.6-8.4L2 12l8.4-1.6z"></path></svg><span style="width: 40px; height: 1px; background: var(--accent-on-dark)"></span></div>
+<nav aria-label="Footer" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 28px; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase">
+<a href="about.html" style="display: inline-flex; align-items: center; min-height: 44px; color: var(--on-dark); text-decoration: none">About</a>
+<a href="gallery.html" style="display: inline-flex; align-items: center; min-height: 44px; color: var(--on-dark); text-decoration: none">Gallery</a>
+<a href="reel.html" style="display: inline-flex; align-items: center; min-height: 44px; color: var(--on-dark); text-decoration: none">Reels</a>
+<a href="resume.html" style="display: inline-flex; align-items: center; min-height: 44px; color: var(--on-dark); text-decoration: none">Resume</a>
+<a href="contact.html" style="display: inline-flex; align-items: center; min-height: 44px; color: var(--on-dark); text-decoration: none">Contact</a>
+</nav>
 <span style="font-size: 13px; color: var(--on-dark-muted)">© 2026 Hannah Ross · Website by <a href="https://www.sullivanparkdesign.com/services/actor-websites" style="color: var(--on-dark)">Sullivan Park Design</a></span>
 </div>
 </footer>
-
-</div>
 </body>
 </html>

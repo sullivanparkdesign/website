@@ -1,13 +1,13 @@
-// Luminous template demo: colour switcher, headshot filters, print button and demo-only forms.
+// Luminous template demo: colour switcher, gallery photo viewer, one-page resume, print button and demo-only forms.
 (function () {
   'use strict';
   var root = document.documentElement;
 
   // Colour switcher: shows visitors the same template in another palette
   var PALETTES = [
-    { id: 'blue', name: 'Blue & gold', short: 'Blue', colours: ['#1c2b45', '#e4ecf3', '#c2a060'] },
-    { id: 'sage', name: 'Sage & slate', short: 'Sage', colours: ['#5c757a', '#c7cdbf', '#e9e2d8'] },
-    { id: 'plum', name: 'Plum & champagne', short: 'Plum', colours: ['#2a1a26', '#c9a66b', '#f2e8dc'] },
+    { id: 'blue', name: 'Navy & gold', short: 'Navy', colours: ['#1c2b45', '#e2e6e9', '#c2a060'] },
+    { id: 'sea', name: 'Sea glass', short: 'Sea', colours: ['#f5f3ee', '#8fbcb6', '#2b4f52'] },
+    { id: 'popcorn', name: 'Popcorn', short: 'Popcorn', colours: ['#fbf3d6', '#fffbf2', '#c99b2c'] },
   ];
   var bar = document.createElement('div');
   bar.className = 'palette-switch';
@@ -70,7 +70,7 @@
   });
 
   // Print button on the resume page
-  document.querySelectorAll('a[href="#print"]').forEach(function (a) {
+  document.querySelectorAll('a[href="#print"], a[href="#pdf"]').forEach(function (a) {
     a.addEventListener('click', function (e) { e.preventDefault(); window.print(); });
   });
 
@@ -86,4 +86,71 @@
       form.appendChild(p);
     });
   });
+
+  // Gallery: click a photo to see it larger (Escape, the close button or a click outside closes it)
+  var opener = null;
+  function closeBox() {
+    var box = document.querySelector('.lightbox');
+    if (!box) return;
+    box.remove();
+    document.removeEventListener('keydown', onKey);
+    if (opener) opener.focus();
+  }
+  function onKey(e) { if (e.key === 'Escape') closeBox(); }
+  document.querySelectorAll('[data-lightbox]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+      e.preventDefault();
+      opener = a;
+      var box = document.createElement('div');
+      box.className = 'lightbox';
+      box.setAttribute('role', 'dialog');
+      box.setAttribute('aria-modal', 'true');
+      box.setAttribute('aria-label', a.getAttribute('aria-label') || 'Photo');
+      var img = document.createElement('img');
+      img.src = a.getAttribute('href');
+      img.alt = '';
+      var close = document.createElement('button');
+      close.type = 'button';
+      close.setAttribute('aria-label', 'Close');
+      close.textContent = '×';
+      close.addEventListener('click', closeBox);
+      box.addEventListener('click', function (ev) { if (ev.target === box) closeBox(); });
+      box.appendChild(img);
+      box.appendChild(close);
+      document.body.appendChild(box);
+      document.addEventListener('keydown', onKey);
+      close.focus();
+    });
+  });
+
+  // Resume: keep the sheet on one page. If more credits are added than fit, the text shrinks a little at a time.
+  var sheet = document.querySelector('.resume-sheet');
+  var baseSize = sheet ? sheet.style.fontSize || getComputedStyle(sheet).fontSize : '';
+  var baseRatio = sheet ? sheet.style.aspectRatio : '';
+  var printing = false;
+  function fitSheet() {
+    if (!sheet) return;
+    sheet.style.fontSize = baseSize;
+    if (!printing && window.matchMedia('(max-width: 760px)').matches) return; // small screens let the sheet grow
+    var size = parseFloat(getComputedStyle(sheet).fontSize);
+    var min = size * 0.72;
+    var target = sheet.offsetWidth * 11 / 8.5; // one letter page at the sheet's width
+    sheet.style.setProperty('aspect-ratio', 'auto', 'important');
+    sheet.style.setProperty('height', 'auto', 'important');
+    while (sheet.scrollHeight > target + 1 && size > min) {
+      size -= 0.25;
+      sheet.style.fontSize = size + 'px';
+    }
+    sheet.style.removeProperty('height');
+    sheet.style.removeProperty('aspect-ratio');
+    sheet.style.aspectRatio = baseRatio;
+  }
+  if (sheet) {
+    fitSheet();
+    window.addEventListener('resize', fitSheet);
+    window.addEventListener('beforeprint', function () { printing = true; sheet.style.width = '8.5in'; fitSheet(); });
+    window.addEventListener('afterprint', function () { printing = false; sheet.style.width = ''; fitSheet(); });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitSheet);
+  }
 })();

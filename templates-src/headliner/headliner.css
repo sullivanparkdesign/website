@@ -1,0 +1,173 @@
+/* Headliner template demo.
+   Every colour on the pages comes from these palettes, so a new colourway is
+   one new block below. Most layout styling is inline in each page. */
+
+html[data-palette="charcoal"] {
+  color-scheme: dark;
+  --bg: #131518;            /* page background, text on accent buttons */
+  --panel: #1f2328;         /* tinted sections and the contact form */
+  --ink: #eceef1;           /* main text, lines, outlined buttons */
+  --soft: #c5cbd2;          /* body copy */
+  --muted: #9aa3ad;         /* secondary text and small labels */
+  --rule: #2e3238;          /* thin dividers */
+  --accent: #93b0e6;        /* cornflower: labels, links, solid buttons */
+  --on-accent: #131518;     /* text on solid buttons */
+  --photo-ink: #f4f2ee;     /* text over photos (always light) */
+  --photo-muted: #d3d7dc;   /* secondary text over photos */
+  --photo-accent: #b4c8ef;  /* small label over the home photo */
+  --scrim: 12, 14, 18;      /* the shade over photos, as red, green, blue */
+  --frame: #0b0c0e;         /* behind videos and photos */
+  --sheet-bar: #131518;     /* resume sheet: the agency bar and the block at the bottom */
+  --sheet-band: #f1f3f6;    /* resume sheet: the band behind the name */
+  --sheet-panel: #e6ecf6;   /* resume sheet: the right column */
+}
+
+/* Sky (the default): the light blue colourway. The home photo keeps a navy shade so the name stays readable */
+:root, html[data-palette="sky"] {
+  color-scheme: light;
+  --bg: #f4f6f9;
+  --panel: #e1e9f2;
+  --ink: #16233a;
+  --soft: #33425a;
+  --muted: #55637a;
+  --rule: #d3dbe6;
+  --accent: #24477a;
+  --on-accent: #f4f6f9;
+  --photo-ink: #f6f7f9;
+  --photo-muted: #dbe3ee;
+  --photo-accent: #bcd2ee;
+  --scrim: 16, 30, 56;
+  --frame: #0f1a2c;
+  --sheet-bar: #16233a;
+  --sheet-band: #f4f6f9;
+  --sheet-panel: #e1e9f2;
+}
+
+/* Garnet: white with deep red buttons and accents, light grey panels, and a deep red bar on the resume */
+html[data-palette="garnet"] {
+  color-scheme: light;
+  --bg: #ffffff;
+  --panel: #ececee;         /* light grey */
+  --ink: #1d1d21;
+  --soft: #3d3d43;
+  --muted: #5d5d66;
+  --rule: #e1e1e5;
+  --accent: #8c1c2b;        /* deep red */
+  --on-accent: #ffffff;
+  --photo-ink: #ffffff;
+  --photo-muted: #e8e6e6;
+  --photo-accent: #f3c3c9;  /* soft pink label over the home photo */
+  --scrim: 26, 18, 20;
+  --frame: #1a1416;
+  --sheet-bar: #8c1c2b;
+  --sheet-band: #f4f4f5;
+  --sheet-panel: #ececee;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: Manrope, 'Helvetica Neue', Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; }
+a { color: var(--ink); }
+a:hover { color: var(--accent); }
+.hero a:hover { color: var(--photo-ink); opacity: 0.85; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.hero :focus-visible { outline-color: var(--photo-ink); }
+button, select, input, textarea { font: inherit; }
+select option { background: var(--bg); color: var(--ink); }
+
+/* Home photo: a slow settle as the page opens (off for visitors who prefer less motion) */
+.hero-img { animation: hero-settle 14s ease-out both; transform-origin: 60% 40%; }
+@keyframes hero-settle { from { transform: scale(1.07); } to { transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) { .hero-img { animation: none; } }
+
+/* Menu: the name (or NY on the home page) in the corner with the page links beside it, and an outlined Contact button on the right.
+   On smaller screens the name and Contact share the top line and the links sit underneath. */
+@media (max-width: 860px) {
+  .site-header { gap: 4px 12px !important; padding-top: 14px !important; padding-bottom: 10px !important; }
+  .site-header .nav-right { order: 1; margin-left: auto; font-size: 11px !important; letter-spacing: 0.1em !important; }
+  .site-header .nav-left { order: 2; flex: 1 1 100% !important; justify-content: space-between; gap: 0 14px !important; font-size: 11px !important; letter-spacing: 0.1em !important; }
+  .site-header .nav-contact { padding: 0 14px !important; }
+}
+
+/* Phones: the name sits low over the photo */
+@media (max-width: 760px) {
+  .hero-img { object-position: 58% center !important; }
+  .hero-scrim { background: linear-gradient(180deg, rgba(var(--scrim), 0.65) 0%, rgba(var(--scrim), 0) 22%, rgba(var(--scrim), 0) 34%, rgba(var(--scrim), 0.82) 62%, rgba(var(--scrim), 0.94) 100%) !important; }
+  .hero-body { align-items: flex-end !important; padding-bottom: 40px !important; }
+  .hero-text { gap: 16px !important; }
+  .hero-eyebrow { font-size: 10px !important; letter-spacing: 0.2em !important; }
+  .hero-name { font-size: 56px !important; }
+  .hero-line { font-size: 15px !important; }
+  .hero-actions { gap: 10px !important; margin-top: 4px !important; }
+  .hero-actions a { min-height: 48px !important; padding: 0 16px !important; letter-spacing: 0.12em !important; }
+}
+
+/* Footer: name and links, representation, then social icons. They stack on smaller screens */
+@media (max-width: 860px) { .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; } .footer-grid > :first-child { grid-column: 1 / -1; } }
+@media (max-width: 560px) { .footer-grid { grid-template-columns: minmax(0, 1fr) !important; } }
+
+/* Photos that zoom gently on hover: gallery tiles and the About page cards */
+.zoom { transition: transform 0.7s cubic-bezier(0.2, 0.6, 0.2, 1); }
+.tile:hover .zoom, .tile:focus-visible .zoom, .card:hover .zoom, .card:focus-visible .zoom { transform: scale(1.045); }
+@media (prefers-reduced-motion: reduce) { .zoom { transition: none; } }
+
+/* Gallery: on phones the large photo goes full width and the others sit two by two */
+@media (max-width: 760px) {
+  .mosaic { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 10px !important; }
+  .mosaic .m-big { grid-column: 1 / -1 !important; grid-row: auto !important; aspect-ratio: 4 / 5 !important; }
+  .mosaic .m-small { grid-column: auto !important; grid-row: auto !important; aspect-ratio: 4 / 5; }
+  .stills3 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 10px !important; }
+  .stills3 > :last-child { grid-column: 1 / -1; }
+}
+
+/* Gallery: click a photo to see it larger */
+[data-lightbox] { cursor: zoom-in; }
+.lightbox { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: 56px 20px; background: rgba(var(--scrim), 0.92); }
+.lightbox img { display: block; max-width: min(100%, 1100px); max-height: 100%; object-fit: contain; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5); }
+.lightbox button { position: absolute; top: 12px; right: 12px; width: 48px; height: 48px; border: 1px solid rgba(255, 255, 255, 0.7); border-radius: 50%; background: transparent; color: #ffffff; font-size: 26px; line-height: 1; cursor: pointer; }
+.lightbox button:focus-visible { outline: 2px solid #ffffff; outline-offset: 3px; }
+
+/* The resume sheet: a printed page. On small screens its columns stack */
+@media (max-width: 760px) {
+  .resume-sheet { aspect-ratio: auto !important; }
+  .sheet-cols { grid-template-columns: minmax(0, 1fr) !important; }
+  .sheet-name { font-size: 2.6em !important; }
+}
+
+/* Printing: the resume prints as its one-page sheet only. Other pages drop the menus and footer */
+@page { size: letter; margin: 0; }
+@media print {
+  html { color-scheme: light; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  header, footer, .palette-switch { display: none !important; }
+  .resume-page, .resume-page body { background: #ffffff !important; }
+  .resume-page .resume-intro { display: none !important; }
+  .resume-page .resume-wrap { padding: 0 !important; background: #ffffff !important; }
+  .resume-page .resume-sheet { width: 8.5in !important; height: 11in !important; max-width: none !important; aspect-ratio: auto !important; margin: 0 !important; box-shadow: none !important; }
+}
+
+/* Colour switcher (template demo only) */
+.palette-switch {
+  position: fixed; left: 50%; bottom: 16px; transform: translateX(-50%); z-index: 50;
+  display: flex; align-items: center; gap: 6px; padding: 6px 6px 6px 14px;
+  background: var(--bg); color: var(--ink); border: 1px solid var(--ink);
+  font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;
+}
+.palette-switch button {
+  white-space: nowrap; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 14px;
+  border: 1px solid transparent; background: transparent; color: var(--ink); cursor: pointer;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+}
+.palette-switch button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+.palette-switch .swatch { display: inline-flex; width: 22px; height: 22px; border-radius: 50%; overflow: hidden; border: 1px solid rgba(128,128,128,0.4); }
+.palette-switch .swatch i { flex: 1; }
+.palette-switch .short { display: none; }
+@media (max-width: 680px) {
+  .palette-switch { left: 12px; right: 12px; bottom: 12px; transform: none; justify-content: center; gap: 2px; padding: 4px; }
+  .palette-switch .label, .palette-switch .full { display: none; }
+  .palette-switch .short { display: inline; }
+  .palette-switch button { flex: 1 1 0; justify-content: center; padding: 0 8px; letter-spacing: 0.06em; }
+  .site-credit { padding-bottom: 84px !important; } /* demo only: room for the switcher */
+  .hero-body { padding-bottom: 92px !important; }   /* demo only: keeps the hero buttons clear of the switcher */
+}

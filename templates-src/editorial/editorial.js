@@ -1,13 +1,13 @@
-// Editorial template demo: colour switcher, headshot filters, print button and demo-only forms.
+// Editorial template demo: colour switcher, headshot filters, print button, reel preview and demo-only forms.
 (function () {
   'use strict';
   var root = document.documentElement;
 
   // Colour switcher: shows visitors the same template in another palette
   var PALETTES = [
-    { id: 'denim', name: 'Stone & denim', short: 'Denim', colours: ['#1b2530', '#3d5a78', '#eef0ef'] },
-    { id: 'heather', name: 'Heather & sage', short: 'Heather', colours: ['#9da2ae', '#e5e5e5', '#9ba191'] },
-    { id: 'forest', name: 'Forest & clay', short: 'Forest', colours: ['#1d2721', '#d49a76', '#ece5d8'] },
+    { id: 'stone', name: 'Stone', short: 'Stone', colours: ['#1b2530', '#3d5a78', '#eef0ef'] },
+    { id: 'denim', name: 'Denim', short: 'Denim', colours: ['#4a4f5e', '#e5e5e5', '#c5cab9'] },
+    { id: 'sage', name: 'Sage', short: 'Sage', colours: ['#5e6e62', '#f4eddd', '#f9eecf'] },
   ];
   var bar = document.createElement('div');
   bar.className = 'palette-switch';
@@ -45,10 +45,10 @@
       var href = a.getAttribute('href');
       if (/^https?:/.test(href) || /^images\//.test(href)) return;
       href = href.replace(/\?palette=[a-z-]+$/, '');
-      a.setAttribute('href', id === 'denim' ? href : href + '?palette=' + id);
+      a.setAttribute('href', id === 'stone' ? href : href + '?palette=' + id);
     });
   }
-  setPalette(root.getAttribute('data-palette') || 'denim');
+  setPalette(root.getAttribute('data-palette') || 'stone');
 
   // Headshot filters (headshots page)
   var filters = Array.prototype.slice.call(document.querySelectorAll('[data-filter]'));
@@ -75,6 +75,12 @@
   });
 
   // Forms are for show in the template demo
+  // No reel yet? The home page has a ready-made "coming soon" version of the reel section.
+  // A live site just keeps whichever section it needs. Here, add ?reel=soon to the address to preview it.
+  if (/[?&]reel=soon\b/.test(location.search)) {
+    document.querySelectorAll('[data-reel]').forEach(function (el) { el.hidden = el.getAttribute('data-reel') !== 'soon'; });
+  }
+
   document.querySelectorAll('[data-demo-form]').forEach(function (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();

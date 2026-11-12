@@ -8,3 +8,9 @@
 /web-design      /services/website-design   301
 /branding        /services/brand-marketing-design   301
 /seo             /services/seo   301
+
+# Actor template demos that were renamed
+/templates/feature/headshots.html   /templates/headliner/gallery.html   301
+/templates/feature/reel.html        /templates/headliner/media.html     301
+/templates/feature/*                /templates/headliner/:splat         301
+/templates/luminous/headshots.html  /templates/luminous/gallery.html    301
