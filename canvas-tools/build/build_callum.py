@@ -142,15 +142,18 @@ PHONES = C.phones(
     items=[(blob('about-phone'), 'The About page on a phone'), (blob('resume-phone'), 'The Resume page on a phone'),
            (blob('gallery-phone'), 'The Gallery page on a phone'), (blob('media-phone'), 'The Media page on a phone')])
 
-QUOTE = f'''<!-- TESTIMONIAL (placeholder until the family's words arrive) -->
-<section aria-label="Client testimonial placeholder" style="background: #FFFFFF">
-<div class="sp-reveal" style="{WRAP}; padding-top: clamp(72px, 8vw, 112px); padding-bottom: clamp(72px, 8vw, 112px)">
-<div style="position: relative; padding: clamp(30px, 3.4vw, 50px); border: 1px dashed rgba(90, 90, 90, 0.55); background: {MIST}; display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center">
-<span aria-hidden="true" style="font-family: {SERIF}; font-size: 88px; line-height: 0.6; height: 32px; color: {CHAR}">“</span>
-<p style="margin: 0; font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; color: {GREY_TXT}">Placeholder</p>
-<p style="margin: 0; font-family: {SERIF}; font-style: italic; font-weight: 300; font-size: clamp(21px, 1.65vw, 25px); line-height: 1.45; color: #121414">A quote from Callum’s family will go here.</p>
-</div>
-</div>
+QUOTE = f'''<!-- TESTIMONIAL (Callum's family, word for word) -->
+<section aria-label="Testimonial from Callum’s family" style="background: #FFFFFF">
+<figure class="sp-reveal" style="{WRAP}; padding-top: clamp(72px, 8vw, 112px); padding-bottom: clamp(72px, 8vw, 112px); margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 24px; text-align: center">
+<span aria-hidden="true" style="font-family: {SERIF}; font-size: 100px; line-height: 0.6; height: 38px; color: {CHAR}">“</span>
+<blockquote style="margin: 0; max-width: 900px; display: flex; flex-direction: column; gap: 18px; font-family: {SERIF}; font-style: italic; font-weight: 300; font-size: clamp(20px, 1.6vw, 25px); line-height: 1.55; color: #121414; text-wrap: pretty">
+<p style="margin: 0">I honestly can’t recommend Natasha enough! She designed a beautiful website for my son, Callum, and we couldn’t be happier with how it turned out.</p>
+<p style="margin: 0">Natasha is incredibly talented, creative, and has such a great eye for detail. She really took the time to understand what we wanted and brought it all together beautifully. You can tell she genuinely cares about her work and takes pride in getting everything just right.</p>
+<p style="margin: 0">The whole experience was a pleasure, and the finished website was even better than we imagined. We’re so grateful for all the time, care, and effort she put into it.</p>
+<p style="margin: 0">Thank you, Natasha, for doing such a wonderful job for Callum. We absolutely love it and wouldn’t hesitate to recommend you to anyone!</p>
+</blockquote>
+<figcaption style="display: flex; flex-direction: column; align-items: center; gap: 6px; padding-top: 20px; border-top: 1px solid {SILVER}"><span style="font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; color: {INK}">Callum’s family</span><span style="font-size: 16px; color: {GREY_TXT}">Custom-coded actor website</span></figcaption>
+</figure>
 </section>
 '''
 
@@ -182,4 +185,4 @@ C.write_page(ROOT, 'Callum-Frost.dc.html',
              title='Callum Frost: Actor Website Case Study | Sullivan Park Design',
              desc='How I designed a classic black and white website for Vancouver actor Callum Frost, first on Squarespace and now custom-coded, with headshot direction, his acting resume, all the copy, SEO and ongoing updates.',
              fonts_href='https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&amp;family=Roboto+Mono:wght@400&amp;display=swap',
-             main=MAIN, extra_css=EXTRA, preview_h=9960)
+             main=MAIN, extra_css=EXTRA, preview_h=10280)
