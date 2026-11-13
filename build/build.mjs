@@ -100,6 +100,10 @@ const slug = (s) => s.toLowerCase().replace(/&amp;/g, 'and').replace(/[’']/g, 
 const imgNames = new Map();
 const usedNames = new Set();
 const NAMED = Object.fromEntries(Object.entries(CONFIG.imageNames || {}));
+// Images are cached for a year under their file name, so a name is never reused for a different image.
+// image-owners.json records the image that first used each name; a new image with the same description gets the next free name.
+const OWNERS_FILE = path.join(ROOT, 'build', 'image-owners.json');
+const OWNERS = fs.existsSync(OWNERS_FILE) ? JSON.parse(fs.readFileSync(OWNERS_FILE, 'utf8')) : {};
 function nameFor(id, alt, kind) {
   if (imgNames.has(id)) return imgNames.get(id);
   const file = path.join(BLOBS, id);
@@ -107,8 +111,9 @@ function nameFor(id, alt, kind) {
   const e = ext(fs.readFileSync(file));
   let base = NAMED[id] || (alt ? slug(alt) : '') || (kind === 'video' ? 'sullivan-park-design-ocean' : 'sullivan-park-design');
   let n = base, i = 2;
-  while (usedNames.has(n)) n = `${base}-${i++}`;
+  while (usedNames.has(n) || (OWNERS[n] && OWNERS[n] !== id)) n = `${base}-${i++}`;
   usedNames.add(n);
+  if (!OWNERS[n]) OWNERS[n] = id;
   const out = (e === '.mp4' ? '/media/' : '/images/') + n + e;
   imgNames.set(id, out);
   fs.copyFileSync(file, path.join(SITE, out));
@@ -367,6 +372,7 @@ fs.writeFileSync(path.join(SITE, '_redirects'), `# Old Squarespace addresses -> 
 /templates/feature/*                /templates/headliner/:splat         301
 /templates/luminous/headshots.html  /templates/luminous/gallery.html    301
 `);
+fs.writeFileSync(OWNERS_FILE, JSON.stringify(Object.fromEntries(Object.entries(OWNERS).sort()), null, 1) + '\n');
 fs.writeFileSync(path.join(ROOT, 'build', 'last-build.json'), JSON.stringify({ pages: built, images: Object.fromEntries(imgNames), warnings: r.warnings }, null, 1));
 console.log(`built ${built.length} pages + 404, ${imgNames.size} images`);
 if (r.warnings.length) console.log('warnings:\n  ' + [...new Set(r.warnings)].join('\n  '));
