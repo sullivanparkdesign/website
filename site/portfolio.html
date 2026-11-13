@@ -164,7 +164,10 @@ img{display:block;max-width:100%;height:auto}
 .pf-feature:hover .pf-desk,.pf-card:hover .pf-desk{transform:translateY(-6px)}
 .pf-feature:hover .pf-phone,.pf-card:hover .pf-phone{transform:translateY(-14px)}
 @media (prefers-reduced-motion: reduce){.pf-stage .pf-desk,.pf-stage .pf-phone{transition:none !important;transform:none !important}}
-/* /PORTFOLIO */
+/* /PORTFOLIO */.pf-actors{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px 40px;padding:22px 0 0;border-top:1px solid rgba(78,99,104,.3)}
+.pf-actors-t{margin:0;flex:1 1 420px;min-width:0;font-size:19px;line-height:1.6;color:#1F2426}
+.pf-actors-t em{font-family:'Cormorant Infant',Garamond,serif;font-size:1.3em;font-style:italic;color:#4E6368;margin-right:6px}
+
 /* NAV v2 (generated) */
 html{scroll-padding-top:104px}
 .sp-header{transition:background-color .45s ease,box-shadow .45s ease}
@@ -269,7 +272,7 @@ html{scroll-padding-top:104px}
 </ul>
 <div style="margin-top: 26px; padding-top: 20px; border-top: 1px solid rgba(18, 20, 20, 0.12); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px">
 <a class="sp-dd-row" href="/services#ongoing-title" style="display: inline-flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; text-decoration: none; color: #121414"><span class="sp-dd-name" style="font-family: 'Cormorant Infant', Garamond, serif; font-size: 22px; line-height: 1.2">Ongoing Support</span><span style="font-size: 15px; line-height: 1.5; color: #4E5558">Keep your website and marketing moving</span></a>
-
+<a class="sp-dd-row" href="/services/actor-websites" style="display: inline-flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; text-decoration: none; color: #121414"><span class="sp-dd-name" style="font-family: 'Cormorant Infant', Garamond, serif; font-size: 22px; line-height: 1.2">Actor Websites</span><span style="font-size: 15px; line-height: 1.5; color: #4E5558">Ready-made looks for actors</span></a>
 <a class="sp-dd-all" href="/services" style="display: inline-flex; align-items: center; gap: 12px; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: #4E6368; text-decoration: none">All Services<svg width="22" height="10" viewBox="0 0 26 10" fill="none" aria-hidden="true"><path d="M0 5h24M20 1l4 4-4 4" stroke="currentColor" stroke-width="1.1"></path></svg></a>
 </div>
 </div>
@@ -299,7 +302,7 @@ html{scroll-padding-top:104px}
 <li><a class="sp-msub" href="/services/brand-marketing-design" style="display: flex; align-items: center; gap: 14px; min-height: 44px; font-size: 16px; letter-spacing: 0.12em; text-transform: uppercase; color: #4E6368; text-decoration: none" data-menu-close=""><span aria-hidden="true" style="display: block; width: 18px; height: 1px; background: currentColor"></span>Brand &amp; Marketing Design</a></li>
 <li><a class="sp-msub" href="/services/seo" style="display: flex; align-items: center; gap: 14px; min-height: 44px; font-size: 16px; letter-spacing: 0.12em; text-transform: uppercase; color: #4E6368; text-decoration: none" data-menu-close=""><span aria-hidden="true" style="display: block; width: 18px; height: 1px; background: currentColor"></span>SEO</a></li>
 <li><a class="sp-msub" href="/services#ongoing-title" style="display: flex; align-items: center; gap: 14px; min-height: 44px; font-size: 16px; letter-spacing: 0.12em; text-transform: uppercase; color: #4E6368; text-decoration: none" data-menu-close=""><span aria-hidden="true" style="display: block; width: 18px; height: 1px; background: currentColor"></span>Ongoing Support</a></li>
-
+<li><a class="sp-msub" href="/services/actor-websites" style="display: flex; align-items: center; gap: 14px; min-height: 44px; font-size: 16px; letter-spacing: 0.12em; text-transform: uppercase; color: #4E6368; text-decoration: none" data-menu-close=""><span aria-hidden="true" style="display: block; width: 18px; height: 1px; background: currentColor"></span>Actor Websites</a></li>
 </ul>
 </div>
 <a href="/portfolio" aria-current="page" style="display: block; padding: 18px 0; border-bottom: 1px solid rgba(18, 20, 20, 0.12); font-family: 'Cormorant Infant', Garamond, serif; font-size: 28px; color: #121414; text-decoration: none" data-menu-close="">Portfolio</a>
@@ -340,6 +343,10 @@ html{scroll-padding-top:104px}
 </a></li>
 </ul>
 </nav>
+<div class="pf-actors sp-reveal">
+<p class="pf-actors-t"><em>Are you an actor?</em> I also offer ready-made actor websites, from $650 + tax.</p>
+<a class="sp-btn sp-btn-ghost" href="/services/actor-websites" style="flex: none; display: inline-flex; align-items: center; justify-content: center; gap: 14px; min-height: 52px; padding: 0 26px; background: transparent; border: 1px solid #4E6368; color: #121414; text-decoration: none; font-size: 17px; letter-spacing: 0.03em">Actor Websites<svg width="22" height="10" viewBox="0 0 26 10" fill="none" aria-hidden="true"><path d="M0 5h24M20 1l4 4-4 4" stroke="currentColor" stroke-width="1.1"></path></svg></a>
+</div>
 </div>
 </section>
 
@@ -531,6 +538,7 @@ html{scroll-padding-top:104px}
 <a class="sp-flink" href="/services/brand-marketing-design" style="color: #121414; text-decoration: none; font-size: 18px; line-height: 1.5">Brand &amp; Marketing Design</a>
 <a class="sp-flink" href="/services/seo" style="color: #121414; text-decoration: none; font-size: 18px; line-height: 1.5">SEO</a>
 <a class="sp-flink" href="/services#ongoing-title" style="color: #121414; text-decoration: none; font-size: 18px; line-height: 1.5">Ongoing Support</a>
+<a class="sp-flink" href="/services/actor-websites" style="color: #121414; text-decoration: none; font-size: 18px; line-height: 1.5">Actor Websites</a>
 </nav>
 <nav aria-label="Explore" style="flex: 0 1 200px; display: flex; flex-direction: column; gap: 12px">
 <p style="margin: 0 0 6px; font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; color: #4E6368">Explore</p>

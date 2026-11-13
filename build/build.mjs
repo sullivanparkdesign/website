@@ -23,7 +23,7 @@ const PAGES = [
   { src: 'Website-Design', url: '/services/website-design', crumb: 'Website Design', parent: 'Services' },
   { src: 'Brand-Marketing-Design', url: '/services/brand-marketing-design', crumb: 'Brand and Marketing Design', parent: 'Services' },
   { src: 'SEO', url: '/services/seo', crumb: 'SEO', parent: 'Services' },
-  { src: 'Actor-Websites', url: '/services/actor-websites', crumb: 'Actor Websites', parent: 'Services', og: '/_blob/d42d37c59ae9c3b6be701fdf2d142351' },
+  { src: 'Actor-Websites', url: '/services/actor-websites', crumb: 'Actor Websites', parent: 'Services', og: '/_blob/d42d37c59ae9c3b6be701fdf2d142351', service: { name: 'Actor Websites', serviceType: 'Website design for actors' } },
   { src: 'Portfolio', url: '/portfolio', crumb: 'Portfolio' },
   { src: 'Hamish-Ross', url: '/portfolio/hamish-ross-real-estate', crumb: 'Hamish Ross Real Estate', parent: 'Portfolio' },
   { src: 'Smash', url: '/portfolio/smash-performing-arts', crumb: 'SMASH Performing Arts Studio', parent: 'Portfolio' },
@@ -189,6 +189,14 @@ function schema(page, meta, body, ogImage) {
       image: ogImage, url: ORIGIN + page.url, mainEntityOfPage: ORIGIN + page.url,
       author: { '@type': 'Person', name: 'Natasha Young', url: ORIGIN + '/about' },
       publisher: { '@id': BUSINESS_ID, '@type': 'ProfessionalService', name: 'Sullivan Park Design', url: ORIGIN + '/' },
+    });
+  }
+  if (page.service) {
+    // a service page: tell search engines what the service is and who provides it
+    graph.push({
+      '@type': 'Service', name: page.service.name, serviceType: page.service.serviceType, description: meta.desc,
+      url: ORIGIN + page.url, image: ogImage, areaServed: { '@type': 'City', name: 'Vancouver' },
+      provider: { '@id': BUSINESS_ID, '@type': 'ProfessionalService', name: 'Sullivan Park Design', url: ORIGIN + '/' },
     });
   }
   const faqs = faqsFrom(body);
