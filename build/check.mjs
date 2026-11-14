@@ -29,13 +29,13 @@ for (const u of list) {
     holes: /\{\{[^}]*\}\}/.test(document.body.innerHTML), h1: document.querySelectorAll('h1').length,
     canon: document.querySelector('link[rel=canonical]')?.href, robots: document.querySelector('meta[name=robots]')?.content || '',
   }));
-  const dead = [...new Set(r.links.map(h => h.split('#')[0]).filter(h => h && !file(h)))];
+  const dead = [...new Set(r.links.map(h => h.split('#')[0].split('?')[0]).filter(h => h && !file(h)))];
   const issues = [];
   if (r.bad.length) issues.push('broken images ' + r.bad.join(','));
   if (dead.length) issues.push('dead links ' + dead.join(','));
   const demo = u.startsWith('/templates/'); // template demos: placeholder links and noindex are intentional
   const hidden = HIDDEN.includes(u.replace(/\.html$/, '')); // built but not launched yet: noindex on purpose
-  const linksHidden = r.links.filter(h => HIDDEN.includes(h.split('#')[0]) && !hidden);
+  const linksHidden = r.links.filter(h => HIDDEN.includes(h.split('#')[0].split('?')[0]) && !hidden);
   if (linksHidden.length && !demo) issues.push('links to a hidden page ' + [...new Set(linksHidden)].join(','));
   if (r.anchors.length && !demo) issues.push('dead anchors ' + [...new Set(r.anchors)].join(','));
   if (r.blob) issues.push('canvas image path left'); if (r.dc) issues.push('.dc.html link left'); if (r.holes) issues.push('template hole left');

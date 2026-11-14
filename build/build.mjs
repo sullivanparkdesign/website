@@ -45,10 +45,11 @@ for (const p of PAGES) if ((CONFIG.hiddenPages || []).includes(p.url)) p.hidden 
 const BY_SRC = Object.fromEntries(PAGES.map(p => [p.src, p]));
 
 function linkMap(u) {
-  const m = /^([A-Za-z0-9-]+)\.dc\.html(#.*)?$/.exec(u);
+  // a page link can carry a query (Contact.dc.html?service=actor-websites) and/or a #section
+  const m = /^([A-Za-z0-9-]+)\.dc\.html(\?[^#]*)?(#.*)?$/.exec(u);
   if (m) {
     const p = BY_SRC[m[1]];
-    if (p) return p.url + (m[2] || '');
+    if (p) return p.url + (m[2] || '') + (m[3] || '');
   }
   if (u === '#privacy-policy') return BY_SRC.Privacy ? '/privacy' : 'mailto:info@sullivanparkdesign.com';
   return undefined;

@@ -158,11 +158,28 @@
           .catch(function () { finish(false); });
       } catch (e) { finish(false); }
     };
+    // Arriving from the Actor Websites page (/contact?service=actor-websites): that service is chosen
+    // for the visitor, who can still pick another. Its hint shows whenever it's the chosen service.
+    var serviceSelect = form.elements.namedItem('service');
+    var serviceHint = doc.getElementById('f-service-hint');
+    var SERVICES = { 'actor-websites': 'Actor Websites' };
+    var updateHint = function () {
+      if (!serviceSelect || !serviceHint) return;
+      var on = serviceSelect.value === 'Actor Websites';
+      show(serviceHint, on);
+      if (on) serviceSelect.setAttribute('aria-describedby', 'f-service-hint'); else serviceSelect.removeAttribute('aria-describedby');
+    };
+    try {
+      var wanted = SERVICES[new URLSearchParams(win.location.search).get('service') || ''];
+      if (wanted && serviceSelect) serviceSelect.value = wanted;
+    } catch (e) {}
+    if (serviceSelect) serviceSelect.addEventListener('change', updateHint);
+    updateHint();
     if (submit) submit.addEventListener('click', send);
     form.addEventListener('submit', function (e) { e.preventDefault(); send(); });
     $$('[data-form-reset]').forEach(function (b) {
       b.addEventListener('click', function () {
-        form.reset(); ['name', 'email', 'message'].forEach(function (n) { setError(n, false); });
+        form.reset(); updateHint(); ['name', 'email', 'message'].forEach(function (n) { setError(n, false); });
         show(views.sent, false); show(views.failed, false); show(views.form, true);
         var f = form.elements.namedItem('name'); if (f) f.focus();
       });

@@ -154,3 +154,27 @@
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitSheet);
   }
 })();
+
+// Reels in the template demo are samples: say so when someone presses play, instead of looking broken.
+(function () {
+  var timer = null;
+  function toast(text) {
+    var t = document.querySelector('.demo-toast');
+    if (!t) {
+      t = document.createElement('p');
+      t.className = 'demo-toast';
+      t.setAttribute('role', 'status');
+      document.body.appendChild(t);
+    }
+    t.textContent = text;
+    t.hidden = false;
+    clearTimeout(timer);
+    timer = setTimeout(function () { t.hidden = true; }, 6000);
+  }
+  document.querySelectorAll('button[aria-label^="Play"], a[href="#clip"]').forEach(function (el) {
+    el.addEventListener('click', function (e) {
+      e.preventDefault();
+      toast('This is a sample reel in the template preview. On a live site, your own YouTube or Vimeo reel plays here.');
+    });
+  });
+})();
