@@ -40,6 +40,7 @@ const PAGES = [
   { src: 'Contact', url: '/contact', crumb: 'Contact' },
 ];
 if (fs.existsSync(path.join(SRC, 'Privacy.dc.html'))) PAGES.push({ src: 'Privacy', url: '/privacy', crumb: 'Privacy Policy' });
+if (fs.existsSync(path.join(SRC, 'Actor-Website-Terms.dc.html'))) PAGES.push({ src: 'Actor-Website-Terms', url: '/services/actor-websites/terms', crumb: 'Actor Website Terms', parent: 'Actor-Websites' });
 // pages in config.hiddenPages are built and reachable by address only: noindex, no sitemap entry
 for (const p of PAGES) if ((CONFIG.hiddenPages || []).includes(p.url)) p.hidden = true;
 const BY_SRC = Object.fromEntries(PAGES.map(p => [p.src, p]));
