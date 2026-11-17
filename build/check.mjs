@@ -28,6 +28,8 @@ for (const u of list) {
     blob: document.documentElement.outerHTML.includes('/_blob/'), dc: document.documentElement.outerHTML.includes('.dc.html'),
     holes: /\{\{[^}]*\}\}/.test(document.body.innerHTML), h1: document.querySelectorAll('h1').length,
     canon: document.querySelector('link[rel=canonical]')?.href, robots: document.querySelector('meta[name=robots]')?.content || '',
+    // dropdown menus must start closed (a page missing the menu styles shows them open and stuck)
+    openMenus: [...document.querySelectorAll('.sp-dd-panel')].filter(el => getComputedStyle(el).visibility !== 'hidden').length,
   }));
   const dead = [...new Set(r.links.map(h => h.split('#')[0].split('?')[0]).filter(h => h && !file(h)))];
   const issues = [];
@@ -39,6 +41,7 @@ for (const u of list) {
   if (linksHidden.length && !demo) issues.push('links to a hidden page ' + [...new Set(linksHidden)].join(','));
   if (r.anchors.length && !demo) issues.push('dead anchors ' + [...new Set(r.anchors)].join(','));
   if (r.blob) issues.push('canvas image path left'); if (r.dc) issues.push('.dc.html link left'); if (r.holes) issues.push('template hole left');
+  if (r.openMenus) issues.push('dropdown menu open on load');
   if (r.h1 !== 1) issues.push('h1 count ' + r.h1); if (r.robots && !((demo || hidden) && /noindex/.test(r.robots))) issues.push('robots ' + r.robots);
   if (issues.length) { problems++; console.log(u, issues.join(' | ')); }
 }

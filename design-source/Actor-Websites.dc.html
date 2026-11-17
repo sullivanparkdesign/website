@@ -250,6 +250,59 @@ img{display:block;max-width:100%;height:auto}
 .aw-custom-phone{position:absolute;right:0;bottom:0;width:clamp(80px,19%,200px)}
 @media (prefers-reduced-motion: reduce){.aw-shots img,.aw-sw{transition:none}}
 
+/* NAV v2 (generated) */
+html{scroll-padding-top:104px}
+.sp-header{transition:background-color .45s ease,box-shadow .45s ease}
+.sp-headbar{position:relative;--hpad:24px;padding-top:var(--hpad) !important;padding-bottom:var(--hpad) !important;transition:padding .45s cubic-bezier(.2,.7,.2,1)}
+.sp-logo{transition:height .45s cubic-bezier(.2,.7,.2,1)}
+.sp-header[data-scrolled="true"]{background:rgba(250,250,248,.94);-webkit-backdrop-filter:saturate(1.3) blur(14px);backdrop-filter:saturate(1.3) blur(14px);box-shadow:0 1px 0 rgba(18,20,20,.08),0 18px 40px -30px rgba(18,20,20,.5)}
+.sp-header[data-scrolled="true"] .sp-headbar{--hpad:12px}
+.sp-header[data-scrolled="true"] .sp-logo{height:46px !important}
+.sp-logo-ink{display:none !important}
+.sp-header.sp-on-dark[data-scrolled="true"] .sp-logo-light{display:none !important}
+.sp-header.sp-on-dark[data-scrolled="true"] .sp-logo-ink{display:block !important}
+.sp-header.sp-on-dark[data-scrolled="true"] .sp-brand,.sp-header.sp-on-dark[data-scrolled="true"] .sp-wordmark,.sp-header.sp-on-dark[data-scrolled="true"] .sp-nav .sp-navlink{color:#121414 !important}
+.sp-header.sp-on-dark[data-scrolled="true"] .sp-header-cta,.sp-header.sp-on-dark[data-scrolled="true"] .sp-menu-btn{color:#121414 !important;border-color:#121414 !important}
+.sp-header.sp-on-dark[data-scrolled="true"] .sp-header-cta:hover{background:#121414 !important;color:#FFFFFF !important}
+.sp-header.sp-on-dark[data-scrolled="true"] :focus-visible{outline-color:#121414}
+.sp-nav{align-self:stretch}
+.sp-dd{display:flex;align-items:center;align-self:stretch;padding-block:var(--hpad);margin-block:calc(var(--hpad) * -1)}
+.sp-dd > .sp-navlink{display:inline-flex !important;align-items:center;gap:9px}
+.sp-caret{transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.sp-navlink.is-active::after,.sp-dd:hover > .sp-navlink::after,.sp-dd:focus-within > .sp-navlink::after{transform:scaleX(1)}
+.sp-dd-panel{opacity:0;visibility:hidden;transform:translateY(-8px);pointer-events:none;transition:opacity .25s ease .12s,transform .3s ease .12s,visibility 0s linear .42s}
+.sp-dd:hover > .sp-dd-panel,.sp-dd:focus-within > .sp-dd-panel{opacity:1;visibility:visible;transform:none;pointer-events:auto;transition:opacity .35s ease,transform .45s cubic-bezier(.2,.7,.2,1),visibility 0s}
+.sp-dd:hover > .sp-navlink .sp-caret,.sp-dd:focus-within > .sp-navlink .sp-caret{transform:rotate(180deg)}
+.sp-nav[data-hush="true"] .sp-dd-panel{opacity:0 !important;visibility:hidden !important;pointer-events:none !important}
+.sp-dd-card img{transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.sp-dd-card:hover img,.sp-dd-card:focus-visible img{transform:scale(1.05)}
+.sp-dd-name{transition:color .3s}
+.sp-dd-card:hover .sp-dd-name,.sp-dd-line:hover .sp-dd-name,.sp-dd-row:hover .sp-dd-name,.sp-dd-card[aria-current="page"] .sp-dd-name,.sp-dd-line[aria-current="page"] .sp-dd-name{color:#4E6368}
+.sp-dd-card[aria-current="page"] .sp-dd-thumb{outline:1px solid #4E6368;outline-offset:4px}
+.sp-dd-all svg,.sp-more-go svg,.sp-more-link svg{transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.sp-dd-all:hover svg,.sp-more-card:hover .sp-more-go svg,.sp-more-link:hover svg{transform:translateX(5px)}
+@media (max-width: 1240px){.sp-nav{gap:30px !important}}
+.sp-foot-grid{display:grid !important;grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr));gap:48px clamp(32px,4vw,64px) !important}
+.sp-foot-grid > :first-child p{max-width:520px}
+@media (max-width: 1000px){.sp-foot-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.sp-foot-grid > :first-child{grid-column:1 / -1}}
+@media (max-width: 680px){.sp-foot-grid{grid-template-columns:1fr 1fr}.sp-foot-grid > :last-child{grid-column:1 / -1}}
+@media (max-width: 420px){.sp-foot-grid{grid-template-columns:1fr}}
+.sp-mnav{max-height:calc(100vh - 110px);max-height:calc(100dvh - 110px);overflow-y:auto;overscroll-behavior:contain}
+.sp-mnav a[aria-current="page"]{color:#4E6368 !important}
+.sp-mnav .sp-msub[aria-current="page"]{color:#121414 !important}
+.sp-mnav .sp-msub[aria-current="page"] span{width:28px !important}
+.sp-msub{transition:color .3s}
+.sp-msub:hover{color:#121414 !important}
+.sp-more-card{transition:transform .6s cubic-bezier(.2,.7,.2,1),box-shadow .6s cubic-bezier(.2,.7,.2,1)}
+.sp-more-card:hover{transform:translateY(-4px);box-shadow:0 34px 60px -34px rgba(0,0,0,.55)}
+.sp-more-card img{transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.sp-more-card:hover img{transform:scale(1.04)}
+@media (max-width: 980px){.sp-more-grid{grid-template-columns:1fr 1fr !important}.sp-more-grid > li:last-child{grid-column:1 / -1}}
+@media (max-width: 640px){.sp-more-grid{grid-template-columns:1fr !important}}
+@media (prefers-reduced-motion: no-preference){.sp-fab{transition:transform .3s cubic-bezier(.2,.7,.2,1),background-color .3s,color .3s,opacity .4s ease,visibility 0s}}
+.sp-fab[data-show="false"]{opacity:0;visibility:hidden;pointer-events:none;transform:translateY(10px)}
+@media (prefers-reduced-motion: reduce){.sp-dd-panel{transform:none !important}.sp-dd-card img,.sp-more-card,.sp-more-card img{transition:none !important;transform:none !important}}
+/* /NAV v2 */
 </style>
 </helmet>
 
@@ -296,7 +349,7 @@ img{display:block;max-width:100%;height:auto}
 </ul>
 <div style="margin-top: 26px; padding-top: 20px; border-top: 1px solid rgba(18, 20, 20, 0.12); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px">
 <a class="sp-dd-row" href="Services.dc.html#ongoing-title" style="display: inline-flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; text-decoration: none; color: #121414"><span class="sp-dd-name" style="font-family: 'Cormorant Infant', Garamond, serif; font-size: 22px; line-height: 1.2">Ongoing Support</span><span style="font-size: 15px; line-height: 1.5; color: #4E5558">Keep your website and marketing moving</span></a>
-<a class="sp-dd-row" href="Actor-Websites.dc.html" style="display: inline-flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; text-decoration: none; color: #121414"><span class="sp-dd-name" style="font-family: 'Cormorant Infant', Garamond, serif; font-size: 22px; line-height: 1.2">Actor Websites</span><span style="font-size: 15px; line-height: 1.5; color: #4E5558">Ready-made looks for actors</span></a>
+<a class="sp-dd-row" href="Actor-Websites.dc.html" aria-current="page" style="display: inline-flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; text-decoration: none; color: #121414"><span class="sp-dd-name" style="font-family: 'Cormorant Infant', Garamond, serif; font-size: 22px; line-height: 1.2">Actor Websites</span><span style="font-size: 15px; line-height: 1.5; color: #4E5558">Ready-made looks for actors</span></a>
 <a class="sp-dd-all" href="Services.dc.html" style="display: inline-flex; align-items: center; gap: 12px; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: #4E6368; text-decoration: none">All Services<svg width="22" height="10" viewBox="0 0 26 10" fill="none" aria-hidden="true"><path d="M0 5h24M20 1l4 4-4 4" stroke="currentColor" stroke-width="1.1"></path></svg></a>
 </div>
 </div>
@@ -326,7 +379,7 @@ img{display:block;max-width:100%;height:auto}
 <li><a class="sp-msub" href="Brand-Marketing-Design.dc.html" onClick="{{closeMenu}}" style="display: flex; align-items: center; gap: 14px; min-height: 44px; font-size: 16px; letter-spacing: 0.12em; text-transform: uppercase; color: #4E6368; text-decoration: none"><span aria-hidden="true" style="display: block; width: 18px; height: 1px; background: currentColor"></span>Brand &amp; Marketing Design</a></li>
 <li><a class="sp-msub" href="SEO.dc.html" onClick="{{closeMenu}}" style="display: flex; align-items: center; gap: 14px; min-height: 44px; font-size: 16px; letter-spacing: 0.12em; text-transform: uppercase; color: #4E6368; text-decoration: none"><span aria-hidden="true" style="display: block; width: 18px; height: 1px; background: currentColor"></span>SEO</a></li>
 <li><a class="sp-msub" href="Services.dc.html#ongoing-title" onClick="{{closeMenu}}" style="display: flex; align-items: center; gap: 14px; min-height: 44px; font-size: 16px; letter-spacing: 0.12em; text-transform: uppercase; color: #4E6368; text-decoration: none"><span aria-hidden="true" style="display: block; width: 18px; height: 1px; background: currentColor"></span>Ongoing Support</a></li>
-<li><a class="sp-msub" href="Actor-Websites.dc.html" onClick="{{closeMenu}}" style="display: flex; align-items: center; gap: 14px; min-height: 44px; font-size: 16px; letter-spacing: 0.12em; text-transform: uppercase; color: #4E6368; text-decoration: none"><span aria-hidden="true" style="display: block; width: 18px; height: 1px; background: currentColor"></span>Actor Websites</a></li>
+<li><a class="sp-msub" href="Actor-Websites.dc.html" aria-current="page" onClick="{{closeMenu}}" style="display: flex; align-items: center; gap: 14px; min-height: 44px; font-size: 16px; letter-spacing: 0.12em; text-transform: uppercase; color: #4E6368; text-decoration: none"><span aria-hidden="true" style="display: block; width: 18px; height: 1px; background: currentColor"></span>Actor Websites</a></li>
 </ul>
 </div>
 <a href="Portfolio.dc.html" onClick="{{closeMenu}}" style="display: block; padding: 18px 0; border-bottom: 1px solid rgba(18, 20, 20, 0.12); font-family: 'Cormorant Infant', Garamond, serif; font-size: 28px; color: #121414; text-decoration: none">Portfolio</a>
@@ -545,7 +598,7 @@ img{display:block;max-width:100%;height:auto}
 <a class="sp-flink" href="Brand-Marketing-Design.dc.html" style="color: #121414; text-decoration: none; font-size: 18px; line-height: 1.5">Brand &amp; Marketing Design</a>
 <a class="sp-flink" href="SEO.dc.html" style="color: #121414; text-decoration: none; font-size: 18px; line-height: 1.5">SEO</a>
 <a class="sp-flink" href="Services.dc.html#ongoing-title" style="color: #121414; text-decoration: none; font-size: 18px; line-height: 1.5">Ongoing Support</a>
-<a class="sp-flink" href="Actor-Websites.dc.html" style="color: #121414; text-decoration: none; font-size: 18px; line-height: 1.5">Actor Websites</a>
+<a class="sp-flink" href="Actor-Websites.dc.html" aria-current="page" style="color: #121414; text-decoration: none; font-size: 18px; line-height: 1.5">Actor Websites</a>
 </nav>
 <nav aria-label="Explore" style="flex: 0 1 200px; display: flex; flex-direction: column; gap: 12px">
 <p style="margin: 0 0 6px; font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; color: #4E6368">Explore</p>
