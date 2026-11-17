@@ -185,4 +185,108 @@
       });
     });
   }
+  // ---------- actor website intake form (hidden page /services/actor-websites/intake) ----------
+  var ik = doc.querySelector('form[data-intake]');
+  if (ik) {
+    var ikEndpoint = ik.getAttribute('data-endpoint') || '';
+    var ikSubmit = ik.querySelector('[data-intake-submit]');
+    var ikLabel = ikSubmit ? ikSubmit.textContent : '';
+    var ikErr = ik.querySelector('[data-intake-error]'), ikFail = ik.querySelector('[data-intake-failed]');
+    var ikSent = doc.querySelector('[data-intake-sent]');
+    var ikBusy = false, ikDirty = false, ikDone = false;
+    var picked = function (key) { var on = ik.querySelector('input[data-key="' + key + '"]:checked'); return on ? on.value : ''; };
+    var stillsBox = ik.elements.namedItem('Stills folder');
+    // conditions that show questions or make them required
+    var conds = function () {
+      return {
+        contact: /form|Email link/.test(picked('contact')),
+        minor: picked('minor') === 'Yes',
+        nopdf: /^No/.test(picked('resume')),
+        stills: !!(stillsBox && stillsBox.value.trim())
+      };
+    };
+    var ikSync = function () {
+      var c = conds();
+      $$('[data-show-if]', ik).forEach(function (el) { if (c[el.getAttribute('data-show-if')]) el.removeAttribute('hidden'); else el.setAttribute('hidden', ''); });
+    };
+    $$('.ik-err', ik).forEach(function (e) { e.setAttribute('data-default', e.textContent); });
+    var boxOf = function (el) { return el.closest('.ik-field'); };
+    var mark = function (box, bad, msg) {
+      if (!box) return;
+      box.setAttribute('aria-invalid', bad ? 'true' : 'false');
+      var e = box.querySelector('.ik-err');
+      if (!e) return;
+      e.textContent = msg || e.getAttribute('data-default');
+      if (bad) e.removeAttribute('hidden'); else e.setAttribute('hidden', '');
+    };
+    var empty = function (el) { return el.type === 'checkbox' ? !el.checked : !el.value.trim(); };
+    var validate = function () {
+      var c = conds(), first = null;
+      $$('.ik-field', ik).forEach(function (b) { mark(b, false); });
+      var fail = function (box, el, msg) { mark(box, true, msg); if (!first) first = el; };
+      $$('input[data-req], textarea[data-req]', ik).forEach(function (el) { if (empty(el)) fail(boxOf(el), el); });
+      $$('fieldset[data-req]', ik).forEach(function (fs) { if (!fs.querySelector('input:checked')) fail(fs, fs.querySelector('input')); });
+      $$('[data-req-if]', ik).forEach(function (el) { var k = el.getAttribute('data-req-if'); if (k !== 'bio' && c[k] && empty(el)) fail(boxOf(el), el); });
+      var bio = $$('[data-req-if="bio"]', ik);
+      if (bio.length && bio.every(empty)) bio.forEach(function (el) { fail(boxOf(el), el, 'Please fill in your bio or your notes for one.'); });
+      $$('input[type=email]', ik).forEach(function (el) {
+        var v = el.value.trim();
+        if (v && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) && !el.closest('[hidden]')) fail(boxOf(el), el, 'Please enter a valid email address.');
+      });
+      return first;
+    };
+    var ikSend = function (e) {
+      if (e) e.preventDefault();
+      if (ikBusy) return;
+      if (ikFail) ikFail.setAttribute('hidden', '');
+      var first = validate();
+      if (first) {
+        if (ikErr) ikErr.removeAttribute('hidden');
+        first.scrollIntoView({ block: 'center', behavior: reduce ? 'auto' : 'smooth' });
+        first.focus({ preventScroll: true });
+        return;
+      }
+      if (ikErr) ikErr.setAttribute('hidden', '');
+      // questions in page order, ticked boxes joined, questions that don't apply left out
+      var data = new FormData(), seen = {};
+      Array.prototype.forEach.call(ik.elements, function (el) {
+        if (!el.name || el.type === 'submit' || el.type === 'button' || el.closest('[hidden]')) return;
+        if (el.type === 'radio' || el.type === 'checkbox') {
+          if (!el.checked) return;
+          if (seen[el.name] !== undefined) { seen[el.name] += ', ' + el.value; data.set(el.name, seen[el.name]); return; }
+          seen[el.name] = el.value; data.append(el.name, el.value); return;
+        }
+        data.append(el.name, el.value.trim());
+      });
+      var who = ik.elements.namedItem('Name on website');
+      data.set('_subject', 'Actor website details: ' + (who ? who.value.trim() : ''));
+      if (!ikEndpoint) { if (ikFail) ikFail.removeAttribute('hidden'); return; }
+      ikBusy = true;
+      if (ikSubmit) { ikSubmit.textContent = 'Sending…'; ikSubmit.setAttribute('aria-disabled', 'true'); }
+      var done = function (ok) {
+        ikBusy = false;
+        if (ikSubmit) { ikSubmit.textContent = ikLabel; ikSubmit.setAttribute('aria-disabled', 'false'); }
+        if (ok) {
+          ikDone = true;
+          ik.setAttribute('hidden', '');
+          if (ikSent) { ikSent.removeAttribute('hidden'); ikSent.scrollIntoView({ block: 'center' }); var h = ikSent.querySelector('h2'); if (h) h.focus({ preventScroll: true }); }
+        } else if (ikFail) ikFail.removeAttribute('hidden');
+      };
+      try {
+        fetch(ikEndpoint, { method: 'POST', body: data, headers: { Accept: 'application/json' } })
+          .then(function (res) { done(res && res.ok); }, function () { done(false); });
+      } catch (err) { done(false); }
+    };
+    ik.addEventListener('submit', ikSend);
+    ik.addEventListener('change', function () { ikDirty = true; ikSync(); });
+    ik.addEventListener('input', function (e) {
+      ikDirty = true;
+      var b = e.target.closest && e.target.closest('.ik-field');
+      if (b && b.getAttribute('aria-invalid') === 'true') mark(b, false);
+      if (e.target === stillsBox) ikSync();
+    });
+    // a long form: warn before leaving with answers that haven't been sent
+    win.addEventListener('beforeunload', function (e) { if (ikDirty && !ikDone) { e.preventDefault(); e.returnValue = ''; } });
+    ikSync();
+  }
 })();

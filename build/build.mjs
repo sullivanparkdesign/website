@@ -40,6 +40,7 @@ const PAGES = [
   { src: 'Contact', url: '/contact', crumb: 'Contact' },
 ];
 if (fs.existsSync(path.join(SRC, 'Privacy.dc.html'))) PAGES.push({ src: 'Privacy', url: '/privacy', crumb: 'Privacy Policy' });
+if (fs.existsSync(path.join(SRC, 'Actor-Website-Intake.dc.html'))) PAGES.push({ src: 'Actor-Website-Intake', url: '/services/actor-websites/intake', crumb: 'Your Website Details', parent: 'Actor-Websites' });
 if (fs.existsSync(path.join(SRC, 'Actor-Website-Terms.dc.html'))) PAGES.push({ src: 'Actor-Website-Terms', url: '/services/actor-websites/terms', crumb: 'Actor Website Terms', parent: 'Actor-Websites' });
 // pages in config.hiddenPages are built and reachable by address only: noindex, no sitemap entry
 for (const p of PAGES) if ((CONFIG.hiddenPages || []).includes(p.url)) p.hidden = true;
@@ -143,6 +144,12 @@ function postProcess(body, page) {
   $('section[aria-label="Client testimonial placeholder"]').remove();
   $('.rd-ba').closest('section').remove();
   $('[aria-describedby=""]').removeAttr('aria-describedby');
+  // Actor website intake form (hidden page): where answers go, plus Formspree's spam trap
+  const intake = $('form[data-intake]');
+  if (intake.length) {
+    intake.attr('data-endpoint', CONFIG.formEndpoint || '').attr('action', CONFIG.formEndpoint || '').attr('method', 'post');
+    if (CONFIG.formEndpoint) intake.prepend('<input type="hidden" name="_subject" value="Actor website details"><input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display: none">');
+  }
   // Contact form: where messages go
   const form = $('form[data-form]');
   if (form.length) {
