@@ -145,7 +145,7 @@
         var alertBox = views.failed && views.failed.querySelector('[role="alert"]');
         if (alertBox && alertBox.getAttribute('data-mailto-note')) alertBox.innerHTML = alertBox.getAttribute('data-mailto-note');
         show(views.failed, true);
-        win.location.href = 'mailto:info@sullivanparkdesign.com?subject=' + encodeURIComponent('Website enquiry from ' + name) + '&body=' + encodeURIComponent(body);
+        win.location.href = 'mailto:hello@sullivanparkdesign.com?subject=' + encodeURIComponent('Website enquiry from ' + name) + '&body=' + encodeURIComponent(body);
         return;
       }
       sending = true;

@@ -51,7 +51,7 @@ function linkMap(u) {
     const p = BY_SRC[m[1]];
     if (p) return p.url + (m[2] || '') + (m[3] || '');
   }
-  if (u === '#privacy-policy') return BY_SRC.Privacy ? '/privacy' : 'mailto:info@sullivanparkdesign.com';
+  if (u === '#privacy-policy') return BY_SRC.Privacy ? '/privacy' : 'mailto:hello@sullivanparkdesign.com';
   return undefined;
 }
 
@@ -155,7 +155,7 @@ function postProcess(body, page) {
     form.find('[data-error="email"] p').attr('data-error-text', '');
     form.find('[data-form-submit]').attr('data-label', form.find('[data-form-submit]').text().trim());
     const alertBox = form.find('[data-form-view="failed"] [role="alert"]');
-    alertBox.attr('data-mailto-note', 'Your email app should open with your message ready to send. If it doesn’t, email me at <a href="mailto:info@sullivanparkdesign.com">info@sullivanparkdesign.com</a>.');
+    alertBox.attr('data-mailto-note', 'Your email app should open with your message ready to send. If it doesn’t, email me at <a href="mailto:hello@sullivanparkdesign.com">hello@sullivanparkdesign.com</a>.');
   }
   return $.html();
 }

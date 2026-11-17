@@ -184,7 +184,7 @@ def closing(h2, body):
 </div>
 <div style="flex: 0 1 auto; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 18px">
 {btn_primary()}
-<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #1F2426">Or email me at <a href="mailto:info@sullivanparkdesign.com" style="color: #4E6368; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 5px">info@sullivanparkdesign.com</a>.</p>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #1F2426">Or email me at <a href="mailto:hello@sullivanparkdesign.com" style="color: #4E6368; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 5px">hello@sullivanparkdesign.com</a>.</p>
 </div>
 </div>
 </section>'''

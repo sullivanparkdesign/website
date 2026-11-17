@@ -232,12 +232,12 @@ html{scroll-padding-top:104px}
 <div style="flex: 1 1 440px; max-width: 560px; min-width: 0; display: flex; flex-direction: column; gap: 40px">
 <div style="display: flex; flex-direction: column; gap: 22px">
 <p style="margin: 0; display: flex; align-items: center; gap: 16px; font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; color: #4E6368"><span aria-hidden="true" style="display: block; width: 40px; height: 1px; background: #4E6368"></span>Send a Message</p>
-<h2 id="form-title" style="margin: 0; font-family: 'Cormorant Infant', Garamond, serif; font-weight: 300; font-size: clamp(40px, 4vw, 60px); line-height: 1.04; color: #121414; text-wrap: balance">Tell me a little <em style="font-style: italic; color: #4E6368">about your business</em></h2>
-<p style="margin: 0; font-size: 19px; line-height: 1.7; color: #1F2426">Share what you’re working on and where you’d like some help. You don’t need a finished brief to start the conversation.</p>
+<h2 id="form-title" style="margin: 0; font-family: 'Cormorant Infant', Garamond, serif; font-weight: 300; font-size: clamp(40px, 4vw, 60px); line-height: 1.04; color: #121414; text-wrap: balance">Tell me about <em style="font-style: italic; color: #4E6368">your project</em></h2>
+<p style="margin: 0; font-size: 19px; line-height: 1.7; color: #1F2426">Share what you have in mind and where you’d like some help. You don’t need a finished brief to start the conversation.</p>
 </div>
 <div style="padding-top: 32px; border-top: 1px solid rgba(18, 20, 20, 0.16); display: flex; flex-direction: column; gap: 12px">
 <h3 style="margin: 0; font-family: 'Cormorant Infant', Garamond, serif; font-weight: 400; font-size: clamp(26px, 2.2vw, 32px); line-height: 1.15; color: #121414">Prefer email?</h3>
-<p style="margin: 0; font-size: 18px; line-height: 1.7; color: #1F2426">You’re welcome to write to me directly at <a class="sp-flink" href="mailto:info@sullivanparkdesign.com" style="color: #121414; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 5px">info@sullivanparkdesign.com</a>.</p>
+<p style="margin: 0; font-size: 18px; line-height: 1.7; color: #1F2426">You’re welcome to write to me directly at <a class="sp-flink" href="mailto:hello@sullivanparkdesign.com" style="color: #121414; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 5px">hello@sullivanparkdesign.com</a>.</p>
 <p style="margin: 0; display: flex; align-items: center; gap: 10px; font-size: 17px; line-height: 1.5; color: #4E5558"><svg width="12" height="16" viewBox="0 0 12 16" fill="none" aria-hidden="true" style="flex: none; color: #4E6368"><path d="M6 15s5-5.1 5-9A5 5 0 0 0 1 6c0 3.9 5 9 5 9z" stroke="currentColor" stroke-width="1.1"></path><circle cx="6" cy="6" r="1.8" stroke="currentColor" stroke-width="1.1"></circle></svg>Vancouver, British Columbia</p>
 </div>
 </div>
@@ -267,19 +267,21 @@ html{scroll-padding-top:104px}
 <option>Website Design</option>
 <option>Brand &amp; Marketing Design</option>
 <option>SEO</option>
+<option>Actor Websites</option>
 <option>More Than One Service</option>
 <option>Not Sure Yet</option>
 </select>
 <svg width="14" height="8" viewBox="0 0 14 8" fill="none" aria-hidden="true" style="position: absolute; right: 20px; top: 25px; pointer-events: none; color: #4E6368"><path d="M1 1l6 6 6-6" stroke="currentColor" stroke-width="1.2"></path></svg>
 </div>
+<p id="f-service-hint" hidden style="margin: 0; font-size: 16px; line-height: 1.5; color: #4E5558">Let me know which look you like, what materials you have ready and your preferred timing.</p>
 </div>
 <div style="grid-column: 1 / -1; display: flex; flex-direction: column; gap: 10px">
 <label for="f-message" style="font-size: 17px; line-height: 1.4; color: #121414">Message <span aria-hidden="true" style="color: #4E6368">*</span></label>
-<textarea id="f-message" name="message" class="sp-field" rows="6" required aria-invalid="{{messageInvalid}}" aria-describedby="{{messageDescribedBy}}" placeholder="Tell me about your business, what you need and any timing you have in mind." style="padding: 16px 18px; border: 1px solid rgba(18, 20, 20, 0.28); border-radius: 0; background: #FFFFFF; font-family: 'Abel', 'Arial Narrow', sans-serif; font-size: 18px; line-height: 1.6; color: #121414; resize: vertical"></textarea>
+<textarea id="f-message" name="message" class="sp-field" rows="6" required aria-invalid="{{messageInvalid}}" aria-describedby="{{messageDescribedBy}}" placeholder="Tell me about your project, what you need and any timing you have in mind." style="padding: 16px 18px; border: 1px solid rgba(18, 20, 20, 0.28); border-radius: 0; background: #FFFFFF; font-family: 'Abel', 'Arial Narrow', sans-serif; font-size: 18px; line-height: 1.6; color: #121414; resize: vertical"></textarea>
 <sc-if value="{{messageError}}" hint-placeholder-val="{{false}}"><p id="f-message-error" style="margin: 0; font-size: 16px; line-height: 1.5; color: #A0412D">Please add a short message.</p></sc-if>
 </div>
 <sc-if value="{{sendFailed}}" hint-placeholder-val="{{false}}">
-<div role="alert" style="grid-column: 1 / -1; padding: 18px 22px; border: 1px solid #A0412D; background: #FFFFFF; font-size: 17px; line-height: 1.6; color: #1F2426">Your message couldn’t be sent. Your details are still here, so please try again, or email me at <a href="mailto:info@sullivanparkdesign.com" style="color: #121414; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px">info@sullivanparkdesign.com</a>.</div>
+<div role="alert" style="grid-column: 1 / -1; padding: 18px 22px; border: 1px solid #A0412D; background: #FFFFFF; font-size: 17px; line-height: 1.6; color: #1F2426">Your message couldn’t be sent. Your details are still here, so please try again, or email me at <a href="mailto:hello@sullivanparkdesign.com" style="color: #121414; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px">hello@sullivanparkdesign.com</a>.</div>
 </sc-if>
 <div style="grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 32px">
 <button class="sp-btn sp-btn-blue" type="button" onClick="{{submitForm}}" aria-disabled="{{sendingAttr}}" style="display: inline-flex; align-items: center; justify-content: center; min-height: 58px; padding: 0 40px; background: #4E6368; border: 1px solid #4E6368; color: #FFFFFF; cursor: pointer; font-family: 'Abel', 'Arial Narrow', sans-serif; font-size: 18px; letter-spacing: 0.03em">{{submitLabel}}</button>
@@ -402,7 +404,7 @@ html{scroll-padding-top:104px}
 <p style="margin: 0 0 6px; font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; color: #4E6368">Contact</p>
 <address style="font-style: normal; display: flex; flex-direction: column; gap: 12px; font-size: 18px; line-height: 1.5; color: #121414">
 <span>Vancouver, British Columbia</span>
-<a class="sp-flink" href="mailto:info@sullivanparkdesign.com" style="color: #121414; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 5px">info@sullivanparkdesign.com</a>
+<a class="sp-flink" href="mailto:hello@sullivanparkdesign.com" style="color: #121414; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 5px">hello@sullivanparkdesign.com</a>
 </address>
 </div>
 </div>

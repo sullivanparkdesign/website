@@ -49,7 +49,7 @@ New canvas images need adding to `build/blobs/` (named by their canvas id) befor
 
 ## Settings (`build/config.json`)
 
-- `formEndpoint`: where the contact form sends messages (for example a Formspree form URL). While it's empty, the form checks the fields and then opens the visitor's email app with their message filled in, addressed to info@sullivanparkdesign.com.
+- `formEndpoint`: where the contact form sends messages (for example a Formspree form URL). While it's empty, the form checks the fields and then opens the visitor's email app with their message filled in, addressed to hello@sullivanparkdesign.com.
 - `imageNames`: friendly file names for images. Everything else is named from its alt text.
 
 ## Good to know

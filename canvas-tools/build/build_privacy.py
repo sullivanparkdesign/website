@@ -7,7 +7,7 @@ SERIF = "'Cormorant Infant', Garamond, serif"
 TEAL, INK, BODY, MUTED = '#4E6368', '#121414', '#1F2426', '#4E5558'
 WRAP = 'width: 100%; max-width: 1680px; margin: 0 auto'
 GUTTER = 'clamp(20px, 5vw, 72px)'
-MAIL = f'<a href="mailto:info@sullivanparkdesign.com" style="color: {TEAL}; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px">info@sullivanparkdesign.com</a>'
+MAIL = f'<a href="mailto:hello@sullivanparkdesign.com" style="color: {TEAL}; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px">hello@sullivanparkdesign.com</a>'
 
 SECTIONS = [
     ('What I collect', [
