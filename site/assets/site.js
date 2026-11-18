@@ -173,13 +173,6 @@
       var wanted = SERVICES[new URLSearchParams(win.location.search).get('service') || ''];
       if (wanted && serviceSelect) serviceSelect.value = wanted;
     } catch (e) {}
-    // An "Order Luminous" style button on the Actor Websites page adds ?design=luminous: the message starts with the order
-    var DESIGNS = { luminous: 'Luminous', editorial: 'Editorial', headliner: 'Headliner' };
-    try {
-      var design = DESIGNS[(new URLSearchParams(win.location.search).get('design') || '').toLowerCase()];
-      var msgBox = form.elements.namedItem('message');
-      if (design && msgBox && !msgBox.value) msgBox.value = 'I’d like to order an actor website in the ' + design + ' design.\n\n';
-    } catch (e) {}
     if (serviceSelect) serviceSelect.addEventListener('change', updateHint);
     updateHint();
     if (submit) submit.addEventListener('click', send);
@@ -303,6 +296,11 @@
     });
     // a long form: warn before leaving with answers that haven't been sent
     win.addEventListener('beforeunload', function (e) { if (ikDirty && !ikDone) { e.preventDefault(); e.returnValue = ''; } });
+    // An "Order Luminous" style button on the Actor Websites page adds ?design=luminous: that design starts ticked
+    try {
+      var want = (new URLSearchParams(win.location.search).get('design') || '').toLowerCase();
+      $$('input[data-key="look"]', ik).forEach(function (r) { if (want && r.value.toLowerCase() === want && !picked('look')) r.checked = true; });
+    } catch (e) {}
     ikSync();
   }
 })();

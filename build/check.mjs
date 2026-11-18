@@ -1,6 +1,9 @@
 import { open, pages, file } from './test-site.mjs';
 import fs from 'node:fs';
-const HIDDEN = JSON.parse(fs.readFileSync(new URL('./config.json', import.meta.url), 'utf8')).hiddenPages || [];
+const CFG = JSON.parse(fs.readFileSync(new URL('./config.json', import.meta.url), 'utf8'));
+const HIDDEN = CFG.hiddenPages || [];
+// hidden pages a public page links to on purpose (still noindex and out of the sitemap): { hidden page: [pages allowed to link it] }
+const LINKED_OK = CFG.linkedHiddenPages || {};
 const O = 'https://www.sullivanparkdesign.com';
 const { b, page } = await open();
 const list = pages(); let problems = 0;
@@ -37,7 +40,7 @@ for (const u of list) {
   if (dead.length) issues.push('dead links ' + dead.join(','));
   const demo = u.startsWith('/templates/'); // template demos: placeholder links and noindex are intentional
   const hidden = HIDDEN.includes(u.replace(/\.html$/, '')); // built but not launched yet: noindex on purpose
-  const linksHidden = r.links.filter(h => HIDDEN.includes(h.split('#')[0].split('?')[0]) && !hidden);
+  const linksHidden = r.links.filter(h => { const t = h.split('#')[0].split('?')[0]; return HIDDEN.includes(t) && !hidden && !(LINKED_OK[t] || []).includes(u.replace(/\.html$/, '')); });
   if (linksHidden.length && !demo) issues.push('links to a hidden page ' + [...new Set(linksHidden)].join(','));
   if (r.anchors.length && !demo) issues.push('dead anchors ' + [...new Set(r.anchors)].join(','));
   if (r.blob) issues.push('canvas image path left'); if (r.dc) issues.push('.dc.html link left'); if (r.holes) issues.push('template hole left');
