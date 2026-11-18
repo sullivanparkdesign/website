@@ -202,7 +202,10 @@
         contact: /form|Email link/.test(picked('contact')),
         minor: picked('minor') === 'Yes',
         nopdf: /^No/.test(picked('resume')),
-        stills: !!(stillsBox && stillsBox.value.trim())
+        stills: !!(stillsBox && stillsBox.value.trim()),
+        'look-luminous': picked('look') === 'Luminous',
+        'look-editorial': picked('look') === 'Editorial',
+        'look-headliner': picked('look') === 'Headliner'
       };
     };
     var ikSync = function () {
@@ -224,8 +227,10 @@
       var c = conds(), first = null;
       $$('.ik-field', ik).forEach(function (b) { mark(b, false); });
       var fail = function (box, el, msg) { mark(box, true, msg); if (!first) first = el; };
-      $$('input[data-req], textarea[data-req]', ik).forEach(function (el) { if (empty(el)) fail(boxOf(el), el); });
-      $$('fieldset[data-req]', ik).forEach(function (fs) { if (!fs.querySelector('input:checked')) fail(fs, fs.querySelector('input')); });
+      // questions hidden because they don't apply (another design's colourways, parent details) are skipped
+      var shown = function (el) { return !el.closest('[hidden]'); };
+      $$('input[data-req], textarea[data-req]', ik).forEach(function (el) { if (shown(el) && empty(el)) fail(boxOf(el), el); });
+      $$('fieldset[data-req]', ik).forEach(function (fs) { if (shown(fs) && !fs.querySelector('input:checked')) fail(fs, fs.querySelector('input')); });
       $$('[data-req-if]', ik).forEach(function (el) { var k = el.getAttribute('data-req-if'); if (k !== 'bio' && c[k] && empty(el)) fail(boxOf(el), el); });
       var bio = $$('[data-req-if="bio"]', ik);
       if (bio.length && bio.every(empty)) bio.forEach(function (el) { fail(boxOf(el), el, 'Please fill in your bio or your notes for one.'); });
@@ -278,7 +283,11 @@
       } catch (err) { done(false); }
     };
     ik.addEventListener('submit', ikSend);
-    ik.addEventListener('change', function () { ikDirty = true; ikSync(); });
+    ik.addEventListener('change', function (e) {
+      ikDirty = true;
+      if (e.target.getAttribute && e.target.getAttribute('data-key') === 'look') $$('input[name="Colourway"]', ik).forEach(function (r) { r.checked = false; });
+      ikSync();
+    });
     ik.addEventListener('input', function (e) {
       ikDirty = true;
       var b = e.target.closest && e.target.closest('.ik-field');
