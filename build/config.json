@@ -1,6 +1,7 @@
 {
  "formEndpoint": "https://formspree.io/f/xbgordgd",
  "hiddenPages": [
+  "/services/actor-websites/guides",
   "/services/actor-websites/intake"
  ],
  "icon": "/_blob/d4956c39878d65ac2c0117fbbbaf4e88",

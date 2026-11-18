@@ -183,10 +183,13 @@ img{display:block;max-width:100%;height:auto}
 .aw-look-text{display:flex;flex-direction:column;gap:18px;min-width:0}
 .aw-look-n{margin:0;font-family:'Cormorant Infant',Garamond,serif;font-style:italic;font-weight:300;font-size:clamp(56px,5vw,84px);line-height:.8;color:#4E6368}
 .aw-look-h{margin:0;font-family:'Cormorant Infant',Garamond,serif;font-weight:300;font-size:clamp(40px,3.8vw,60px);line-height:1;color:#121414}
-.aw-look-line{margin:0;font-size:20px;line-height:1.65;color:#1F2426;text-wrap:balance}
+.aw-look-line{margin:0;font-size:20px;line-height:1.65;color:#1F2426;text-wrap:pretty}
+@media (min-width:640px){.aw-look-line{text-wrap:balance}}
 .aw-look-pts{list-style:none;margin:4px 0 6px;padding:0;border-top:1px solid rgba(78,99,104,.25)}
 .aw-look-pts li{padding:12px 0 12px 22px;border-bottom:1px solid rgba(78,99,104,.25);position:relative;font-size:17px;line-height:1.5;color:#1F2426}
 .aw-look-pts li::before{content:"";position:absolute;left:2px;top:22px;width:9px;height:1px;background:#4E6368}
+.aw-look-ctas{display:flex;flex-wrap:wrap;align-items:center;gap:16px 32px;margin-top:6px}
+.aw-order{display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:56px;padding:0 30px;background:#4E6368;border:1px solid #4E6368;color:#FFFFFF;text-decoration:none;font-size:18px;letter-spacing:.03em}
 .aw-demo{align-self:flex-start;display:inline-flex;align-items:center;gap:10px;min-height:44px;color:#4E6368;font-size:18px;letter-spacing:.03em;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px}
 
 /* eight items: one, two or four across, so a row never ends with a lone item */
@@ -227,8 +230,11 @@ img{display:block;max-width:100%;height:auto}
 .aw-addon-price span{display:block;margin-top:8px;font-family:Abel,sans-serif;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#DCE4E5}
 .aw-addon-price{margin:0;flex:none;font-family:'Cormorant Infant',Garamond,serif;font-weight:300;font-size:clamp(48px,4vw,60px);line-height:1;color:#FFFFFF}
 @media (min-width:1000px){.aw-addon{grid-column:2}}
-.aw-notes{margin-top:calc(16px - clamp(40px,5vw,64px));padding-top:28px;border-top:1px solid rgba(255,255,255,.28);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:22px 40px}
-@media (min-width:1000px){.aw-notes{grid-column:2}}
+.aw-card li,.aw-addon-h{text-wrap:balance}
+.aw-price-p,.aw-card-p,.aw-card-note,.aw-addon-t,.aw-notes p{text-wrap:pretty}
+.aw-notes{padding-top:32px;border-top:1px solid rgba(255,255,255,.28);display:grid;grid-template-columns:minmax(0,1fr);gap:22px 64px}
+@media (min-width:760px){.aw-notes{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1000px){.aw-notes{grid-column:1/-1}}
 .aw-note-h{margin:0 0 8px;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#DCE4E5}
 .aw-note-t{margin:0;font-size:16px;line-height:1.6;color:#E8EEEF}
 .aw-terms-link{grid-column:1/-1;justify-self:start;display:inline-flex;align-items:center;gap:14px;font-size:18px;letter-spacing:.03em;color:#FFFFFF;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px}
@@ -435,7 +441,7 @@ html{scroll-padding-top:104px}
 <h3 class="aw-look-h" id="aw-luminous-h">Luminous</h3>
 <p class="aw-look-line">Light and welcoming, with soft details that give your headshots a beautifully finished setting.</p>
 <ul class="aw-look-pts"><li>Gently framed photographs</li><li>Open spacing around your photos and bio</li><li>Elegant headings and subtle colour accents</li></ul>
-<a class="aw-demo" href="https://www.sullivanparkdesign.com/templates/luminous/" target="_blank" rel="noopener">Try the Live Demo<svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M4.5 2H2v8h8V7.5M7 2h3v3M10 2 5.5 6.5" stroke="currentColor" stroke-width="1.1"></path></svg><span class="aw-vh"> (opens in a new tab)</span></a>
+<div class="aw-look-ctas"><a class="sp-btn sp-btn-blue aw-order" href="/contact?service=actor-websites&amp;design=luminous">Order Luminous<svg width="22" height="10" viewBox="0 0 26 10" fill="none" aria-hidden="true"><path d="M0 5h24M20 1l4 4-4 4" stroke="currentColor" stroke-width="1.1"></path></svg></a><a class="aw-demo" href="https://www.sullivanparkdesign.com/templates/luminous/" target="_blank" rel="noopener">Try the Live Demo<svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M4.5 2H2v8h8V7.5M7 2h3v3M10 2 5.5 6.5" stroke="currentColor" stroke-width="1.1"></path></svg><span class="aw-vh"> (opens in a new tab)</span></a></div>
 </div>
 </article>
 <article class="aw-look aw-look-editorial aw-flip sp-reveal" aria-labelledby="aw-editorial-h">
@@ -448,7 +454,7 @@ html{scroll-padding-top:104px}
 <h3 class="aw-look-h" id="aw-editorial-h">Editorial</h3>
 <p class="aw-look-line">Inspired by magazine layouts, with a mix of photographs that brings different sides of your work into view.</p>
 <ul class="aw-look-pts"><li>Multiple photos in the opening section</li><li>A photo strip to showcase your range</li><li>Clean typography and generous white space</li></ul>
-<a class="aw-demo" href="https://www.sullivanparkdesign.com/templates/editorial/" target="_blank" rel="noopener">Try the Live Demo<svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M4.5 2H2v8h8V7.5M7 2h3v3M10 2 5.5 6.5" stroke="currentColor" stroke-width="1.1"></path></svg><span class="aw-vh"> (opens in a new tab)</span></a>
+<div class="aw-look-ctas"><a class="sp-btn sp-btn-blue aw-order" href="/contact?service=actor-websites&amp;design=editorial">Order Editorial<svg width="22" height="10" viewBox="0 0 26 10" fill="none" aria-hidden="true"><path d="M0 5h24M20 1l4 4-4 4" stroke="currentColor" stroke-width="1.1"></path></svg></a><a class="aw-demo" href="https://www.sullivanparkdesign.com/templates/editorial/" target="_blank" rel="noopener">Try the Live Demo<svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M4.5 2H2v8h8V7.5M7 2h3v3M10 2 5.5 6.5" stroke="currentColor" stroke-width="1.1"></path></svg><span class="aw-vh"> (opens in a new tab)</span></a></div>
 </div>
 </article>
 <article class="aw-look aw-look-headliner sp-reveal" aria-labelledby="aw-headliner-h">
@@ -461,7 +467,7 @@ html{scroll-padding-top:104px}
 <h3 class="aw-look-h" id="aw-headliner-h">Headliner</h3>
 <p class="aw-look-line">A bold, cinematic introduction that puts you centre stage from the moment your site opens.</p>
 <ul class="aw-look-pts"><li>A full-screen opening photograph</li><li>Your name in oversized type</li><li>A striking contrast between images and text</li></ul>
-<a class="aw-demo" href="https://www.sullivanparkdesign.com/templates/headliner/" target="_blank" rel="noopener">Try the Live Demo<svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M4.5 2H2v8h8V7.5M7 2h3v3M10 2 5.5 6.5" stroke="currentColor" stroke-width="1.1"></path></svg><span class="aw-vh"> (opens in a new tab)</span></a>
+<div class="aw-look-ctas"><a class="sp-btn sp-btn-blue aw-order" href="/contact?service=actor-websites&amp;design=headliner">Order Headliner<svg width="22" height="10" viewBox="0 0 26 10" fill="none" aria-hidden="true"><path d="M0 5h24M20 1l4 4-4 4" stroke="currentColor" stroke-width="1.1"></path></svg></a><a class="aw-demo" href="https://www.sullivanparkdesign.com/templates/headliner/" target="_blank" rel="noopener">Try the Live Demo<svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M4.5 2H2v8h8V7.5M7 2h3v3M10 2 5.5 6.5" stroke="currentColor" stroke-width="1.1"></path></svg><span class="aw-vh"> (opens in a new tab)</span></a></div>
 </div>
 </article>
 </div>

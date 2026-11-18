@@ -40,6 +40,7 @@ const PAGES = [
   { src: 'Contact', url: '/contact', crumb: 'Contact' },
 ];
 if (fs.existsSync(path.join(SRC, 'Privacy.dc.html'))) PAGES.push({ src: 'Privacy', url: '/privacy', crumb: 'Privacy Policy' });
+if (fs.existsSync(path.join(SRC, 'Actor-Website-Guides.dc.html'))) PAGES.push({ src: 'Actor-Website-Guides', url: '/services/actor-websites/guides', crumb: 'Your Website Guides', parent: 'Actor-Websites' });
 if (fs.existsSync(path.join(SRC, 'Actor-Website-Intake.dc.html'))) PAGES.push({ src: 'Actor-Website-Intake', url: '/services/actor-websites/intake', crumb: 'Your Website Details', parent: 'Actor-Websites' });
 if (fs.existsSync(path.join(SRC, 'Actor-Website-Terms.dc.html'))) PAGES.push({ src: 'Actor-Website-Terms', url: '/services/actor-websites/terms', crumb: 'Actor Website Terms', parent: 'Actor-Websites' });
 // pages in config.hiddenPages are built and reachable by address only: noindex, no sitemap entry
@@ -327,6 +328,10 @@ ${body}
 // ---------- runtime, sitemap, robots, headers, redirects ----------
 fs.copyFileSync(path.join(ROOT, 'build', 'site.js'), path.join(SITE, 'assets', 'site.js'));
 
+// ---------- downloadable files (/files/...), such as the actor website guide PDFs ----------
+fs.rmSync(path.join(SITE, 'files'), { recursive: true, force: true });
+if (fs.existsSync(path.join(ROOT, 'files'))) fs.cpSync(path.join(ROOT, 'files'), path.join(SITE, 'files'), { recursive: true });
+
 // ---------- actor website template demos (/templates/<look>/) ----------
 // Copied as they are, except: internal notes (HANDOFF.md) are never published, and the
 // "Website by Sullivan Park Design" credit points back to the Actor Websites page.
@@ -362,6 +367,9 @@ https://:version.:project.pages.dev/*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: SAMEORIGIN
+
+/files/*
+  X-Robots-Tag: noindex
 
 /images/*
   Cache-Control: public, max-age=31536000, immutable
