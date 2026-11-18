@@ -170,6 +170,8 @@ img{display:block;max-width:100%;height:auto}
 .aw-look:has(.aw-sw:nth-of-type(2) input:checked) .aw-shots img:nth-child(2){opacity:1}
 .aw-look:has(.aw-sw:nth-of-type(3) input:checked) .aw-shots img:nth-child(3){opacity:1}
 .aw-sws{border:0;margin:0;padding:0;min-width:0;display:flex;flex-wrap:wrap;gap:10px}
+/* On phones the three colourways sit side by side as equal tiles (swatch above the name), so they never split two and one */
+@media (max-width:560px){.aw-sws{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.aw-sw{flex-direction:column;justify-content:center;gap:8px;padding:10px 4px;font-size:clamp(11px,3.1vw,12px);letter-spacing:.06em;white-space:nowrap;text-align:center}}
 .aw-sw{cursor:pointer;display:inline-flex;align-items:center;gap:12px;min-height:44px;padding:8px 16px 8px 12px;border:1px solid rgba(78,99,104,.45);background:#FFFFFF;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:#1F2426;transition:background-color .3s,color .3s,border-color .3s}
 .aw-sw:hover{border-color:#4E6368}
 .aw-dots{display:flex;padding-left:4px}
@@ -179,7 +181,7 @@ img{display:block;max-width:100%;height:auto}
 .aw-look-text{display:flex;flex-direction:column;gap:18px;min-width:0}
 .aw-look-n{margin:0;font-family:'Cormorant Infant',Garamond,serif;font-style:italic;font-weight:300;font-size:clamp(56px,5vw,84px);line-height:.8;color:#4E6368}
 .aw-look-h{margin:0;font-family:'Cormorant Infant',Garamond,serif;font-weight:300;font-size:clamp(40px,3.8vw,60px);line-height:1;color:#121414}
-.aw-look-line{margin:0;font-size:20px;line-height:1.65;color:#1F2426}
+.aw-look-line{margin:0;font-size:20px;line-height:1.65;color:#1F2426;text-wrap:balance}
 .aw-look-pts{list-style:none;margin:4px 0 6px;padding:0;border-top:1px solid rgba(78,99,104,.25)}
 .aw-look-pts li{padding:12px 0 12px 22px;border-bottom:1px solid rgba(78,99,104,.25);position:relative;font-size:17px;line-height:1.5;color:#1F2426}
 .aw-look-pts li::before{content:"";position:absolute;left:2px;top:22px;width:9px;height:1px;background:#4E6368}
@@ -424,8 +426,8 @@ html{scroll-padding-top:104px}
 <div class="aw-look-text">
 <p class="aw-look-n">01</p>
 <h3 id="aw-luminous-h" class="aw-look-h">Luminous</h3>
-<p class="aw-look-line">Soft and refined, with framed photographs, elegant headings and room for your story.</p>
-<ul class="aw-look-pts"><li>Galleries for headshots, production stills and stage photos</li><li>Space to introduce your work and feature your reel</li><li>Contact form included</li></ul>
+<p class="aw-look-line">Light and airy, with delicate framing details that make every photograph feel polished and personal.</p>
+<ul class="aw-look-pts"><li>Soft, framed photographs with gentle detailing</li><li>An airy layout with room for your story</li><li>Elegant headings and calm, considered colour</li></ul>
 <a class="aw-demo" href="https://www.sullivanparkdesign.com/templates/luminous/" target="_blank" rel="noopener">Try the Live Demo<svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M4.5 2H2v8h8V7.5M7 2h3v3M10 2 5.5 6.5" stroke="currentColor" stroke-width="1.1"></path></svg><span class="aw-vh"> (opens in a new tab)</span></a>
 </div>
 </article>
@@ -437,8 +439,8 @@ html{scroll-padding-top:104px}
 <div class="aw-look-text">
 <p class="aw-look-n">02</p>
 <h3 id="aw-editorial-h" class="aw-look-h">Editorial</h3>
-<p class="aw-look-line">A clean, magazine-inspired design with spacious layouts and a strong focus on your photographs.</p>
-<ul class="aw-look-pts"><li>Headshots visitors can filter by type</li><li>A placeholder reel section if your reel is not ready yet</li><li>Contact form included</li></ul>
+<p class="aw-look-line">An editorial, magazine-inspired feel, with more photos up top and a photo bar that shows your range.</p>
+<ul class="aw-look-pts"><li>More of your photos at the top of the page</li><li>A photo bar that shows your range at a glance</li><li>Clean, spacious layouts with a magazine feel</li></ul>
 <a class="aw-demo" href="https://www.sullivanparkdesign.com/templates/editorial/" target="_blank" rel="noopener">Try the Live Demo<svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M4.5 2H2v8h8V7.5M7 2h3v3M10 2 5.5 6.5" stroke="currentColor" stroke-width="1.1"></path></svg><span class="aw-vh"> (opens in a new tab)</span></a>
 </div>
 </article>
@@ -450,8 +452,8 @@ html{scroll-padding-top:104px}
 <div class="aw-look-text">
 <p class="aw-look-n">03</p>
 <h3 id="aw-headliner-h" class="aw-look-h">Headliner</h3>
-<p class="aw-look-line">A bold, cinematic design that opens with a full-screen photograph and your name.</p>
-<ul class="aw-look-pts"><li>A striking introduction with simple navigation</li><li>Dedicated pages for your photos, media and resume</li><li>Email contact link instead of a contact form</li></ul>
+<p class="aw-look-line">A dynamic home page where your photograph does all the talking.</p>
+<ul class="aw-look-pts"><li>A full-screen photo that makes an entrance</li><li>Your name in large, cinematic type</li><li>Bold and confident from the first glance</li></ul>
 <a class="aw-demo" href="https://www.sullivanparkdesign.com/templates/headliner/" target="_blank" rel="noopener">Try the Live Demo<svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M4.5 2H2v8h8V7.5M7 2h3v3M10 2 5.5 6.5" stroke="currentColor" stroke-width="1.1"></path></svg><span class="aw-vh"> (opens in a new tab)</span></a>
 </div>
 </article>
@@ -552,7 +554,7 @@ html{scroll-padding-top:104px}
 </div>
 <div style="border-top: 1px solid rgba(18, 20, 20, 0.16)">
 <h3 style="margin: 0"><button id="faq-5-btn" class="sp-faq-btn" type="button" aria-expanded="{{faq4Expanded}}" aria-controls="faq-5-panel" onClick="{{toggleFaq4}}" style="width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 28px; padding: 22px 0; background: transparent; border: 0; cursor: pointer; text-align: left; color: #121414"><span class="sp-faq-q" style="font-family: 'Cormorant Infant', Garamond, serif; font-weight: 400; font-size: clamp(22px, 1.9vw, 27px); line-height: 1.25">Do I need a contact form?</span><span class="sp-plus" aria-hidden="true" style="flex: none; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid #4E6368; color: #4E6368"><svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.2"></path></svg></span></button></h3>
-<sc-if value="{{faq4Open}}" hint-placeholder-val="{{false}}"><div id="faq-5-panel" style="padding: 0 68px 26px 0"><p style="margin: 0; font-size: 18px; line-height: 1.7; color: #1F2426">Luminous and Editorial include a contact form connected to your own Formspree account, or a parent or guardian’s account for a young actor. The current free plan includes 50 submissions per month, and the provider sends usage notifications. If you need more capacity, you can choose a paid upgrade or discuss an email-link alternative. Headliner uses an email link rather than a form. Account limits and available plans can change.</p></div></sc-if>
+<sc-if value="{{faq4Open}}" hint-placeholder-val="{{false}}"><div id="faq-5-panel" style="padding: 0 68px 26px 0"><p style="margin: 0; font-size: 18px; line-height: 1.7; color: #1F2426">Not necessarily. Any design can have a contact form connected to your own Formspree account, or a parent or guardian’s account for a young actor. You can also use a simple email link, or your agent’s details only. The current free Formspree plan includes 50 submissions per month, and the provider sends usage notifications. If you need more capacity, you can choose a paid upgrade or switch to an email link. Account limits and available plans can change.</p></div></sc-if>
 </div>
 <div style="border-top: 1px solid rgba(18, 20, 20, 0.16)">
 <h3 style="margin: 0"><button id="faq-6-btn" class="sp-faq-btn" type="button" aria-expanded="{{faq5Expanded}}" aria-controls="faq-6-panel" onClick="{{toggleFaq5}}" style="width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 28px; padding: 22px 0; background: transparent; border: 0; cursor: pointer; text-align: left; color: #121414"><span class="sp-faq-q" style="font-family: 'Cormorant Infant', Garamond, serif; font-weight: 400; font-size: clamp(22px, 1.9vw, 27px); line-height: 1.25">What do I need to provide?</span><span class="sp-plus" aria-hidden="true" style="flex: none; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid #4E6368; color: #4E6368"><svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.2"></path></svg></span></button></h3>
